@@ -1,0 +1,12 @@
+[submodule ".ai/docs"]
+	path = .ai/docs
+	url = https://github.com/OG-Matcha/codefest2026-ai-docs.git
+	shallow = true
+[submodule ".ai/taipei-gov-dev"]
+	path = .ai/taipei-gov-dev
+	url = https://github.com/taipei-doit/TP_AI_Agent_soul_skill.git
+	shallow = true
+[submodule ".ai/townpass-services"]
+	path = .ai/townpass-services
+	url = https://github.com/taipei-doit/TownPass-Services.git
+	shallow = true
