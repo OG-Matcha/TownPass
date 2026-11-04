@@ -2,6 +2,7 @@
 	path = .ai/docs
 	url = https://github.com/OG-Matcha/codefest2026-ai-docs.git
 	shallow = true
+	branch = master
 [submodule ".ai/taipei-gov-dev"]
 	path = .ai/taipei-gov-dev
 	url = https://github.com/taipei-doit/TP_AI_Agent_soul_skill.git
