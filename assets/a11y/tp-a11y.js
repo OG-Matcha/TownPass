@@ -212,24 +212,43 @@
     return Math.round((String(text).length / (4 * (rate || 1))) * 1000) + 1500;
   }
 
-  // 找服務：服務名稱、說明、網址取自 App 的 lib/page/city_service/model/my_service_model.dart（只列有網址的）；
-  // keywords 是我們整理的「市民會怎麼說」對照表（不是官方資料）。之後改由 App 透過 handler 提供完整清單。
+  // 找服務：「市民會怎麼說」對照表（我們整理的，不是官方資料），依 App 的 MyServiceItemId 名稱對應。
+  // 服務清單本身在 App 內由 handler `service_catalog` 提供（lib/util/web_message_handler/service_catalog_message_handler.dart）；
+  // 不在 App 內（瀏覽器開發）時用下面的 SERVICES，內容照抄 my_service_model.dart。沒有對照表的服務仍可用名稱與說明找到。
+  var KEYWORDS = {
+    districtOffice: ["申請", "申辦", "補助", "津貼", "證明", "身障", "身心障礙", "手冊", "低收", "謄本", "線上辦", "表單"],
+    reportIssue: ["陳情", "檢舉", "反映", "抱怨", "建議", "路燈", "壞了", "坑洞", "噪音", "違停", "垃圾", "人行道"],
+    reservation: ["叫號", "排隊", "預約", "臨櫃", "櫃台", "戶政", "區公所", "號碼", "等多久", "現場"],
+    disasterReport: ["災情", "淹水", "積水", "倒樹", "颱風", "地震", "坍方", "土石", "停電", "危險", "通報"],
+    library: ["借書", "還書", "圖書館", "書", "館藏", "續借"],
+    locationSearch: ["附近", "地點", "哪裡", "廁所", "無障礙", "電梯", "停車", "公園", "怎麼去", "地圖", "設施"],
+    dedicatedLine: ["電話", "打電話", "客服", "問人", "專人", "熱線", "不知道", "不會用", "幫忙"],
+    dashboard: ["數據", "統計", "空氣", "資料"],
+  };
   var SERVICES = [
-    { id: "districtOffice", title: "申辦服務", desc: "線上申辦市政府各項服務", url: "https://taipei-pass-service.vercel.app/",
-      keywords: ["申請", "申辦", "補助", "津貼", "證明", "身障", "身心障礙", "手冊", "低收", "謄本", "線上辦", "表單"] },
-    { id: "reportIssue", title: "有話要說", desc: "陳情、反映市政問題", url: "https://taipei-pass-service.vercel.app/citizen-report/",
-      keywords: ["陳情", "檢舉", "反映", "抱怨", "建議", "路燈", "壞了", "坑洞", "噪音", "違停", "垃圾", "人行道"] },
-    { id: "reservation", title: "臨櫃叫號", desc: "查看臨櫃叫號、預約臨櫃時段", url: "https://taipei-pass-service.vercel.app/counter-calling/",
-      keywords: ["叫號", "排隊", "預約", "臨櫃", "櫃台", "戶政", "區公所", "號碼", "等多久", "現場"] },
-    { id: "disasterReport", title: "災情通報", desc: "立即通報發生災情的地點", url: "https://taipei-pass-service.vercel.app/disaster-report",
-      keywords: ["災情", "淹水", "積水", "倒樹", "颱風", "地震", "坍方", "土石", "停電", "危險", "通報"] },
-    { id: "library", title: "圖書借閱", desc: "查詢與借閱市立圖書館館藏", url: "https://taipei-pass-service.vercel.app/library-service/",
-      keywords: ["借書", "還書", "圖書館", "書", "館藏", "續借"] },
-    { id: "surrounding", title: "找地點", desc: "找附近的公共設施與地點", url: "https://taipei-pass-service.vercel.app/surrounding-service/",
-      keywords: ["附近", "地點", "哪裡", "廁所", "無障礙", "電梯", "停車", "公園", "怎麼去", "地圖", "設施"] },
-    { id: "dedicatedLine", title: "1999 市民熱線", desc: "打電話請專人協助", tel: "1999",
-      keywords: ["電話", "打電話", "客服", "問人", "專人", "熱線", "不知道", "不會用", "幫忙"] },
+    { id: "dedicatedLine", title: "1999", desc: "播打網路語音通話", tel: "1999" },
+    { id: "districtOffice", title: "申辦服務", desc: "線上申辦市政府服務個項目（市民）", url: "https://taipei-pass-service.vercel.app/" },
+    { id: "reportIssue", title: "有話要說", desc: "陳情系統", url: "https://taipei-pass-service.vercel.app/citizen-report/" },
+    { id: "reservation", title: "臨櫃叫號", desc: "臨櫃服務查看叫號、預約", url: "https://taipei-pass-service.vercel.app/counter-calling/" },
+    { id: "dashboard", title: "市政資訊儀表板", desc: "提供臺北市生活的重要數據", url: "https://dashboard.gov.taipei/" },
+    { id: "disasterReport", title: "災情通報", desc: "立即通報發生災情地點", url: "https://taipei-pass-service.vercel.app/disaster-report" },
+    { id: "library", title: "圖書借閱", desc: "市立圖書館借閱服務", url: "https://taipei-pass-service.vercel.app/library-service/" },
+    { id: "locationSearch", title: "找地點", desc: "提供各區日常服務地圖查找", url: "https://taipei-pass-service.vercel.app/surrounding-service/" },
   ];
+
+  /** App 回傳的服務清單 → 搜尋用的格式；只收 http(s) 網址或電話號碼，其他一律丟掉。 */
+  function toCatalog(list) {
+    if (!Array.isArray(list)) return null;
+    var out = [];
+    list.forEach(function (x) {
+      if (!x || typeof x.title !== "string" || typeof x.id !== "string") return;
+      var url = typeof x.url === "string" && /^https?:\/\//.test(x.url) ? x.url : "";
+      var tel = typeof x.tel === "string" && /^[0-9+#*]{3,15}$/.test(x.tel) ? x.tel : "";
+      if (!url && !tel) return;
+      out.push({ id: x.id, title: x.title, desc: String(x.description || x.desc || ""), url: url, tel: tel });
+    });
+    return out.length ? out : null;
+  }
   var SEARCH_EXAMPLES = ["預約臨櫃", "路燈壞了", "家門口淹水", "附近的無障礙廁所", "申請身障補助", "借書"];
 
   /**
@@ -243,7 +262,7 @@
     (catalog || SERVICES).forEach(function (sv) {
       var score = 0;
       var reasons = [];
-      sv.keywords.forEach(function (k) {
+      (sv.keywords || KEYWORDS[sv.id] || []).forEach(function (k) {
         if (q.indexOf(norm(k)) >= 0) {
           score += 2 + Math.min(k.length, 4);
           reasons.push(k);
@@ -264,6 +283,8 @@
 
   var core = {
     SERVICES: SERVICES,
+    KEYWORDS: KEYWORDS,
+    toCatalog: toCatalog,
     searchServices: searchServices,
     FONT_LEVELS: FONT_LEVELS,
     MISS: MISS,
@@ -816,6 +837,16 @@
 
     // ---------------- 找服務（主選單切換成搜尋頁） ----------------
     var currentView = "main";
+    var catalog = SERVICES;
+    var catalogFromApp = false;
+    // App 內改用 App 的服務清單（新增服務不用改這支 JS）
+    askApp("service_catalog", null, 2000).then(function (list) {
+      var c = toCatalog(list);
+      if (c) {
+        catalog = c;
+        catalogFromApp = true;
+      }
+    });
     function showView(name, animated) {
       var toSearch = name === "search";
       if (currentView === name && animated) return;
@@ -885,7 +916,7 @@
         $("#search-status").textContent = "";
         return;
       }
-      var hits = searchServices(q);
+      var hits = searchServices(q, catalog);
       $("#search-status").textContent = hits.length ? "找到 " + hits.length + " 個可能的服務" : "找不到相關的服務，可以換個說法，或打電話問 1999";
       hits.forEach(function (h, i) {
         var li = el("li");
@@ -936,7 +967,8 @@
       });
     });
     $("#call-1999").addEventListener("click", function () {
-      goService(SERVICES[SERVICES.length - 1]);
+      var line = catalog.filter(function (x) { return x.tel; })[0] || SERVICES[0];
+      goService(line);
     });
     // 用講的輸入問題（裝置端辨識；瀏覽器只在本機開發時可用）
     $("#q-mic").addEventListener("click", function () {
@@ -1088,6 +1120,16 @@
       return el.getAttribute("title") || el.getAttribute("placeholder") || "";
     }
 
+    var SECRET_AUTOCOMPLETE = /(password|one-time-code|cc-|tel|email|bday|street-address|postal-code)/i;
+    /** 不能念出內容的欄位：只有一般文字、數字、日期、下拉選單才念值。 */
+    function isSecretField(n) {
+      if (n.hasAttribute("data-tp-a11y-secret")) return true;
+      if (n.tagName === "SELECT") return SECRET_AUTOCOMPLETE.test(n.getAttribute("autocomplete") || "");
+      var type = (n.getAttribute("type") || "text").toLowerCase();
+      if (["text", "search", "number", "date", "time", "month", "week", "range"].indexOf(type) < 0 && n.tagName !== "TEXTAREA") return true;
+      return SECRET_AUTOCOMPLETE.test(n.getAttribute("autocomplete") || "");
+    }
+
     /** 依畫面順序收集要念的段落：主要內容優先（main／article），每段記住元素以便標示。 */
     function collectBlocks() {
       var scope = document.querySelector("main, [role='main'], article") || document.body;
@@ -1109,7 +1151,8 @@
             } else {
               el = n;
               var v = n.tagName === "SELECT" ? (n.options[n.selectedIndex] || {}).text : n.value;
-              text = "輸入欄：" + labelOf(n) + (v ? "，目前是" + v : "");
+              // 密碼、驗證碼、卡號、電話、email 等不念內容（念出來等於在公共場所公開，也會傳給 App 的語音引擎）
+              text = "輸入欄：" + labelOf(n) + (v ? (isSecretField(n) ? "，已輸入" : "，目前是" + v) : "");
             }
           } else continue;
         } else {
@@ -1502,6 +1545,9 @@
       listen: listenOnce,
       runCommand: runCommand,
       openPanel: openPanel,
+      serviceCatalog: function () {
+        return { fromApp: catalogFromApp, count: catalog.length };
+      },
       contrastFixed: function () {
         return contrastBooster.count();
       },

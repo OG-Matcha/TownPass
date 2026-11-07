@@ -90,7 +90,7 @@ for (const [q, want] of [
   ["我要預約臨櫃", "reservation"],
   ["戶政事務所要排隊嗎", "reservation"],
   ["家門口淹水", "disasterReport"],
-  ["附近的無障礙廁所", "surrounding"],
+  ["附近的無障礙廁所", "locationSearch"],
   ["申請身障補助", "districtOffice"],
   ["借書", "library"],
   ["我不知道要找誰，想問人", "dedicatedLine"],
@@ -98,6 +98,17 @@ for (const [q, want] of [
   ["今天天氣很好", null],
   ["", null],
 ]) eq(`找服務「${q}」`, top(q), want);
+// App 傳來的服務清單：只收 http(s) 網址或電話，壞資料丟掉；沒有對照表的服務靠名稱也找得到
+const appList = [
+  { id: "zoo", title: "愛遊動物園", description: "動物園區資訊導覽、線上地圖", url: "https://example.org/zoo" },
+  { id: "evil", title: "壞連結", description: "x", url: "javascript:alert(1)" },
+  { id: "dedicatedLine", title: "1999", description: "播打網路語音通話", tel: "1999" },
+  { title: "缺 id" },
+];
+const cat = core.toCatalog(appList);
+eq("App 清單：丟掉 javascript: 與缺欄位的項目", cat.map((x) => x.id), ["zoo", "dedicatedLine"]);
+eq("App 清單：新服務不用對照表也找得到", core.searchServices("想去動物園", cat)[0]?.service.id, "zoo");
+eq("App 清單：不是陣列就回 null（改用內建清單）", core.toCatalog({}), null);
 eq("推薦理由列出命中的關鍵字", core.searchServices("路燈壞了")[0].reasons, ["路燈", "壞了"]);
 eq("最多 5 個結果", core.searchServices("附近 申請 預約 淹水 借書 路燈 電話").length <= 5, true);
 

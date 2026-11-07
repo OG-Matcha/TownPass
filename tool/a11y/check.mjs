@@ -36,6 +36,12 @@ const FAKE_APP = () => {
         }
         if (msg.name === "tts") data = { ok: true };
         if (msg.name === "speech_to_text") data = { text: "下一步" };
+        if (msg.name === "service_catalog")
+          data = [
+            { id: "zoo", title: "愛遊動物園", description: "動物園區資訊導覽、線上地圖", category: "探索臺北", url: "https://taipei-pass-service.vercel.app/zoo-test/" },
+            { id: "reservation", title: "臨櫃叫號", description: "臨櫃服務查看叫號、預約", category: "市政服務", url: "https://taipei-pass-service.vercel.app/counter-calling/" },
+            { id: "dedicatedLine", title: "1999", description: "播打網路語音通話", category: "市政服務", tel: "1999" },
+          ];
         if (data) listeners.forEach((f) => f({ data: JSON.stringify({ name: msg.name, data }) }));
       }, 30);
     },
@@ -329,11 +335,13 @@ async function smallTargets(page) {
   const sets = await page.evaluate(() => window.__posted.filter((m) => m.name === "a11y_settings" && m.data.action === "set"));
   check("改字級會存回 App", sets.at(-1)?.data.settings.fontLevel === "large");
   await layer(page).locator("#dock-done").click();
+  await page.locator("#tel").fill("0912345678");
   await layer(page).locator("#fab").click();
   await layer(page).locator("#read").click();
   const tts = await page.evaluate(() => window.__posted.find((m) => m.name === "tts"));
   check("朗讀交給 App 的 tts（語速 0.85）", tts && tts.data.rate === 0.85 && tts.data.text.startsWith("臨櫃預約"), tts?.data.text.slice(0, 40));
   check("朗讀內容包含主要內容外的按鈕與輸入欄", tts && tts.data.text.includes("這頁的按鈕還有：上一步、下一步") && tts.data.text.includes("輸入欄：手機號碼"), tts?.data.text.slice(-60));
+  check("電話等個資欄位只念「已輸入」，不念內容", tts && tts.data.text.includes("輸入欄：手機號碼，已輸入") && !tts.data.text.includes("0912345678"));
   await layer(page).locator("#fab").click();
   await layer(page).locator("#read").click();
   const stop = await page.evaluate(() => window.__posted.filter((m) => m.name === "tts").at(-1));
@@ -342,6 +350,18 @@ async function smallTargets(page) {
   await layer(page).locator("#voice").click();
   await page.locator("#step2").waitFor({ state: "visible", timeout: 3000 }).catch(() => {});
   check("語音走 App 的 speech_to_text，辨識結果「下一步」會執行", await page.locator("#step2").isVisible());
+  const cat = await page.evaluate(() => window.__tpA11y.serviceCatalog());
+  check("App 內改用 App 的服務清單", cat.fromApp && cat.count === 3, JSON.stringify(cat));
+  await layer(page).locator("#fab").click();
+  await layer(page).locator("#find").click();
+  await layer(page).locator("#q").fill("想去動物園");
+  await layer(page).locator("#q").press("Enter");
+  check("App 清單裡的新服務（沒有對照表）也找得到", (await layer(page).locator("#results .result").first().textContent()).includes("愛遊動物園"));
+  await layer(page).locator("#q").fill("我不知道要找誰");
+  await layer(page).locator("#q").press("Enter");
+  await layer(page).locator("#call-1999").click();
+  const call = await page.evaluate(() => window.__posted.filter((m) => m.name === "phone_call").at(-1));
+  check("1999 走 App 的 phone_call", call?.data === "1999", JSON.stringify(call));
   await ctx.close();
 }
 
