@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:town_pass/gen/assets.gen.dart';
 import 'package:town_pass/service/account_service.dart';
@@ -23,10 +24,24 @@ void main() async {
   // );
 
   await initServices();
+  await startLocalWebServer();
 
   SystemChrome.setSystemUIOverlayStyle(_transparentStatusBar);
 
   runApp(const MyApp());
+}
+
+/// 打包在 App 裡的微服務網頁（assets/web/）由本機伺服器提供，斷網也能開。
+/// 網址：http://localhost:8080/mrt/index.html
+const localWebPort = 8080;
+final InAppLocalhostServer localWebServer = InAppLocalhostServer(documentRoot: 'assets/web', port: localWebPort);
+
+Future<void> startLocalWebServer() async {
+  try {
+    if (!localWebServer.isRunning()) await localWebServer.start();
+  } catch (e) {
+    debugPrint('local web server failed: $e');
+  }
 }
 
 Future<void> initServices() async {

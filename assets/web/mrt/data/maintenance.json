@@ -1,0 +1,4725 @@
+{
+ "source": "https://data.taipei/dataset/detail?id=4f8b6fcd-5508-48fd-9b2f-98308ad1b0c4",
+ "note": "預定排程，不含臨時故障；實際以車站現場公告為準",
+ "fetchedAt": "2026-11-07T05:35:36.578Z",
+ "items": [
+  {
+   "date": "2026-10-01",
+   "station": "動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "動物園站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "動物園站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "木柵站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "木柵站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "木柵站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-21",
+   "station": "萬芳社區站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "萬芳社區站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "萬芳醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-04",
+   "station": "萬芳醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-04",
+   "station": "萬芳醫院站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "辛亥站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "辛亥站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "麟光站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "麟光站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "麟光站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "六張犁站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "六張犁站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "六張犁站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "科技大樓站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "科技大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "科技大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "大安站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "忠孝復興站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "南京復興站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "南京復興站",
+   "place": "出口7",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "中山國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "中山國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "中山國中站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "松山機場站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "松山機場站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "松山機場站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "松山機場站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-07",
+   "station": "松山機場站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "松山機場站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "大直站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "大直站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "大直站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-23",
+   "station": "劍南路站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-15",
+   "station": "劍南路站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-23",
+   "station": "劍南路站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-15",
+   "station": "劍南路站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "西湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "西湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "西湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "港墘站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "港墘站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "港墘站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "港墘站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "文德站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "文德站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "文德站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "文德站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-15",
+   "station": "內湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "內湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-15",
+   "station": "內湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "內湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "內湖站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "大湖公園站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "大湖公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "大湖公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "大湖公園站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "葫洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "葫洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "葫洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "葫洲站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "東湖站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "東湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "東湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "東湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-21",
+   "station": "東湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "南港軟體園區站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "南港軟體園區站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "南港軟體園區站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "南港軟體園區站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "南港展覽館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-28",
+   "station": "南港展覽館站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "貓纜動物園站",
+   "place": "出口",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-31",
+   "station": "貓纜動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-31",
+   "station": "貓纜動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "貓纜動物園南站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "貓纜動物園南站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-06",
+   "station": "貓纜指南宮站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-06",
+   "station": "貓纜指南宮站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-07",
+   "station": "貓纜指南宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-06",
+   "station": "貓纜指南宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-31",
+   "station": "貓纜貓空站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "象山站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-15",
+   "station": "象山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "象山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "台北101/世貿站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "台北101/世貿站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "台北101/世貿站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "台北101/世貿站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "信義安和站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "信義安和站",
+   "place": "出口2A",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "信義安和站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "大安站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "大安站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "大安森林公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "大安森林公園站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "大安森林公園站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "大安森林公園站",
+   "place": "出口6",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "台大醫院站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "台大醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "台大醫院站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-24",
+   "station": "台北車站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-24",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-25",
+   "station": "台北車站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-04",
+   "station": "中山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-04",
+   "station": "中山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "雙連站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "雙連站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "民權西路站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "圓山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "劍潭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "劍潭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "士林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "芝山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "芝山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-10",
+   "station": "明德站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-11",
+   "station": "石牌站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "石牌站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "唭哩岸站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "奇岩站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-17",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-18",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "新北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "復興崗站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "復興崗站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "忠義站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "忠義站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "關渡站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "關渡站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "關渡站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-17",
+   "station": "竹圍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "竹圍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-18",
+   "station": "紅樹林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-18",
+   "station": "紅樹林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-18",
+   "station": "紅樹林站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "淡水站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "淡水站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店區公所站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "新店區公所站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "七張站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "七張站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-20",
+   "station": "小碧潭站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-20",
+   "station": "小碧潭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "大坪林站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "大坪林站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-07",
+   "station": "景美站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "景美站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "萬隆站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-05",
+   "station": "萬隆站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-07",
+   "station": "公館站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-07",
+   "station": "公館站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "公館站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "台電大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "台電大樓站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "古亭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "古亭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "中正紀念堂站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "中正紀念堂站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-16",
+   "station": "中正紀念堂站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-23",
+   "station": "中正紀念堂站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "中正紀念堂站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "小南門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-30",
+   "station": "小南門站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "小南門站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-18",
+   "station": "北門站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-18",
+   "station": "北門站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-28",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "中山站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "中山站",
+   "place": "出口6",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "松江南京站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "南京復興站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-06",
+   "station": "南京復興站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-01",
+   "station": "台北小巨蛋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "台北小巨蛋站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "台北小巨蛋站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "台北小巨蛋站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "南京三民站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "南京三民站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "南京三民站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "松山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "松山站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "松山站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "南勢角站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "南勢角站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-05",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-06",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-12",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "景安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-03",
+   "station": "永安市場站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "永安市場站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "頂溪站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "頂溪站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "東門站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "東門站",
+   "place": "出口8",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "忠孝新生站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "松江南京站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "松江南京站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "松江南京站",
+   "place": "出口8",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "松江南京站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "行天宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "行天宮站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "中山國小站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "中山國小站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-20",
+   "station": "民權西路站",
+   "place": "出口10",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "台北橋站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-02",
+   "station": "台北橋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-09",
+   "station": "菜寮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "菜寮站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-05",
+   "station": "三重站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "三重站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "三重站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-03",
+   "station": "先嗇宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "先嗇宮站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "頭前庄站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "頭前庄站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "新莊站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "新莊站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "新莊站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "輔大站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "輔大站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "輔大站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "丹鳳站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "丹鳳站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "迴龍站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "迴龍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "三重國小站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "三重國小站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "徐匯中學站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "徐匯中學站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-24",
+   "station": "蘆洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "蘆洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "蘆洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-02",
+   "station": "蘆洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-27",
+   "station": "頂埔站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-23",
+   "station": "頂埔站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "頂埔站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-23",
+   "station": "頂埔站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-31",
+   "station": "永寧站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "永寧站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "永寧站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-28",
+   "station": "土城站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-28",
+   "station": "土城站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "海山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "海山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "亞東醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-08",
+   "station": "亞東醫院站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "府中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-12",
+   "station": "府中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "板橋站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "板橋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-13",
+   "station": "板橋站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-21",
+   "station": "新埔站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-14",
+   "station": "新埔站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "新埔站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "江子翠站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "江子翠站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "龍山寺站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "龍山寺站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-16",
+   "station": "龍山寺站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "西門站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-15",
+   "station": "西門站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-28",
+   "station": "西門站",
+   "place": "出口6",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "西門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "西門地下街站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-21",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-25",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "台北車站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "善導寺站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-20",
+   "station": "善導寺站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "忠孝新生站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "忠孝新生站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-17",
+   "station": "忠孝新生站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "東區地下街站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "東區地下街站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-23",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-01",
+   "station": "忠孝復興站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "忠孝敦化站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "忠孝敦化站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "國父紀念館站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "國父紀念館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-27",
+   "station": "國父紀念館站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "市政府站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-11",
+   "station": "市政府站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-28",
+   "station": "永春站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-29",
+   "station": "永春站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "後山埤站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "後山埤站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-30",
+   "station": "昆陽站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-07",
+   "station": "南港站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-08",
+   "station": "南港站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "南港展覽館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "南港展覽館站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-29",
+   "station": "南港展覽館站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "南港展覽館站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-10-13",
+   "station": "台大醫院站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-06",
+   "station": "民權西路站",
+   "place": "出口10",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-21",
+   "station": "三和國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-14",
+   "station": "三和國中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-22",
+   "station": "三和國中站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-10-19",
+   "station": "大橋頭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-19",
+   "station": "大橋頭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "三民高中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "三民高中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-10-22",
+   "station": "中山國小站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-02",
+   "station": "動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-02",
+   "station": "動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-02",
+   "station": "動物園站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "動物園站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-18",
+   "station": "木柵站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "木柵站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "木柵站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-19",
+   "station": "萬芳社區站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "萬芳社區站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-01",
+   "station": "萬芳醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "萬芳醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-01",
+   "station": "萬芳醫院站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "辛亥站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "辛亥站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "麟光站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "麟光站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "麟光站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "六張犁站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "六張犁站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "六張犁站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "科技大樓站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "科技大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "科技大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-07",
+   "station": "大安站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-07",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-07",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "忠孝復興站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "南京復興站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "南京復興站",
+   "place": "出口7",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "中山國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "中山國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "中山國中站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "松山機場站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-19",
+   "station": "松山機場站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-06",
+   "station": "松山機場站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "松山機場站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-06",
+   "station": "松山機場站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-19",
+   "station": "松山機場站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-11",
+   "station": "大直站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "大直站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-11",
+   "station": "大直站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "劍南路站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-11",
+   "station": "劍南路站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "劍南路站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-11",
+   "station": "劍南路站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "西湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "西湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "西湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "港墘站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "港墘站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "港墘站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "港墘站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "文德站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "文德站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-16",
+   "station": "文德站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-25",
+   "station": "文德站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "內湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "內湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "內湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "內湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-06",
+   "station": "內湖站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "大湖公園站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "大湖公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "大湖公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "大湖公園站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "葫洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "葫洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "葫洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "葫洲站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-16",
+   "station": "東湖站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "東湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-16",
+   "station": "東湖站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "東湖站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-20",
+   "station": "東湖站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "南港軟體園區站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "南港軟體園區站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "南港軟體園區站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "南港軟體園區站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "南港展覽館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "南港展覽館站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-03",
+   "station": "貓纜動物園站",
+   "place": "出口",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "貓纜動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "貓纜動物園站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "貓纜動物園南站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-04",
+   "station": "貓纜動物園南站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-05",
+   "station": "貓纜指南宮站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-05",
+   "station": "貓纜指南宮站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-05",
+   "station": "貓纜指南宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-06",
+   "station": "貓纜指南宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "貓纜貓空站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "象山站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "象山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "象山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "台北101/世貿站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "台北101/世貿站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "台北101/世貿站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "台北101/世貿站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "信義安和站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-01",
+   "station": "信義安和站",
+   "place": "出口2A",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "信義安和站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "大安站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-02",
+   "station": "大安站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "大安站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "大安森林公園站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "大安森林公園站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-05",
+   "station": "大安森林公園站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-05",
+   "station": "大安森林公園站",
+   "place": "出口6",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "台大醫院站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "台大醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "台大醫院站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "台北車站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-25",
+   "station": "台北車站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "中山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "中山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-08",
+   "station": "雙連站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "雙連站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "民權西路站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "圓山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "劍潭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "劍潭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "士林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "芝山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-02",
+   "station": "芝山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "明德站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-15",
+   "station": "石牌站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-02",
+   "station": "石牌站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "唭哩岸站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "奇岩站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-15",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-15",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-15",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-12",
+   "station": "北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "新北投站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "復興崗站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "復興崗站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "忠義站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "忠義站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "關渡站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "關渡站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "關渡站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-20",
+   "station": "竹圍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "竹圍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-21",
+   "station": "紅樹林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-21",
+   "station": "紅樹林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-21",
+   "station": "紅樹林站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "淡水站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "淡水站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "新店站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "新店站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "新店站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-06",
+   "station": "新店區公所站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-06",
+   "station": "新店區公所站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-06",
+   "station": "七張站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "七張站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "小碧潭站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "小碧潭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-09",
+   "station": "大坪林站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "大坪林站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "景美站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "景美站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "萬隆站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "萬隆站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "公館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "公館站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "公館站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "台電大樓站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "台電大樓站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "古亭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "古亭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "中正紀念堂站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "中正紀念堂站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "中正紀念堂站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-25",
+   "station": "中正紀念堂站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-26",
+   "station": "中正紀念堂站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "小南門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "小南門站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "小南門站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-16",
+   "station": "北門站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "北門站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-30",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "北門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-26",
+   "station": "北門站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "中山站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "中山站",
+   "place": "出口6",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "松江南京站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-06",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-03",
+   "station": "南京復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "南京復興站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-03",
+   "station": "南京復興站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-03",
+   "station": "台北小巨蛋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "台北小巨蛋站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "台北小巨蛋站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-10",
+   "station": "台北小巨蛋站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "南京三民站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "南京三民站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "南京三民站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "松山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "松山站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "松山站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-21",
+   "station": "南勢角站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "南勢角站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-02",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-16",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-18",
+   "station": "南勢角站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-14",
+   "station": "景安站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "永安市場站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "永安市場站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-02",
+   "station": "頂溪站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "頂溪站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "東門站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "東門站",
+   "place": "出口8",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "忠孝新生站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "松江南京站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "松江南京站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "松江南京站",
+   "place": "出口8",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "松江南京站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "行天宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "行天宮站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "中山國小站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "中山國小站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-18",
+   "station": "民權西路站",
+   "place": "出口10",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "台北橋站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "台北橋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "菜寮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "菜寮站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-04",
+   "station": "三重站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "三重站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "三重站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "先嗇宮站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "先嗇宮站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "頭前庄站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-30",
+   "station": "頭前庄站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "新莊站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "新莊站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "新莊站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "輔大站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "輔大站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-02",
+   "station": "輔大站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "丹鳳站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "丹鳳站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-26",
+   "station": "迴龍站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-26",
+   "station": "迴龍站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "三重國小站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "三重國小站",
+   "place": "出口",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "徐匯中學站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "徐匯中學站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "蘆洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-09",
+   "station": "蘆洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "蘆洲站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-03",
+   "station": "蘆洲站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "頂埔站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "頂埔站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-27",
+   "station": "頂埔站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-20",
+   "station": "頂埔站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-28",
+   "station": "永寧站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "永寧站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "永寧站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "土城站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "土城站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "海山站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "海山站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-06",
+   "station": "亞東醫院站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-06",
+   "station": "亞東醫院站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "府中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "府中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "板橋站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "板橋站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "板橋站",
+   "place": "出口3",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "新埔站",
+   "place": "出口4",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-11",
+   "station": "新埔站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "新埔站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "江子翠站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "江子翠站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "龍山寺站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "龍山寺站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-13",
+   "station": "龍山寺站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "西門站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "西門站",
+   "place": "出口4",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-28",
+   "station": "西門站",
+   "place": "出口6",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-28",
+   "station": "西門站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "西門地下街站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-18",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-25",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-16",
+   "station": "台北車站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-27",
+   "station": "台北車站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "善導寺站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "善導寺站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "忠孝新生站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "忠孝新生站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-14",
+   "station": "忠孝新生站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "東區地下街站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "東區地下街站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "忠孝復興站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-03",
+   "station": "忠孝復興站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "忠孝敦化站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-20",
+   "station": "忠孝敦化站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "國父紀念館站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "國父紀念館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-23",
+   "station": "國父紀念館站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "市政府站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "市政府站",
+   "place": "出口2",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "永春站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-24",
+   "station": "永春站",
+   "place": "出口5",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-25",
+   "station": "後山埤站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-26",
+   "station": "後山埤站",
+   "place": "出口3",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-26",
+   "station": "昆陽站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-05",
+   "station": "南港站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-20",
+   "station": "南港站",
+   "place": "月台",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "南港展覽館站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-10",
+   "station": "南港展覽館站",
+   "place": "轉乘通道",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-24",
+   "station": "南港展覽館站",
+   "place": "出口5",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-17",
+   "station": "南港展覽館站",
+   "place": "停車場",
+   "isExit": false,
+   "night": false
+  },
+  {
+   "date": "2026-11-13",
+   "station": "台大醫院站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-12",
+   "station": "民權西路站",
+   "place": "出口10",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-17",
+   "station": "三和國中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-11",
+   "station": "三和國中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-23",
+   "station": "三和國中站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  },
+  {
+   "date": "2026-11-18",
+   "station": "大橋頭站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-18",
+   "station": "大橋頭站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-25",
+   "station": "三民高中站",
+   "place": "月台",
+   "isExit": false,
+   "night": true
+  },
+  {
+   "date": "2026-11-25",
+   "station": "三民高中站",
+   "place": "出口1",
+   "isExit": true,
+   "night": true
+  },
+  {
+   "date": "2026-11-19",
+   "station": "中山國小站",
+   "place": "出口2",
+   "isExit": true,
+   "night": false
+  }
+ ]
+}

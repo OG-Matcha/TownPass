@@ -8,6 +8,7 @@ import 'package:town_pass/gen/assets.gen.dart';
 // Then add MyServiceItem within MyServiceIdExt extension.
 
 enum MyServiceItemId {
+  mrtAccess,
   dedicatedLine,
   districtOffice,
   reportIssue,
@@ -35,6 +36,14 @@ enum MyServiceItemId {
 extension MyServiceIdExt on MyServiceItemId {
   MyServiceItem get item {
     return switch (this) {
+      MyServiceItemId.mrtAccess => MyServiceItem(
+          title: '自在出發',
+          description: '想去哪裡、想做什麼：找官方場館與服務，查電梯路線，再接官方下一步',
+          icon: Assets.svg.iconMrtAccess.svg(),
+          category: MyServiceCategory.cityService,
+          // 打包在 App 裡（assets/web/mrt），斷網也能用；見 main.dart startLocalWebServer
+          destinationUrl: 'http://localhost:8080/mrt/index.html',
+        ),
       MyServiceItemId.dedicatedLine => MyServiceItem(
           title: '1999',
           description: '播打網路語音通話',
