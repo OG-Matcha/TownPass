@@ -57,7 +57,7 @@ void main() {
     final catalog = buildSearchCatalog();
     final scores = {for (var i = 0; i < catalog.length; i++) catalog[i].id: 0.8 + (i % 3) * 0.004, 'petFriendlyMap': 0.95};
     await pumpView(tester, ranker: StubRanker(result: scores));
-    await typeQuery(tester, '我家毛小孩想出去透透氣');
+    await typeQuery(tester, '我家毛茸茸的想出去透透氣'); // 刻意不含任何關鍵字，才是純語意命中
     await tester.pump(const Duration(milliseconds: 50));
     expect(find.text('寵物安心遛'), findsOneWidget);
     expect(find.textContaining('還沒開通'), findsOneWidget);
