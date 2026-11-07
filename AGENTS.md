@@ -5,7 +5,7 @@
 - `microservice/` = 微服務網頁（開賽後建立；雙向溝通封裝用 `.ai/docs/kit/tp-bridge.ts`）
 - `server/` = 後端（選配）
 - `.ai/` = **唯讀參考資料（git submodule），不要修改**：
-  - `.ai/docs/` 官方規則、選手手冊、說明會簡報（`.ai/docs/docs/official/`）、TownPass 開發文件全站鏡像（`docs/townpass-guideline/_INDEX.md`）、研究報告（`.ai/docs/docs/research/`）、作戰手冊（`docs/作戰手冊.md`）、範本（`kit/`）
+  - `.ai/docs/` 官方規則、選手手冊、說明會簡報（`.ai/docs/docs/official/`）、TownPass 開發文件全站鏡像（`docs/townpass-guideline/_INDEX.md`）、研究報告（`.ai/docs/docs/research/`）、**開放資料目錄 13,561 筆**（`.ai/docs/docs/data-catalog/`，題目公布後先看 `01_選題地圖.md`）、提案（`.ai/docs/docs/ideation/`）、作戰手冊（`docs/作戰手冊.md`）、範本（`kit/`）
   - `.ai/taipei-gov-dev/` 臺北市府官方 AI 開發規範包：有畫面、個資、對外文字時先讀 `SKILL.md`
   - `.ai/townpass-services/` 官方 Vue 3 微服務範例（**用 Google Maps，今年禁用，不要照抄地圖部分**）
 
