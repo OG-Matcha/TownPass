@@ -89,3 +89,5 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+# 裝置端模型 113 MB（超過 GitHub 單檔上限）：建置前在 map-vue 跑 npm run fetch:model 再 sync-app
+assets/web/mrt/models/
