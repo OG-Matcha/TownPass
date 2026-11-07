@@ -59,6 +59,17 @@ Here are some quick setup guide.
 
 **App 裡只有這一顆向量模型。** 捷運陪伴微服務（`assets/web/mrt/`）的語音指令與目的地語意搜尋也透過 `embed` handler（`lib/util/web_message_handler/embed_message_handler.dart`）共用同一個已載入的實例；網頁原本自帶的 multilingual-e5-small 不再打包進 App（只留給一般瀏覽器部署）。選它的量測：同一組題目上兩顆模型的比較見主工作區 `docs/research/17_向量模型二選一.md`。
 
+**語音辨識與朗讀（手機系統元件，不打包、不連雲端）**
+
+| 項目 | 語音辨識（用講的） | 朗讀（唸給我聽） |
+|---|---|---|
+| 元件 | Android `SpeechRecognizer.createOnDeviceSpeechRecognizer`：Google 裝置端辨識（SODA，Android System Intelligence 提供） | Android 系統 TTS（`flutter_tts` 4.2.5（MIT）），只選已安裝、不需網路的語音 |
+| 語言包 | 中文（台灣）`cmn-Hant-TW` v3056，約 56 MB；手機沒有時由 App 呼叫 `SpeechRecognizer.triggerModelDownload`（Android 13+）叫出系統下載視窗，下載一次（需網路），之後離線可用 | 系統內建語音 |
+| 呼叫方式 | `speech_to_text` 7.5.0（BSD-3-Clause），`onDevice: true`；語言標籤一律送 `cmn-Hant-TW`（`lib/util/speech/voice_input.dart`） | `lib/util/web_message_handler/tts_message_handler.dart` |
+| 不會做的事 | 不退回雲端辨識；沒有語言包就請使用者打字或下載 | 沒有離線語音就回錯誤，不改用雲端語音 |
+
+實機驗證（2026-11-08，Xiaomi 2602EPTC0G、Android 16、飛航模式）：logcat 顯示 `SodaSpeechRecognizer: Offline recognizer - start detection`，說「台北車站」辨識成功。
+
 模型檔不進 git。取得：`bash tool/semantic_search/fetch_model.sh`（固定修訂版並驗證 SHA-256，會放到 `assets/models/`）。
 打包進 App 後，第一次啟動複製到 App 私有目錄再載入，不依賴執行時下載。
 
