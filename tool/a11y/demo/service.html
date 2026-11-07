@@ -85,7 +85,7 @@
       show(2);
     });
     document.getElementById("prev").addEventListener("click", function () { history.back(); });
-    window.addEventListener("popstate", function () { show(location.hash === "#step2" ? 2 : 1); });
+    window.addEventListener("popstate", function (e) { show(e.state && e.state.step === 2 ? 2 : 1); });
     document.getElementById("del").addEventListener("click", function () {
       document.getElementById("del-result").textContent = "已刪除 11 月 3 日的預約（模擬）";
     });

@@ -134,6 +134,54 @@ async function smallTargets(page) {
   await ctx.close();
 }
 
+// ---------- 展開時背景虛化、點背景收起、不跳泡泡蓋住操作列 ----------
+{
+  const { ctx, page } = await open(SERVICE);
+  await layer(page).locator("#fab").click();
+  const blur = await page.evaluate(() => getComputedStyle(document.querySelector("tp-a11y-layer").shadowRoot.getElementById("scrim")).backdropFilter);
+  check("展開時背景虛化", (await visibleIn(page, "#scrim")) && blur.includes("blur"), blur);
+  await layer(page).locator("#hand").click();
+  check("展開時調整設定不跳泡泡", !(await visibleIn(page, "#toast")));
+  await page.waitForTimeout(100);
+  const live = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.getElementById("live").textContent);
+  check("報讀器仍會收到通知", live.includes("手邊"), live);
+  await page.mouse.click(40, 60);
+  await page.waitForTimeout(250); // 等淡出結束
+  check("點虛化的背景會收起操作列", !(await visibleIn(page, "#panel")) && !(await visibleIn(page, "#scrim")));
+  check("點背景不會誤觸頁面", (await page.locator("#step1").isVisible()));
+  await ctx.close();
+}
+
+// ---------- 字級與對比：調整列不虛化背景，邊調邊看 ----------
+{
+  const { ctx, page } = await open(SERVICE);
+  await layer(page).locator("#fab").click();
+  check("主選單打開時浮動鈕變成「關閉」", (await layer(page).locator("#fab").getAttribute("aria-label")) === "關閉操作輔助");
+  await layer(page).locator("#display").click();
+  await settle(page);
+  check("調整列出現、背景不虛化、浮動鈕讓位", (await visibleIn(page, "#dock")) && !(await visibleIn(page, "#scrim")) && !(await visibleIn(page, "#fab")));
+  const onTop = await page.evaluate(() => document.elementFromPoint(180, 120)?.tagName);
+  check("調整時看得到頁面（上半部沒有被蓋住）", onTop !== "TP-A11Y-LAYER", onTop);
+  const focusLv = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.getAttribute("data-level"));
+  check("焦點在目前的字級", focusLv === "normal", focusLv);
+  await layer(page).locator("[data-level=large]").click();
+  check("點「大」→ 頁面馬上放大", (await zoom(page)) === "1.25");
+  check("調整列保持開著（可以連續調）", await visibleIn(page, "#dock"));
+  check("調整時不跳泡泡蓋住預覽", !(await visibleIn(page, "#toast")));
+  await page.keyboard.press("ArrowRight");
+  check("方向鍵切到「特大」", (await zoom(page)) === "1.5" && (await layer(page).locator("[data-level=xlarge]").getAttribute("aria-checked")) === "true");
+  await layer(page).locator("#contrast").click();
+  check("高對比開關狀態", (await layer(page).locator("#contrast").getAttribute("aria-checked")) === "true");
+  check("調整列觸控目標 ≥ 64px", (await smallTargets(page)).length === 0, (await smallTargets(page)).join("、"));
+  const added = (await axe(page)).length;
+  check("調整列開著時 axe 沒有違規", added === 0, `${added} 項`);
+  await layer(page).locator("#dock-done").click();
+  await settle(page);
+  const back = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
+  check("按「完成」收起、浮動鈕回來並取得焦點", !(await visibleIn(page, "#dock")) && back === "fab", back);
+  await ctx.close();
+}
+
 // ---------- 驗收 2：按偏 3 次 → 詢問 → 同意 → 放大，重新開啟仍維持 ----------
 {
   const { ctx, page } = await open(SERVICE);
@@ -184,7 +232,8 @@ async function smallTargets(page) {
   await page.waitForTimeout(800);
   check("own:misstap → 不跳按偏詢問", !(await visibleIn(page, "#ask")));
   await layer(page).locator("#fab").click();
-  await layer(page).locator("#font-up").click();
+  await layer(page).locator("#display").click();
+  await layer(page).locator("[data-level=large]").click();
   check("own:font → 不縮放頁面", (await zoom(page)) === "1");
   check("own:font → 頁面收到設定自己放大", (await page.locator("#got").textContent()) === "large");
   await ctx.close();
@@ -227,11 +276,13 @@ async function smallTargets(page) {
   await page.waitForFunction(() => getComputedStyle(document.body).zoom === "1.5", null, { timeout: 3000 }).catch(() => {});
   check("App 內套用 App 存的設定（特大、左手）", (await zoom(page)) === "1.5" && (await layer(page).getAttribute("data-hand")) === "left");
   await layer(page).locator("#fab").click();
-  await layer(page).locator("#font-down").click();
+  await layer(page).locator("#display").click();
+  await layer(page).locator("[data-level=large]").click();
   await page.waitForTimeout(100);
   const sets = await page.evaluate(() => window.__posted.filter((m) => m.name === "a11y_settings" && m.data.action === "set"));
   check("改字級會存回 App", sets.at(-1)?.data.settings.fontLevel === "large");
-  check("調字級後操作列保持展開（可以連按）", await visibleIn(page, "#panel"));
+  await layer(page).locator("#dock-done").click();
+  await layer(page).locator("#fab").click();
   await layer(page).locator("#read").click();
   const tts = await page.evaluate(() => window.__posted.find((m) => m.name === "tts"));
   check("朗讀交給 App 的 tts（語速 0.85）", tts && tts.data.rate === 0.85 && tts.data.text.startsWith("臨櫃預約"), tts?.data.text.slice(0, 40));
@@ -264,12 +315,15 @@ async function smallTargets(page) {
     (await new AxeBuilder({ page }).withRules(["color-contrast-enhanced"]).analyze()).violations.reduce((n, v) => n + v.nodes.length, 0);
   const before = await enhanced();
   await layer(page).locator("#fab").click();
+  await layer(page).locator("#display").click();
   await layer(page).locator("#contrast").click();
   await page.keyboard.press("Escape");
+  await settle(page);
   const fixed = await page.evaluate(() => window.__tpA11y.contrastFixed());
   const after = await enhanced();
   check("高對比：對比不足 7:1 的文字清零", after === 0, `開啟前 ${before} 處、加深 ${fixed} 個元素、開啟後 ${after} 處`);
   await layer(page).locator("#fab").click();
+  await layer(page).locator("#display").click();
   await layer(page).locator("#contrast").click();
   const restored = await page.evaluate(() => getComputedStyle(document.querySelector(".muted")).color);
   check("關掉高對比會還原原本顏色", restored === "rgb(145, 160, 168)", restored);
@@ -284,7 +338,14 @@ async function smallTargets(page) {
   const first = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
   check("鍵盤 Enter 打開操作列，焦點移到第一項", first === "read", first);
   check("操作列展開時 aria-expanded=true", (await layer(page).locator("#fab").getAttribute("aria-expanded")) === "true");
+  for (let i = 0; i < 12; i++) await page.keyboard.press("Tab");
+  const inside = await page.evaluate(() => {
+    const r = document.querySelector("tp-a11y-layer").shadowRoot;
+    return !!r.activeElement && (r.getElementById("panel").contains(r.activeElement) || r.activeElement.id === "fab");
+  });
+  check("展開時 Tab 只在操作列與浮動鈕之間循環", inside);
   await page.keyboard.press("Escape");
+  await page.waitForTimeout(250); // 等淡出結束
   const back = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
   check("Esc 收起並把焦點還給浮動鈕", back === "fab" && !(await visibleIn(page, "#panel")));
   await ctx.close();

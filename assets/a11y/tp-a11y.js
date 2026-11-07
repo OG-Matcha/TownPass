@@ -238,7 +238,8 @@
   }
   // 只在最上層頁面執行（iframe 裡的廣告、地圖不加浮動列），也不重複載入
   try {
-    if (window.top !== window) return;
+    // 展示頁（報告裡的模擬手機）可設 window.__TP_A11Y_ALLOW_FRAME__ = true 在 iframe 內執行
+    if (window.top !== window && !window.__TP_A11Y_ALLOW_FRAME__) return;
   } catch (e) {
     return;
   }
@@ -349,11 +350,25 @@
     var listenSheet = $("#listen");
     var confirmSheet = $("#confirm");
     var highlight = $("#hl");
+    var scrim = $("#scrim");
+    var dock = $("#dock");
 
     // ---------------- 設定套用 ----------------
     var pageStyle = document.createElement("style");
     pageStyle.id = "tp-a11y-page-style";
     (document.head || document.documentElement).appendChild(pageStyle);
+
+    // 動態曲線：參考 GSAP 常用的 back.out／power3.out／expo.out，用 Web Animations API 實作
+    var EASE = {
+      pop: "cubic-bezier(.175,.885,.32,1.275)", // back.out：彈出時稍微超過再回來
+      out: "cubic-bezier(.215,.61,.355,1)", // power3.out
+      soft: "cubic-bezier(.16,1,.3,1)", // expo.out
+      in: "cubic-bezier(.55,.055,.675,.19)", // power3.in：收起
+    };
+
+    function stateText() {
+      return "字級" + FONT_LEVELS[levelIndex(settings.fontLevel)].label + "・高對比" + (settings.highContrast ? "開" : "關");
+    }
 
     function applyFont() {
       var lv = FONT_LEVELS[levelIndex(settings.fontLevel)];
@@ -362,16 +377,21 @@
       if (settings.highContrast && !own.contrast) css += CONTRAST_PAGE_CSS;
       pageStyle.textContent = css;
       document.documentElement.setAttribute("data-tp-font", lv.id);
-      $("#font-state").textContent = "字級：" + lv.label;
-      $("#font-down").disabled = levelIndex(lv.id) === 0;
-      $("#font-up").disabled = levelIndex(lv.id) === FONT_LEVELS.length - 1;
+      var idx = levelIndex(lv.id);
+      $(".seg").setAttribute("data-i", String(idx));
+      var radios = root.querySelectorAll(".seg [role=radio]");
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].setAttribute("aria-checked", String(i === idx));
+        radios[i].tabIndex = i === idx ? 0 : -1;
+      }
+      $("#display-state").textContent = stateText();
     }
 
     function applyContrast() {
       host.toggleAttribute("data-contrast", settings.highContrast);
-      var btn = $("#contrast");
-      btn.setAttribute("aria-pressed", String(settings.highContrast));
-      $("#contrast-state").textContent = settings.highContrast ? "目前：開" : "目前：關";
+      $("#contrast").setAttribute("aria-checked", String(settings.highContrast));
+      $("#contrast-state").textContent = settings.highContrast ? "開" : "關";
+      $("#display-state").textContent = stateText();
       if (settings.highContrast) document.documentElement.setAttribute("data-tp-contrast", "high");
       else document.documentElement.removeAttribute("data-tp-contrast");
       if (own.contrast) return;
@@ -381,7 +401,7 @@
 
     function applyHand() {
       host.setAttribute("data-hand", settings.hand);
-      $("#hand-label").textContent = settings.hand === "right" ? "換到左手邊" : "換到右手邊";
+      $("#hand-label").textContent = settings.hand === "right" ? "換到左手" : "換到右手";
     }
 
     function broadcast() {
@@ -515,7 +535,7 @@
         live.textContent = msg;
       }, 30);
       // 有底部卡片時卡片本身就在說明，不再疊一個泡泡蓋住它
-      if (!ask.hidden || !listenSheet.hidden || !confirmSheet.hidden) {
+      if (isOpen() || dockOpen || !ask.hidden || !listenSheet.hidden || !confirmSheet.hidden) {
         toast.hidden = true;
         return;
       }
@@ -528,36 +548,150 @@
       }, 4000);
     }
 
-    // ---------------- 浮動操作列 ----------------
+    // ---------------- 浮動操作列（主選單：動作） ----------------
+    // 兩層設計：主選單只放「動作」，背景虛化讓人專心選；
+    // 字級與對比要「邊調邊看」，所以改成貼底的調整列，不虛化、不遮住頁面。
+    // 開關狀態用變數記，不看 hidden：收起動畫播放中再按一次「輔助」也要能馬上打開
+    var panelOpen = false;
+    var dockOpen = false;
+    var panelOut = null;
+    var dockOut = null;
     function isOpen() {
-      return !panel.hidden;
+      return panelOpen;
+    }
+    function setFab(open) {
+      fab.setAttribute("aria-expanded", String(open));
+      fab.setAttribute("aria-label", open ? "關閉操作輔助" : "操作輔助");
+      $("#fab-label").textContent = open ? "關閉" : "輔助";
+      animate(fab.querySelector(open ? ".i-close" : ".i-open"), [
+        { transform: "rotate(" + (open ? -90 : 90) + "deg) scale(.4)", opacity: 0 },
+        { transform: "none", opacity: 1 },
+      ], { duration: 260, easing: EASE.pop });
     }
     function openPanel() {
       closeSheets();
+      closeDock(false);
+      panelOpen = true;
+      if (panelOut) panelOut.cancel();
+      panelOut = null;
+      toast.hidden = true;
+      scrim.style.pointerEvents = "";
+      panel.style.pointerEvents = "";
+      scrim.hidden = false;
+      animate(scrim, [{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: EASE.out });
       panel.hidden = false;
-      fab.setAttribute("aria-expanded", "true");
-      var items = panel.querySelectorAll(".item, .row");
-      for (var i = 0; i < items.length; i++) {
-        animate(items[items.length - 1 - i], [{ opacity: 0, transform: "translateY(12px) scale(.96)" }, { opacity: 1, transform: "none" }], {
-          delay: i * 24,
-          fill: "backwards",
-        });
+      setFab(true);
+      // 從「輔助」鈕的位置彈出（transform-origin 跟著慣用手）
+      animate(panel, [
+        { opacity: 0, transform: "translateY(16px) scale(.85)" },
+        { opacity: 1, transform: "none" },
+      ], { duration: 320, easing: EASE.pop });
+      // 格子由靠近拇指的那一格開始依序浮現（GSAP stagger from: "end"）
+      var tiles = panel.querySelectorAll(".tile");
+      for (var i = 0; i < tiles.length; i++) {
+        animate(tiles[tiles.length - 1 - i], [
+          { opacity: 0, transform: "translateY(14px) scale(.92)" },
+          { opacity: 1, transform: "none" },
+        ], { duration: 300, delay: 40 + i * 35, easing: EASE.pop, fill: "backwards" });
       }
-      var first = panel.querySelector("button:not([disabled])");
+      var first = panel.querySelector(".tile");
       if (first) first.focus();
     }
     function closePanel(focusFab) {
       if (!isOpen()) return;
-      panel.hidden = true;
-      fab.setAttribute("aria-expanded", "false");
+      panelOpen = false;
+      setFab(false);
+      // 淡出的這段時間不能擋住頁面：一開始收起就不再攔截點擊
+      scrim.style.pointerEvents = "none";
+      panel.style.pointerEvents = "none";
+      var done = function () {
+        if (panelOpen) return;
+        panel.hidden = true;
+        scrim.hidden = true;
+      };
+      var a = (panelOut = animate(panel, [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(10px) scale(.92)" }], {
+        duration: 140,
+        easing: EASE.in,
+      }));
+      animate(scrim, [{ opacity: 1 }, { opacity: 0 }], { duration: 140 });
+      if (a) a.finished.then(done, done);
+      else done();
       if (focusFab) fab.focus();
     }
     fab.addEventListener("click", function () {
       if (isOpen()) closePanel(true);
       else openPanel();
     });
+    // 點虛化的背景就收起（背景被遮住，這時候點不到頁面，也不會誤觸）
+    scrim.addEventListener("click", function () {
+      closePanel(true);
+    });
 
-    // 點在操作列以外就收起
+    /** 被調整的那一項輕輕彈一下當作回饋（不另外跳泡泡蓋住畫面）。 */
+    function flash(el) {
+      animate(el, [{ transform: "scale(1)" }, { transform: "scale(1.05)", offset: 0.35 }, { transform: "scale(1)" }], {
+        duration: 320,
+        easing: EASE.out,
+      });
+    }
+
+    // ---------------- 調整列（字級與對比：邊調邊看） ----------------
+    function openDock() {
+      closePanel(false);
+      closeSheets();
+      dockOpen = true;
+      if (dockOut) dockOut.cancel();
+      dockOut = null;
+      dock.hidden = false;
+      fab.hidden = true; // 調整列有自己的「完成」，浮動鈕先讓位
+      animate(dock, [{ transform: "translateY(100%)" }, { transform: "none" }], { duration: 340, easing: EASE.soft });
+      var checked = dock.querySelector("[role=radio][aria-checked=true]");
+      if (checked) checked.focus();
+      say("字級與對比，調整後頁面會馬上變化");
+    }
+    function closeDock(focusFab) {
+      if (!dockOpen) return;
+      dockOpen = false;
+      var done = function () {
+        if (!dockOpen) dock.hidden = true;
+      };
+      var a = (dockOut = animate(dock, [{ transform: "none" }, { transform: "translateY(100%)" }], { duration: 200, easing: EASE.in }));
+      if (a) a.finished.then(done, done);
+      else done();
+      fab.hidden = false;
+      animate(fab, [{ opacity: 0, transform: "scale(.6)" }, { opacity: 1, transform: "none" }], { duration: 260, easing: EASE.pop });
+      if (focusFab) fab.focus();
+    }
+    function pickLevel(id) {
+      if (id === settings.fontLevel) return;
+      update({ fontLevel: id });
+      flash($(".seg .thumb"));
+      say("字級：" + FONT_LEVELS[levelIndex(id)].label);
+    }
+    var radios = root.querySelectorAll(".seg [role=radio]");
+    Array.prototype.forEach.call(radios, function (r, i) {
+      r.addEventListener("click", function () {
+        pickLevel(r.getAttribute("data-level"));
+      });
+      // 單選群組的鍵盤慣例：左右鍵換選項
+      r.addEventListener("keydown", function (ev) {
+        var d = ev.key === "ArrowRight" || ev.key === "ArrowDown" ? 1 : ev.key === "ArrowLeft" || ev.key === "ArrowUp" ? -1 : 0;
+        if (!d) return;
+        ev.preventDefault();
+        var j = Math.max(0, Math.min(radios.length - 1, i + d));
+        pickLevel(radios[j].getAttribute("data-level"));
+        radios[j].focus();
+      });
+    });
+    $("#contrast").addEventListener("click", function () {
+      update({ highContrast: !settings.highContrast });
+      say(settings.highContrast ? "已開啟高對比" : "已關閉高對比");
+    });
+    $("#dock-done").addEventListener("click", function () {
+      closeDock(true);
+    });
+
+    // 點在主選單以外就收起
     document.addEventListener(
       "pointerdown",
       function (ev) {
@@ -568,8 +702,17 @@
       true,
     );
     root.addEventListener("keydown", function (ev) {
+      if (ev.key === "Tab" && isOpen()) {
+        var list = Array.prototype.slice.call(panel.querySelectorAll("button:not([disabled])")).concat([fab]);
+        var i = list.indexOf(root.activeElement);
+        var next = ev.shiftKey ? (i <= 0 ? list.length - 1 : i - 1) : i === list.length - 1 ? 0 : i + 1;
+        ev.preventDefault();
+        list[next].focus();
+        return;
+      }
       if (ev.key !== "Escape") return;
       if (isOpen()) closePanel(true);
+      else if (dockOpen) closeDock(true);
       else if (!ask.hidden || !listenSheet.hidden || !confirmSheet.hidden) {
         closeSheets();
         fab.focus();
@@ -585,18 +728,7 @@
       closePanel(false);
       openListen();
     });
-    $("#font-up").addEventListener("click", function () {
-      update({ fontLevel: stepLevel(settings.fontLevel, 1) });
-      say("字級：" + FONT_LEVELS[levelIndex(settings.fontLevel)].label);
-    });
-    $("#font-down").addEventListener("click", function () {
-      update({ fontLevel: stepLevel(settings.fontLevel, -1) });
-      say("字級：" + FONT_LEVELS[levelIndex(settings.fontLevel)].label);
-    });
-    $("#contrast").addEventListener("click", function () {
-      update({ highContrast: !settings.highContrast });
-      say(settings.highContrast ? "已開啟高對比" : "已關閉高對比");
-    });
+    $("#display").addEventListener("click", openDock);
     $("#back").addEventListener("click", function () {
       closePanel(false);
       goBack();
@@ -604,7 +736,11 @@
     $("#hand").addEventListener("click", function () {
       update({ hand: settings.hand === "right" ? "left" : "right" });
       say(settings.hand === "right" ? "操作鈕已移到右手邊" : "操作鈕已移到左手邊");
-      fab.focus();
+      animate(panel, [{ opacity: 0.4, transform: "translateX(" + (settings.hand === "left" ? 24 : -24) + "px)" }, { opacity: 1, transform: "none" }], {
+        duration: 300,
+        easing: EASE.soft,
+      });
+      $("#hand").focus();
     });
 
     function goBack() {
@@ -620,6 +756,7 @@
     }
     function showSheet(el, focusSel) {
       closePanel(false);
+      closeDock(false);
       toast.hidden = true;
       el.hidden = false;
       animate(el, [{ opacity: 0, transform: "translateY(24px)" }, { opacity: 1, transform: "none" }], { duration: 220 });
@@ -1188,6 +1325,7 @@
     swap: '<path d="M4 8h14l-3-3M20 16H6l3 3"/>',
     close: '<path d="M6 6l12 12M18 6 6 18"/>',
     send: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    textsize: '<path d="M3 7V5h11v2M8.5 5v14M6.5 19h4"/><path d="M14 12v-1.5h7V12M17.5 10.5V19M16 19h3"/>',
   };
 
   var TEMPLATE =
@@ -1197,40 +1335,67 @@
     "--primary:#5ab4c5;--primary-50:#edf8fa;--primary-800:#22474e;--on-primary:#171b1d;--ink:#171b1d;--sub:#475259;" +
     "--line:#738995;--surface:#fff;--ring:#22474e;--shadow:0 8px 24px rgba(11,13,14,.18);" +
     "--side:16px;--lift:calc(104px + env(safe-area-inset-bottom,0px));color:var(--ink);font-size:18px;line-height:1.4}" +
-    ":host([data-contrast]){--primary:#0b0d0e;--on-primary:#fff;--primary-50:#fff;--line:#0b0d0e;--sub:#0b0d0e;--ink:#0b0d0e;--ring:#0b0d0e}" +
+    ":host{--tile:#f1f3f4;--chip:#dbf1f5}" +
+    ":host([data-contrast]){--primary:#0b0d0e;--on-primary:#fff;--primary-50:#fff;--line:#0b0d0e;--sub:#0b0d0e;--ink:#0b0d0e;--ring:#0b0d0e;--tile:#fff;--chip:#fff;--primary-800:#0b0d0e}" +
     "*{box-sizing:border-box}" +
     "[hidden]{display:none !important}" +
     "button,input{font:inherit;color:inherit}" +
     "button{cursor:pointer;-webkit-tap-highlight-color:transparent}" +
     "button:focus-visible,input:focus-visible{outline:3px solid var(--ring);outline-offset:3px}" +
     "button:disabled{cursor:not-allowed;opacity:.45}" +
-    // 浮動鈕：64×64，主色底＋深字（7.2:1）
+    // 浮動鈕：64×64，主色底＋深字（7.2:1）；展開時圖示轉成 ×、字變「關閉」
     "#fab{pointer-events:auto;position:fixed;bottom:var(--lift);right:var(--side);width:64px;height:64px;border-radius:32px;" +
     "border:2px solid var(--primary-800);background:var(--primary);color:var(--on-primary);box-shadow:var(--shadow);" +
     "display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:0;font-size:14px;font-weight:600;" +
-    "transition:transform .15s ease}" +
-    "#fab:active{transform:scale(.94)}" +
+    "transition:transform .18s cubic-bezier(.175,.885,.32,1.275)}" +
+    "#fab:active{transform:scale(.9)}" +
     "#fab svg{width:26px;height:26px}" +
+    "#fab .i-open,#fab .i-close{display:block;height:26px}#fab .i-close{display:none}#fab[aria-expanded=true] .i-close{display:block}#fab[aria-expanded=true] .i-open{display:none}" +
     ":host([data-hand=left]) #fab{right:auto;left:var(--side)}" +
     "#fab[data-busy]::after{content:'';position:absolute;inset:-6px;border-radius:40px;border:3px solid var(--primary-800);animation:pulse 1.6s ease-out infinite}" +
-    // 操作列
-    "#panel{pointer-events:auto;position:fixed;bottom:calc(var(--lift) + 76px);right:var(--side);width:min(300px,calc(100vw - 32px));" +
-    "max-height:calc(100vh - var(--lift) - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;" +
-    "box-shadow:var(--shadow);padding:8px;display:flex;flex-direction:column;gap:6px}" +
-    ":host([data-hand=left]) #panel{right:auto;left:var(--side)}" +
-    ".item{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:8px 14px;border:0;border-radius:12px;background:transparent;text-align:left}" +
-    ".item:hover{background:var(--primary-50)}" +
-    ".item[aria-pressed=true]{background:var(--primary-50);box-shadow:inset 0 0 0 2px var(--primary-800)}" +
-    ".item .t{display:flex;flex-direction:column}" +
-    ".item .l{font-weight:600}" +
-    ".item .s{font-size:15px;color:var(--sub)}" +
-    ".row{display:flex;flex-direction:column;gap:4px;padding:6px 6px 4px}" +
-    ".row .cap{font-size:15px;color:var(--sub);padding:0 8px}" +
-    ".row .pair{display:grid;grid-template-columns:1fr 1fr;gap:6px}" +
-    ".pair button{min-height:64px;border-radius:12px;border:2px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600}" +
-    "hr{border:0;border-top:1px solid #cad1d5;margin:2px 8px;width:auto}" +
+    // 主選單：2 欄大格子，從浮動鈕的位置彈出
+    "#panel{pointer-events:auto;position:fixed;bottom:calc(var(--lift) + 76px);right:var(--side);width:min(344px,calc(100vw - 32px));" +
+    "max-height:calc(100vh - var(--lift) - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:24px;" +
+    "box-shadow:0 18px 48px rgba(11,13,14,.28);padding:14px;transform-origin:calc(100% - 32px) calc(100% + 44px)}" +
+    ":host([data-hand=left]) #panel{right:auto;left:var(--side);transform-origin:32px calc(100% + 44px)}" +
+    ".ph{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:2px 6px 12px}" +
+    ".ph b{font-size:17px}" +
+    ".grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}" +
+    ".tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:10px;min-height:112px;" +
+    "padding:14px;border:2px solid transparent;border-radius:18px;background:var(--tile);text-align:left;" +
+    "transition:transform .18s cubic-bezier(.175,.885,.32,1.275),background-color .15s ease}" +
+    ".tile:active{transform:scale(.95)}" +
+    ".tile.wide{grid-column:1 / -1;flex-direction:row;align-items:center;justify-content:flex-start;min-height:84px}" +
+    ".tile .ic{flex:none;width:48px;height:48px;border-radius:24px;background:var(--chip);color:var(--primary-800);display:flex;align-items:center;justify-content:center}" +
+    ":host([data-contrast]) .tile{border-color:#0b0d0e}:host([data-contrast]) .tile .ic{border:2px solid #0b0d0e}" +
+    ".tile .t{display:flex;flex-direction:column}" +
+    ".tile .l{font-weight:600;font-size:18px}" +
+    ".tile .s{font-size:15px;color:var(--sub)}" +
+    ".tile .go{margin-left:auto;font-size:26px;line-height:1;color:var(--sub)}" +
+    ".tile[aria-pressed=true]{background:var(--chip);border-color:var(--primary-800)}" +
+    // 調整列：貼底、不虛化背景，邊調邊看
+    "#dock{pointer-events:auto;position:fixed;left:0;right:0;bottom:0;max-width:560px;margin:0 auto;background:var(--surface);" +
+    "border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -10px 32px rgba(11,13,14,.22);" +
+    "padding:10px 16px max(28px, calc(12px + env(safe-area-inset-bottom,0px)))}" +
+    ".grab{width:44px;height:5px;border-radius:3px;background:#adb8be;margin:0 auto 10px}" +
+    "#dock h2{margin:0;font-size:20px;font-weight:600}" +
+    "#dock .ds{margin:2px 0 12px;font-size:15px;color:var(--sub)}" +
+    ".seg{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:4px;border-radius:18px;background:var(--tile);border:2px solid var(--line);margin-bottom:12px}" +
+    ".seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 3);border-radius:14px;background:var(--primary);" +
+    "border:2px solid var(--primary-800);box-shadow:0 4px 12px rgba(11,13,14,.18);transition:transform .38s cubic-bezier(.175,.885,.32,1.275)}" +
+    ".seg[data-i='1'] .thumb{transform:translateX(100%)}.seg[data-i='2'] .thumb{transform:translateX(200%)}" +
+    ".seg button{position:relative;z-index:1;min-height:80px;border:0;background:transparent;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-weight:600}" +
+    ".seg button[aria-checked=true]{color:var(--on-primary)}" +
+    ".seg .g{line-height:1;font-weight:700}" +
+    ".row2{display:flex;gap:10px}" +
+    "#contrast{flex:1;display:flex;align-items:center;gap:12px;min-height:64px;padding:8px 14px;border:2px solid var(--line);border-radius:16px;background:var(--surface);text-align:left}" +
+    "#contrast .t{display:flex;flex-direction:column;flex:1}#contrast .l{font-weight:600}#contrast .s{font-size:15px;color:var(--sub)}" +
+    ".track{flex:none;position:relative;width:56px;height:32px;border-radius:16px;background:#adb8be;border:2px solid #475259;transition:background-color .2s ease}" +
+    ".knob{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .3s cubic-bezier(.175,.885,.32,1.275)}" +
+    "#contrast[aria-checked=true] .track{background:var(--primary-800);border-color:var(--primary-800)}#contrast[aria-checked=true] .knob{transform:translateX(24px)}" +
+    "#dock-done{flex:none;width:112px}" +
     // 底部卡片：詢問、確認、用講的
-    ".sheet{pointer-events:auto;position:fixed;left:var(--side);right:var(--side);bottom:calc(16px + env(safe-area-inset-bottom,0px));" +
+    ".sheet{pointer-events:auto;position:fixed;left:var(--side);right:var(--side);bottom:max(28px, calc(12px + env(safe-area-inset-bottom,0px)));" +
     "max-width:480px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px}" +
     ".sheet h2{margin:0 0 8px;font-size:22px;line-height:1.35;font-weight:600}" +
     ".sheet p{margin:0 0 16px;color:var(--sub)}" +
@@ -1249,7 +1414,9 @@
     "#typed::placeholder{color:#5e6d76}" +
     "form button{flex:none;width:64px;min-height:64px;border-radius:12px;border:2px solid var(--primary-800);background:var(--primary);color:var(--on-primary);display:flex;align-items:center;justify-content:center}" +
     // 提示與朗讀框
-    "#toast{position:fixed;left:50%;bottom:calc(var(--lift) + 80px);transform:translateX(-50%);max-width:calc(100vw - 32px);width:max-content;" +
+    "#scrim{pointer-events:auto;position:fixed;inset:0;background:rgba(11,13,14,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}" +
+    ":host([data-contrast]) #scrim{background:rgba(11,13,14,.6)}" +
+    "#toast{position:fixed;left:50%;top:calc(16px + env(safe-area-inset-top,0px));transform:translateX(-50%);max-width:calc(100vw - 32px);width:max-content;" +
     "background:#171b1d;color:#fff;border-radius:12px;padding:12px 16px;font-size:17px;box-shadow:var(--shadow)}" +
     "#hl{position:fixed;left:0;top:0;border:4px solid #f5ba4b;outline:2px solid #171b1d;border-radius:10px;transition:transform .2s ease,width .2s ease,height .2s ease}" +
     ".sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}" +
@@ -1257,21 +1424,29 @@
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}" +
     "</style>" +
     '<div id="hl" hidden></div>' +
-    '<div id="panel" role="group" aria-label="操作輔助" hidden>' +
-    '<button class="item" id="read" type="button" aria-pressed="false">' + icon(I.speaker) +
-    '<span class="t"><span class="l" id="read-label">念這頁</span><span class="s">按了才念，再按停止</span></span></button>' +
-    '<button class="item" id="voice" type="button">' + icon(I.mic) +
-    '<span class="t"><span class="l">用講的</span><span class="s">說「返回」「往下」或按鈕上的字</span></span></button>' +
-    '<div class="row" role="group" aria-labelledby="font-state"><span class="cap" id="font-state">字級：標準</span><div class="pair">' +
-    '<button id="font-down" type="button">' + icon(I.smaller) + "字變小</button>" +
-    '<button id="font-up" type="button">' + icon(I.bigger) + "字變大</button></div></div>" +
-    '<button class="item" id="contrast" type="button" aria-pressed="false">' + icon(I.contrast) +
-    '<span class="t"><span class="l">高對比</span><span class="s" id="contrast-state">目前：關</span></span></button>' +
-    "<hr>" +
-    '<button class="item" id="back" type="button">' + icon(I.back) + '<span class="t"><span class="l">回上一頁</span></span></button>' +
-    '<button class="item" id="hand" type="button">' + icon(I.swap) + '<span class="t"><span class="l" id="hand-label">換到左手邊</span></span></button>' +
-    "</div>" +
-    '<button id="fab" type="button" aria-expanded="false" aria-controls="panel" aria-label="操作輔助">' + icon(I.person) + '<span aria-hidden="true">輔助</span></button>' +
+    '<div id="scrim" aria-hidden="true" hidden></div>' +
+    '<div id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>' +
+    '<div class="ph"><b id="panel-title">操作輔助</b></div><div class="grid">' +
+    '<button class="tile" id="read" type="button" aria-pressed="false"><span class="ic">' + icon(I.speaker) + '</span>' +
+    '<span class="t"><span class="l" id="read-label">念這頁</span><span class="s">再按一次停止</span></span></button>' +
+    '<button class="tile" id="voice" type="button"><span class="ic">' + icon(I.mic) + '</span>' +
+    '<span class="t"><span class="l">用講的</span><span class="s">說按鈕上的字</span></span></button>' +
+    '<button class="tile wide" id="display" type="button"><span class="ic">' + icon(I.textsize) + '</span>' +
+    '<span class="t"><span class="l">字級與對比</span><span class="s" id="display-state">字級標準・高對比關</span></span><span class="go" aria-hidden="true">›</span></button>' +
+    '<button class="tile" id="back" type="button"><span class="ic">' + icon(I.back) + '</span><span class="t"><span class="l">回上一頁</span></span></button>' +
+    '<button class="tile" id="hand" type="button"><span class="ic">' + icon(I.swap) + '</span><span class="t"><span class="l" id="hand-label">換到左手</span></span></button>' +
+    "</div></div>" +
+    '<div id="dock" role="dialog" aria-modal="false" aria-labelledby="dock-title" aria-describedby="dock-desc" hidden>' +
+    '<div class="grab" aria-hidden="true"></div><h2 id="dock-title">字級與對比</h2><p class="ds" id="dock-desc">邊調邊看，頁面會馬上變化</p>' +
+    '<div class="seg" role="radiogroup" aria-label="字級" data-i="0"><span class="thumb" aria-hidden="true"></span>' +
+    '<button type="button" role="radio" aria-checked="true" data-level="normal"><span class="g" aria-hidden="true" style="font-size:20px">字</span>標準</button>' +
+    '<button type="button" role="radio" aria-checked="false" data-level="large" tabindex="-1"><span class="g" aria-hidden="true" style="font-size:26px">字</span>大</button>' +
+    '<button type="button" role="radio" aria-checked="false" data-level="xlarge" tabindex="-1"><span class="g" aria-hidden="true" style="font-size:32px">字</span>特大</button></div>' +
+    '<div class="row2"><button id="contrast" type="button" role="switch" aria-checked="false">' + icon(I.contrast) +
+    '<span class="t"><span class="l">高對比</span><span class="s" id="contrast-state">關</span></span><span class="track" aria-hidden="true"><span class="knob"></span></span></button>' +
+    '<button class="btn primary" id="dock-done" type="button">完成</button></div></div>' +
+    '<button id="fab" type="button" aria-expanded="false" aria-controls="panel" aria-label="操作輔助"><span class="i-open">' + icon(I.person) +
+    '</span><span class="i-close">' + icon(I.close) + '</span><span id="fab-label" aria-hidden="true">輔助</span></button>' +
     '<div class="sheet" id="ask" role="dialog" aria-modal="false" aria-labelledby="ask-title" aria-describedby="ask-desc" hidden>' +
     '<h2 id="ask-title">按鈕不太好按嗎？要不要放大一點</h2><p id="ask-desc"></p>' +
     '<div class="actions"><button class="btn secondary" id="ask-no" type="button">不用</button>' +
