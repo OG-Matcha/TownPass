@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>臨櫃預約（測試用模擬頁）</title>
+  <!--
+    測試用模擬頁：仿一般微服務常見的寫法（px 字級、32px 小按鈕、淺灰字），
+    用來驗證操作輔助層「不改微服務程式碼」也能生效。內容與資料都是模擬，不是真實服務。
+  -->
+  <style>
+    body { margin: 0; font: 14px/1.5 "PingFang TC", sans-serif; color: #30383d; background: #f1f3f4; }
+    main { padding: 16px 16px 120px; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    .note { color: #8a9aa3; font-size: 13px; margin: 0 0 16px; }
+    .card { background: #fff; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+    .card h2 { font-size: 16px; margin: 0 0 8px; }
+    .slots { display: flex; flex-wrap: wrap; gap: 8px; }
+    .slot { height: 32px; padding: 0 10px; border: 1px solid #5ab4c5; border-radius: 6px; background: #fff; color: #356c77; font-size: 13px; }
+    .slot[aria-pressed="true"] { background: #5ab4c5; color: #171b1d; }
+    .muted { color: #91a0a8; font-size: 12px; }
+    label { display: block; font-size: 13px; margin: 8px 0 4px; }
+    input { width: 100%; box-sizing: border-box; height: 36px; border: 1px solid #738995; border-radius: 6px; padding: 0 8px; font-size: 14px; }
+    .bar { position: fixed; left: 0; right: 0; bottom: 0; background: #fff; box-shadow: 0 0 6px rgba(0,0,0,.1); padding: 10px 16px; display: flex; gap: 12px; }
+    .bar button { flex: 1; height: 48px; border-radius: 10px; font-size: 16px; }
+    .primary { background: #5ab4c5; color: #171b1d; border: 0; }
+    .secondary { background: #fff; color: #356c77; border: 1px solid #5ab4c5; }
+    .danger { background: none; border: 0; color: #c2332f; font-size: 12px; padding: 4px; }
+    #step2 { display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="step1">
+      <h1>選擇臨櫃時段</h1>
+      <p class="note">士林區戶政事務所・模擬資料</p>
+      <div class="card">
+        <h2>11 月 10 日（二）</h2>
+        <div class="slots" role="group" aria-label="11 月 10 日時段">
+          <button class="slot" type="button" aria-pressed="false">09:00</button>
+          <button class="slot" type="button" aria-pressed="false">09:30</button>
+          <button class="slot" type="button" aria-pressed="false">10:00</button>
+          <button class="slot" type="button" aria-pressed="false">10:30</button>
+          <button class="slot" type="button" aria-pressed="false">14:00</button>
+          <button class="slot" type="button" aria-pressed="false">14:30</button>
+        </div>
+        <p class="muted">每個時段 15 分鐘，請提早 5 分鐘到場。</p>
+      </div>
+      <div class="card">
+        <h2>聯絡電話</h2>
+        <label for="tel">手機號碼</label>
+        <input id="tel" type="tel" autocomplete="tel" placeholder="0912345678">
+      </div>
+      <div class="card">
+        <h2>已有的預約</h2>
+        <p>11 月 3 日 10:00 印鑑登記 <button class="danger" type="button" id="del">刪除預約</button></p>
+        <p class="muted" id="del-result"></p>
+      </div>
+    </section>
+    <section id="step2">
+      <h1>確認預約內容</h1>
+      <div class="card"><p id="summary">尚未選擇時段</p></div>
+    </section>
+  </main>
+  <div class="bar">
+    <button class="secondary" type="button" id="prev">上一步</button>
+    <button class="primary" type="button" id="next">下一步</button>
+  </div>
+  <script>
+    var chosen = "";
+    document.querySelectorAll(".slot").forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll(".slot").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+        b.setAttribute("aria-pressed", "true");
+        chosen = b.textContent;
+      });
+    });
+    function show(step) {
+      document.getElementById("step1").style.display = step === 1 ? "" : "none";
+      document.getElementById("step2").style.display = step === 2 ? "block" : "none";
+    }
+    document.getElementById("next").addEventListener("click", function () {
+      document.getElementById("summary").textContent = chosen ? "11 月 10 日 " + chosen + "，士林區戶政事務所" : "尚未選擇時段";
+      history.pushState({ step: 2 }, "", "#step2");
+      show(2);
+    });
+    document.getElementById("prev").addEventListener("click", function () { history.back(); });
+    window.addEventListener("popstate", function (e) { show(e.state && e.state.step === 2 ? 2 : 1); });
+    document.getElementById("del").addEventListener("click", function () {
+      document.getElementById("del-result").textContent = "已刪除 11 月 3 日的預約（模擬）";
+    });
+  </script>
+  <script src="../tp-a11y.js"></script>
+</body>
+</html>

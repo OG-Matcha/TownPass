@@ -1,4 +1,6 @@
 import 'package:town_pass/page/setting/setting_view_controller.dart';
+import 'package:town_pass/util/a11y/a11y_layer.dart';
+import 'package:town_pass/util/tp_switch.dart';
 import 'package:town_pass/util/tp_setting_list.dart';
 import 'package:town_pass/util/extension/datetime.dart';
 import 'package:town_pass/util/tp_app_bar.dart';
@@ -36,6 +38,15 @@ class SettingView extends GetView<SettingViewController> {
               TPSettingListTile.navigate(
                 title: 'APP起始頁面',
                 onTap: () => Get.toNamed(TPRoute.settingStartPage),
+              ),
+              TPSettingListTile.line(),
+              // 操作輔助層：關掉後微服務完全不注入；字級等細項在微服務右下角的「輔助」調整
+              TPSettingListTile.switchButton(
+                title: '操作輔助（放大、朗讀、用講的）',
+                controller: TPSwitchController(
+                  A11yLayer.enabled,
+                  onChanged: (value) => A11yLayer.setEnabled(value),
+                ),
               ),
               TPSettingListTile.header(title: '通知'),
               TPSettingListTile.switchButton(title: '訊息通知提醒'),

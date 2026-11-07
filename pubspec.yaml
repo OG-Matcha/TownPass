@@ -97,6 +97,7 @@ flutter:
     - assets/mock_data/
     - assets/image/
     - assets/svg/
+    - assets/a11y/
     # >>> web assets (scripts/sync-app.mjs 產生，勿手改)
     - assets/web/
     - assets/web/mrt/

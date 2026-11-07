@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:town_pass/gen/assets.gen.dart';
+import 'package:town_pass/util/a11y/a11y_layer.dart';
 import 'package:town_pass/util/tp_app_bar.dart';
 import 'package:town_pass/util/tp_colors.dart';
 import 'package:town_pass/util/web_message_handler/tp_web_message_listener.dart';
@@ -77,6 +78,8 @@ class TPWebView extends StatelessWidget {
         controller: appBarController,
       ),
       body: TPInAppWebView(
+        // 操作輔助層：注入所有微服務（關掉時是空清單，完全不注入）
+        initialUserScripts: A11yLayer.userScripts(),
         onWebViewCreated: (controller) {
           webViewController.value = controller;
           try {

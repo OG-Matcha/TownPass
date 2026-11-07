@@ -10,6 +10,7 @@ import 'package:town_pass/service/notification_service.dart';
 import 'package:town_pass/service/package_service.dart';
 import 'package:town_pass/service/shared_preferences_service.dart';
 import 'package:town_pass/service/subscription_service.dart';
+import 'package:town_pass/util/a11y/a11y_layer.dart';
 import 'package:town_pass/util/tp_colors.dart';
 import 'package:town_pass/util/tp_route.dart';
 
@@ -49,6 +50,7 @@ Future<void> initServices() async {
   await Get.putAsync<DeviceService>(() async => await DeviceService().init());
   await Get.putAsync<PackageService>(() async => await PackageService().init());
   await Get.putAsync<SharedPreferencesService>(() async => await SharedPreferencesService().init());
+  await A11yLayer.init();
   await Get.putAsync<GeoLocatorService>(() async => await GeoLocatorService().init());
   await Get.putAsync<NotificationService>(() async => await NotificationService().init());
 

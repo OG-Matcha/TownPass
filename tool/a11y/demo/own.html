@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 已自己做好字級與按偏偵測的微服務（例如 A），宣告由頁面處理，操作輔助層只廣播設定 -->
+  <meta name="tp-a11y" content="own:font,own:misstap">
+  <title>自己處理字級的服務（測試用模擬頁）</title>
+  <style>
+    html { font-size: 16px; }
+    body { margin: 0; font-family: "PingFang TC", sans-serif; color: #171b1d; background: #fff; }
+    main { padding: 16px; }
+    h1 { font-size: 1.5rem; margin: 0 0 8px; }
+    .chips { display: flex; gap: 8px; }
+    .chip { min-height: 32px; padding: 0 10px; font-size: 0.875rem; border: 1px solid #22474e; border-radius: 6px; background: #fff; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>自己處理字級的服務</h1>
+    <p>這頁宣告 <code>own:font,own:misstap</code>：字級由頁面自己依「輔助」的設定調整，操作輔助層不縮放、不跳按偏詢問。</p>
+    <p>目前收到的字級：<strong id="got">（尚未收到）</strong></p>
+    <div class="chips"><button class="chip" type="button">甲</button><button class="chip" type="button">乙</button></div>
+  </main>
+  <script>
+    var PX = { normal: 16, large: 20, xlarge: 24 };
+    window.addEventListener("tp-a11y:settings", function (e) {
+      document.getElementById("got").textContent = e.detail.fontLevel;
+      document.documentElement.style.fontSize = PX[e.detail.fontLevel] + "px";
+    });
+  </script>
+  <script src="../tp-a11y.js"></script>
+</body>
+</html>
