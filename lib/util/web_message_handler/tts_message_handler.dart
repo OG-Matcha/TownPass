@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
@@ -8,6 +9,19 @@ import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
 /// Android WebView 沒有 Web Speech API 的 speechSynthesis，所以朗讀交給系統 TTS（裝置端合成，不連網）。
 /// `rate` 以「1 = 正常語速」計；flutter_tts 的 0.5 才是正常語速，所以乘 0.5。
 class TtsMessageHandler extends TPWebMessageHandler {
+  TtsMessageHandler() {
+    // 切到別的 App、鎖螢幕：正在念的立刻停（只建一次）
+    _lifecycle ??= AppLifecycleListener(onHide: stopAll);
+  }
+  static AppLifecycleListener? _lifecycle;
+
+  /// 離開微服務頁或 App 進背景時呼叫：系統 TTS 是共用的，停一次全部停。
+  static Future<void> stopAll() async {
+    try {
+      await FlutterTts().stop();
+    } catch (_) {}
+  }
+
   final FlutterTts _tts = FlutterTts();
   String? _locale;
 

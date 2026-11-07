@@ -1,3 +1,4 @@
+import 'package:town_pass/util/web_message_handler/tts_message_handler.dart';
 import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
@@ -54,7 +55,12 @@ class TPWebView extends StatelessWidget {
         // 有上一頁就回上一頁；第一頁才真的離開微服務
         canPop: !canGoBack.value,
         onPopInvokedWithResult: (didPop, _) async {
-          if (!didPop) await webViewController.value?.goBack();
+          // 真的離開微服務（返回、關閉、第一頁按返回）：停止朗讀，不讓聲音跟著跑到別頁
+          if (didPop) {
+            await TtsMessageHandler.stopAll();
+          } else {
+            await webViewController.value?.goBack();
+          }
         },
         child: _buildScaffold(),
       ),

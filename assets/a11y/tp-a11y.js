@@ -590,7 +590,10 @@
     function applyFont() {
       var lv = FONT_LEVELS[levelIndex(settings.fontLevel)];
       // 整頁縮放而不是只放大字：按不準的人需要的是「按鈕也變大」。zoom 放在 body，浮動列（在 html 下）不受影響。
-      var css = own.font || lv.zoom === 1 ? "" : "body{zoom:" + lv.zoom + " !important;}";
+      // body 寬度除回縮放倍率、長字可斷行、元素不超出父層：放大後版面重新排，不會右邊被切掉
+      var css = own.font || lv.zoom === 1 ? "" :
+        "body{zoom:" + lv.zoom + " !important;width:calc(100vw / " + lv.zoom + ") !important;overflow-x:hidden !important;}" +
+        "body *{max-width:100%;overflow-wrap:anywhere;}";
       if (settings.highContrast && !own.contrast) css += CONTRAST_PAGE_CSS;
       pageStyle.textContent = css;
       document.documentElement.setAttribute("data-tp-font", lv.id);
