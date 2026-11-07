@@ -1,0 +1,4 @@
+# 向量模型檔不進 git；用 tool/semantic_search/fetch_model.sh 下載
+*
+!.gitignore
+!.gitkeep

@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "說明": "網頁（tp-a11y.js）與 App（service_catalog、service_rank handler）之間的資料契約範例。兩邊的測試都對著這份，欄位改了要同時改這裡。",
+    "測試": "Dart：test/semantic/service_rank_integration_test.dart；網頁：tool/semantic_search/e2e.mjs、merge.test.mjs"
+  },
+  "service_catalog": {
+    "request": { "name": "service_catalog" },
+    "replyEntryWithUrl": { "id": "library", "title": "圖書借閱", "description": "市立圖書館借閱服務", "category": "城市生活", "url": "https://example.invalid/library" },
+    "replyEntryWithTel": { "id": "dedicatedLine", "title": "1999", "description": "播打網路語音通話", "category": "市政服務", "tel": "1999" },
+    "replyEntryUnavailable": { "id": "vaccineAppointment", "title": "疫苗預約", "description": "預約Covid-19、流感疫苗施打", "category": "防疫醫療", "unavailable": true }
+  },
+  "service_rank": {
+    "request": { "name": "service_rank", "data": { "query": "家裡水管爆了", "ids": ["waterMeter", "dedicatedLine"], "rid": 1 } },
+    "replyOk": { "name": "service_rank", "data": { "ok": true, "rid": 1, "scores": { "waterMeter": 0.61, "dedicatedLine": 0.55 }, "model": "model-id" } },
+    "replyFail": { "name": "service_rank", "data": { "ok": false, "rid": 1, "reason": "not_ready" } },
+    "failReasons": ["bad_request", "not_ready", "error"]
+  }
+}

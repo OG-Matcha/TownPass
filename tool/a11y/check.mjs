@@ -36,6 +36,8 @@ const FAKE_APP = () => {
         }
         if (msg.name === "tts") data = { ok: true };
         if (msg.name === "speech_to_text") data = { text: "下一步" };
+        // 模型還沒準備好時 App 的真實回覆；網頁必須無聲退回規則搜尋（語意搜尋的檢查在 tool/semantic_search/e2e.mjs）
+        if (msg.name === "service_rank") data = { ok: false, rid: msg.data && msg.data.rid, reason: "not_ready" };
         if (msg.name === "service_catalog")
           data = [
             { id: "zoo", title: "愛遊動物園", description: "動物園區資訊導覽、線上地圖", category: "探索臺北", url: "https://taipei-pass-service.vercel.app/zoo-test/" },

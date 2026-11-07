@@ -7,6 +7,7 @@ import 'package:town_pass/service/device_service.dart';
 import 'package:town_pass/service/geo_locator_service.dart';
 import 'package:town_pass/service/notification_service.dart';
 import 'package:town_pass/service/package_service.dart';
+import 'package:town_pass/service/service_rank_service.dart';
 import 'package:town_pass/service/shared_preferences_service.dart';
 import 'package:town_pass/service/subscription_service.dart';
 import 'package:town_pass/util/a11y/a11y_layer.dart';
@@ -40,6 +41,8 @@ Future<void> initServices() async {
   await Get.putAsync<NotificationService>(() async => await NotificationService().init());
 
   Get.put<SubscriptionService>(SubscriptionService());
+  // 找服務的語意比對：模型與服務向量在背景準備，不擋啟動；沒準備好時網頁退回規則搜尋
+  Get.put<ServiceRankService>(ServiceRankService().init());
 }
 
 class MyApp extends StatelessWidget {

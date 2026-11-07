@@ -47,11 +47,16 @@ dependencies:
   # 裝置端語音辨識（BSD-3-Clause）；版本寫死，比賽中不升級
   speech_to_text: 7.5.0
   flutter_tts: 4.2.5
+  # 裝置端向量模型（EmbeddingGemma）推論：找服務的語意比對；版本寫死，比賽中不 pub upgrade
+  flutter_edge_ai: 2.5.5
+  flutter_edge_ai_litertlm: 1.19.1
   intl: ^0.20.3
   image_picker: ^1.2.4
   json_annotation: ^4.12.0
   mobile_scanner: ^7.4.2
   package_info_plus: ^10.2.2
+  # 服務向量快取寫在 App 私有目錄；本來就是 shared_preferences 等的相依，這裡只是升為直接相依並鎖定已解析的版本
+  path_provider: 2.1.6
   shared_preferences: ^2.5.6
   shimmer: ^4.0.0
   url_launcher: ^6.3.3
@@ -98,6 +103,9 @@ flutter:
     - assets/image/
     - assets/svg/
     - assets/a11y/
+    # 找服務的語意比對：模型（不進 git，tool/semantic_search/fetch_model.sh 下載）與服務例句
+    - assets/models/
+    - tool/semantic_search/phrases.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

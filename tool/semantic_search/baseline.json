@@ -1,0 +1,1000 @@
+{
+  "generatedAt": "2026-11-07T16:50:57.149Z",
+  "engine": "tp-a11y.js searchServices（規則式：關鍵字、服務名稱、相同兩字詞）",
+  "keywordServices": [
+    "districtOffice",
+    "reportIssue",
+    "reservation",
+    "disasterReport",
+    "library",
+    "locationSearch",
+    "dedicatedLine",
+    "dashboard"
+  ],
+  "now": {
+    "catalogSize": 8,
+    "scored": 27,
+    "top1": 10,
+    "top3": 10,
+    "unreachable": 15,
+    "none": {
+      "n": 3,
+      "correct": 3
+    },
+    "byCategory": {
+      "direct": {
+        "n": 6,
+        "top1": 4,
+        "top3": 4
+      },
+      "colloquial": {
+        "n": 11,
+        "top1": 2,
+        "top3": 2
+      },
+      "family": {
+        "n": 4,
+        "top1": 2,
+        "top3": 2
+      },
+      "vague": {
+        "n": 3,
+        "top1": 1,
+        "top3": 1
+      },
+      "simplified": {
+        "n": 3,
+        "top1": 1,
+        "top3": 1
+      }
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "category": "direct",
+        "text": "我想預約臨櫃",
+        "expected": [
+          "reservation"
+        ],
+        "top": [
+          "reservation"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q02",
+        "category": "direct",
+        "text": "水費繳費單掉了怎麼辦",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q03",
+        "category": "direct",
+        "text": "圖書館的書要續借",
+        "expected": [
+          "library"
+        ],
+        "top": [
+          "library"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q04",
+        "category": "direct",
+        "text": "我要報案",
+        "expected": [
+          "police"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q05",
+        "category": "direct",
+        "text": "申請身心障礙手冊",
+        "expected": [
+          "districtOffice"
+        ],
+        "top": [
+          "districtOffice"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q06",
+        "category": "direct",
+        "text": "路燈壞了要通報",
+        "expected": [
+          "reportIssue"
+        ],
+        "top": [
+          "reportIssue",
+          "disasterReport"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q07",
+        "category": "colloquial",
+        "text": "家裡附近淹水了很危險",
+        "expected": [
+          "disasterReport"
+        ],
+        "top": [
+          "disasterReport",
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q08",
+        "category": "colloquial",
+        "text": "我想帶狗去公園散步，哪裡可以",
+        "expected": [
+          "petFriendlyMap"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q09",
+        "category": "colloquial",
+        "text": "小朋友週末可以去哪裡玩",
+        "expected": [
+          "familyCenter",
+          "zoo"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q10",
+        "category": "colloquial",
+        "text": "我想知道這週菜價有沒有漲",
+        "expected": [
+          "essentialGoods"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q11",
+        "category": "colloquial",
+        "text": "想找個節目聽聽，不想看螢幕",
+        "expected": [
+          "cityRadio"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q12",
+        "category": "colloquial",
+        "text": "我收到一通說我中獎的電話，好像被騙了",
+        "expected": [
+          "police"
+        ],
+        "top": [
+          "dedicatedLine"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q13",
+        "category": "colloquial",
+        "text": "想看今天空氣好不好",
+        "expected": [
+          "dashboard"
+        ],
+        "top": [
+          "dashboard"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q14",
+        "category": "colloquial",
+        "text": "里長辦的活動在哪裡看",
+        "expected": [
+          "neighborhood"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q15",
+        "category": "colloquial",
+        "text": "我想用手機參加投票",
+        "expected": [
+          "iVoting"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q16",
+        "category": "colloquial",
+        "text": "朋友說填完調查可以幫忙改善市政，在哪填",
+        "expected": [
+          "survey"
+        ],
+        "top": [
+          "dedicatedLine",
+          "districtOffice",
+          "dashboard"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q17",
+        "category": "colloquial",
+        "text": "我想找適合看花看樹的地方",
+        "expected": [
+          "greenMap"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q18",
+        "category": "family",
+        "text": "我媽出院後走不穩，有什麼可以幫忙的",
+        "expected": [
+          "districtOffice",
+          "dedicatedLine"
+        ],
+        "top": [
+          "dedicatedLine"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q19",
+        "category": "family",
+        "text": "我爸爸耳朵不好，要幫他預約看診",
+        "expected": [
+          "medicalAppointment"
+        ],
+        "top": [
+          "reservation"
+        ],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q20",
+        "category": "family",
+        "text": "阿嬤想去戶政事務所辦東西，要先拿號碼牌嗎",
+        "expected": [
+          "reservation"
+        ],
+        "top": [
+          "reservation"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q21",
+        "category": "family",
+        "text": "我阿公的水錶好像怪怪的，度數要怎麼回報",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q22",
+        "category": "vague",
+        "text": "我不知道要找哪個服務",
+        "expected": [
+          "dedicatedLine"
+        ],
+        "top": [
+          "dedicatedLine",
+          "districtOffice",
+          "reservation",
+          "library",
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q23",
+        "category": "vague",
+        "text": "想找個人問問看",
+        "expected": [
+          "dedicatedLine"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q24",
+        "category": "vague",
+        "text": "有點急，家裡水管爆了",
+        "expected": [
+          "dedicatedLine",
+          "disasterReport"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q25",
+        "category": "simplified",
+        "text": "我想预约疫苗",
+        "expected": [
+          "vaccineAppointment"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q26",
+        "category": "simplified",
+        "text": "怎么缴水费",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [],
+        "reachable": false,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q27",
+        "category": "simplified",
+        "text": "附近的无障碍厕所",
+        "expected": [
+          "locationSearch"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q28",
+        "category": "none",
+        "text": "我想辦護照",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      },
+      {
+        "id": "q29",
+        "category": "none",
+        "text": "幫我訂高鐵票",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      },
+      {
+        "id": "q30",
+        "category": "none",
+        "text": "今年的所得稅怎麼報",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      }
+    ]
+  },
+  "all21": {
+    "catalogSize": 21,
+    "scored": 27,
+    "top1": 15,
+    "top3": 15,
+    "unreachable": 0,
+    "none": {
+      "n": 3,
+      "correct": 3
+    },
+    "byCategory": {
+      "direct": {
+        "n": 6,
+        "top1": 6,
+        "top3": 6
+      },
+      "colloquial": {
+        "n": 11,
+        "top1": 3,
+        "top3": 3
+      },
+      "family": {
+        "n": 4,
+        "top1": 3,
+        "top3": 3
+      },
+      "vague": {
+        "n": 3,
+        "top1": 1,
+        "top3": 1
+      },
+      "simplified": {
+        "n": 3,
+        "top1": 2,
+        "top3": 2
+      }
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "category": "direct",
+        "text": "我想預約臨櫃",
+        "expected": [
+          "reservation"
+        ],
+        "top": [
+          "reservation",
+          "vaccineAppointment",
+          "familyCenter"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q02",
+        "category": "direct",
+        "text": "水費繳費單掉了怎麼辦",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [
+          "waterMeter"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q03",
+        "category": "direct",
+        "text": "圖書館的書要續借",
+        "expected": [
+          "library"
+        ],
+        "top": [
+          "library"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q04",
+        "category": "direct",
+        "text": "我要報案",
+        "expected": [
+          "police"
+        ],
+        "top": [
+          "police"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q05",
+        "category": "direct",
+        "text": "申請身心障礙手冊",
+        "expected": [
+          "districtOffice"
+        ],
+        "top": [
+          "districtOffice"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q06",
+        "category": "direct",
+        "text": "路燈壞了要通報",
+        "expected": [
+          "reportIssue"
+        ],
+        "top": [
+          "reportIssue",
+          "disasterReport"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q07",
+        "category": "colloquial",
+        "text": "家裡附近淹水了很危險",
+        "expected": [
+          "disasterReport"
+        ],
+        "top": [
+          "disasterReport",
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q08",
+        "category": "colloquial",
+        "text": "我想帶狗去公園散步，哪裡可以",
+        "expected": [
+          "petFriendlyMap"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q09",
+        "category": "colloquial",
+        "text": "小朋友週末可以去哪裡玩",
+        "expected": [
+          "familyCenter",
+          "zoo"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q10",
+        "category": "colloquial",
+        "text": "我想知道這週菜價有沒有漲",
+        "expected": [
+          "essentialGoods"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q11",
+        "category": "colloquial",
+        "text": "想找個節目聽聽，不想看螢幕",
+        "expected": [
+          "cityRadio"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q12",
+        "category": "colloquial",
+        "text": "我收到一通說我中獎的電話，好像被騙了",
+        "expected": [
+          "police"
+        ],
+        "top": [
+          "dedicatedLine"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q13",
+        "category": "colloquial",
+        "text": "想看今天空氣好不好",
+        "expected": [
+          "dashboard"
+        ],
+        "top": [
+          "dashboard"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q14",
+        "category": "colloquial",
+        "text": "里長辦的活動在哪裡看",
+        "expected": [
+          "neighborhood"
+        ],
+        "top": [
+          "locationSearch",
+          "familyCenter"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q15",
+        "category": "colloquial",
+        "text": "我想用手機參加投票",
+        "expected": [
+          "iVoting"
+        ],
+        "top": [
+          "iVoting"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q16",
+        "category": "colloquial",
+        "text": "朋友說填完調查可以幫忙改善市政，在哪填",
+        "expected": [
+          "survey"
+        ],
+        "top": [
+          "dedicatedLine",
+          "districtOffice",
+          "iVoting",
+          "dashboard",
+          "survey"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q17",
+        "category": "colloquial",
+        "text": "我想找適合看花看樹的地方",
+        "expected": [
+          "greenMap"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q18",
+        "category": "family",
+        "text": "我媽出院後走不穩，有什麼可以幫忙的",
+        "expected": [
+          "districtOffice",
+          "dedicatedLine"
+        ],
+        "top": [
+          "dedicatedLine"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q19",
+        "category": "family",
+        "text": "我爸爸耳朵不好，要幫他預約看診",
+        "expected": [
+          "medicalAppointment"
+        ],
+        "top": [
+          "reservation",
+          "vaccineAppointment",
+          "familyCenter"
+        ],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q20",
+        "category": "family",
+        "text": "阿嬤想去戶政事務所辦東西，要先拿號碼牌嗎",
+        "expected": [
+          "reservation"
+        ],
+        "top": [
+          "reservation"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q21",
+        "category": "family",
+        "text": "我阿公的水錶好像怪怪的，度數要怎麼回報",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [
+          "waterMeter"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q22",
+        "category": "vague",
+        "text": "我不知道要找哪個服務",
+        "expected": [
+          "dedicatedLine"
+        ],
+        "top": [
+          "dedicatedLine",
+          "districtOffice",
+          "reservation",
+          "iVoting",
+          "police"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q23",
+        "category": "vague",
+        "text": "想找個人問問看",
+        "expected": [
+          "dedicatedLine"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q24",
+        "category": "vague",
+        "text": "有點急，家裡水管爆了",
+        "expected": [
+          "dedicatedLine",
+          "disasterReport"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q25",
+        "category": "simplified",
+        "text": "我想预约疫苗",
+        "expected": [
+          "vaccineAppointment"
+        ],
+        "top": [
+          "vaccineAppointment"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q26",
+        "category": "simplified",
+        "text": "怎么缴水费",
+        "expected": [
+          "waterMeter"
+        ],
+        "top": [],
+        "reachable": true,
+        "top1": false,
+        "top3": false
+      },
+      {
+        "id": "q27",
+        "category": "simplified",
+        "text": "附近的无障碍厕所",
+        "expected": [
+          "locationSearch"
+        ],
+        "top": [
+          "locationSearch"
+        ],
+        "reachable": true,
+        "top1": true,
+        "top3": true
+      },
+      {
+        "id": "q28",
+        "category": "none",
+        "text": "我想辦護照",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      },
+      {
+        "id": "q29",
+        "category": "none",
+        "text": "幫我訂高鐵票",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      },
+      {
+        "id": "q30",
+        "category": "none",
+        "text": "今年的所得稅怎麼報",
+        "top": [],
+        "expectNone": true,
+        "correct": true
+      }
+    ]
+  },
+  "phraseCoverage": {
+    "dedicatedLine": {
+      "title": "1999",
+      "phrases": 9,
+      "top3": 5
+    },
+    "districtOffice": {
+      "title": "申辦服務",
+      "phrases": 9,
+      "top3": 9
+    },
+    "reportIssue": {
+      "title": "有話要說",
+      "phrases": 9,
+      "top3": 6
+    },
+    "reservation": {
+      "title": "臨櫃叫號",
+      "phrases": 8,
+      "top3": 5
+    },
+    "iVoting": {
+      "title": "網路投票",
+      "phrases": 7,
+      "top3": 5
+    },
+    "dashboard": {
+      "title": "市政資訊儀表板",
+      "phrases": 7,
+      "top3": 7
+    },
+    "survey": {
+      "title": "意見調查",
+      "phrases": 6,
+      "top3": 3
+    },
+    "police": {
+      "title": "警政服務",
+      "phrases": 8,
+      "top3": 2
+    },
+    "neighborhood": {
+      "title": "里辦服務",
+      "phrases": 7,
+      "top3": 0
+    },
+    "disasterReport": {
+      "title": "災情通報",
+      "phrases": 8,
+      "top3": 6
+    },
+    "vaccineAppointment": {
+      "title": "疫苗預約",
+      "phrases": 7,
+      "top3": 6
+    },
+    "medicalAppointment": {
+      "title": "聯醫掛號",
+      "phrases": 8,
+      "top3": 5
+    },
+    "cityRadio": {
+      "title": "台北電台",
+      "phrases": 7,
+      "top3": 5
+    },
+    "familyCenter": {
+      "title": "親子館",
+      "phrases": 8,
+      "top3": 5
+    },
+    "greenMap": {
+      "title": "簡單森呼吸",
+      "phrases": 8,
+      "top3": 2
+    },
+    "petFriendlyMap": {
+      "title": "寵物安心遛",
+      "phrases": 8,
+      "top3": 3
+    },
+    "waterMeter": {
+      "title": "用水服務",
+      "phrases": 7,
+      "top3": 5
+    },
+    "essentialGoods": {
+      "title": "民生物資",
+      "phrases": 7,
+      "top3": 0
+    },
+    "library": {
+      "title": "圖書借閱",
+      "phrases": 8,
+      "top3": 7
+    },
+    "locationSearch": {
+      "title": "找地點",
+      "phrases": 8,
+      "top3": 6
+    },
+    "zoo": {
+      "title": "愛遊動物園",
+      "phrases": 8,
+      "top3": 6
+    }
+  }
+}

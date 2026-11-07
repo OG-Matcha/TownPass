@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "說明": "「找服務」語意搜尋的測試題。團隊自行擬定，不是官方資料。expected 列出「列在前面就算對」的服務 id（可多個）；expectNone 為 true 的題，期望是沒有合適服務、建議改打 1999。",
+    "類別": {
+      "direct": "直白說法（服務名稱或明確用詞）",
+      "colloquial": "口語說法（沒有服務名稱）",
+      "family": "家屬代問（用「我媽、我阿公」的口吻）",
+      "vague": "說法含糊、情緒或需求不明確",
+      "simplified": "簡體字輸入（新住民、陸配可能打的）。這三題的簡體字是刻意的測試內容",
+      "none": "資料裡沒有對應的服務"
+    },
+    "ambiguous": "標記 true 的題，期望答案是團隊判斷，需使用者確認。",
+    "版本": 1,
+    "更新日": "2026-11-08"
+  },
+  "queries": [
+    { "id": "q01", "text": "我想預約臨櫃", "category": "direct", "expected": ["reservation"] },
+    { "id": "q02", "text": "水費繳費單掉了怎麼辦", "category": "direct", "expected": ["waterMeter"] },
+    { "id": "q03", "text": "圖書館的書要續借", "category": "direct", "expected": ["library"] },
+    { "id": "q04", "text": "我要報案", "category": "direct", "expected": ["police"] },
+    { "id": "q05", "text": "申請身心障礙手冊", "category": "direct", "expected": ["districtOffice"] },
+    { "id": "q06", "text": "路燈壞了要通報", "category": "direct", "expected": ["reportIssue"] },
+
+    { "id": "q07", "text": "家裡附近淹水了很危險", "category": "colloquial", "expected": ["disasterReport"] },
+    { "id": "q08", "text": "我想帶狗去公園散步，哪裡可以", "category": "colloquial", "expected": ["petFriendlyMap"] },
+    { "id": "q09", "text": "小朋友週末可以去哪裡玩", "category": "colloquial", "expected": ["familyCenter", "zoo"] },
+    { "id": "q10", "text": "我想知道這週菜價有沒有漲", "category": "colloquial", "expected": ["essentialGoods"] },
+    { "id": "q11", "text": "想找個節目聽聽，不想看螢幕", "category": "colloquial", "expected": ["cityRadio"] },
+    { "id": "q12", "text": "我收到一通說我中獎的電話，好像被騙了", "category": "colloquial", "expected": ["police"] },
+    { "id": "q13", "text": "想看今天空氣好不好", "category": "colloquial", "expected": ["dashboard"] },
+    { "id": "q14", "text": "里長辦的活動在哪裡看", "category": "colloquial", "expected": ["neighborhood"] },
+    { "id": "q15", "text": "我想用手機參加投票", "category": "colloquial", "expected": ["iVoting"] },
+    { "id": "q16", "text": "朋友說填完調查可以幫忙改善市政，在哪填", "category": "colloquial", "expected": ["survey"] },
+    { "id": "q17", "text": "我想找適合看花看樹的地方", "category": "colloquial", "expected": ["greenMap"] },
+
+    { "id": "q18", "text": "我媽出院後走不穩，有什麼可以幫忙的", "category": "family", "expected": ["districtOffice", "dedicatedLine"], "ambiguous": true, "note": "App 沒有長照專屬服務；團隊判斷最接近的是申辦（輔具、長照補助）或 1999 轉介。" },
+    { "id": "q19", "text": "我爸爸耳朵不好，要幫他預約看診", "category": "family", "expected": ["medicalAppointment"] },
+    { "id": "q20", "text": "阿嬤想去戶政事務所辦東西，要先拿號碼牌嗎", "category": "family", "expected": ["reservation"] },
+    { "id": "q21", "text": "我阿公的水錶好像怪怪的，度數要怎麼回報", "category": "family", "expected": ["waterMeter"] },
+
+    { "id": "q22", "text": "我不知道要找哪個服務", "category": "vague", "expected": ["dedicatedLine"] },
+    { "id": "q23", "text": "想找個人問問看", "category": "vague", "expected": ["dedicatedLine"] },
+    { "id": "q24", "text": "有點急，家裡水管爆了", "category": "vague", "expected": ["dedicatedLine", "disasterReport"], "ambiguous": true, "note": "沒有「搶修」服務；用水服務只管繳費與度數，不算。團隊判斷 1999 轉介，或當成災情通報（積水）。" },
+
+    { "id": "q25", "text": "我想预约疫苗", "category": "simplified", "expected": ["vaccineAppointment"] },
+    { "id": "q26", "text": "怎么缴水费", "category": "simplified", "expected": ["waterMeter"] },
+    { "id": "q27", "text": "附近的无障碍厕所", "category": "simplified", "expected": ["locationSearch"] },
+
+    { "id": "q28", "text": "我想辦護照", "category": "none", "expectNone": true, "note": "護照由外交部領事事務局辦理，App 沒有。" },
+    { "id": "q29", "text": "幫我訂高鐵票", "category": "none", "expectNone": true },
+    { "id": "q30", "text": "今年的所得稅怎麼報", "category": "none", "expectNone": true, "note": "報稅屬財政部國稅局，App 沒有。" }
+  ]
+}
