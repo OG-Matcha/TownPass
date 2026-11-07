@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!-- release build 載入微服務網頁需要（原本只有 debug/profile 有） -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 語音指令（speech_to_text） -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:label="Town Pass"
         android:name="${applicationName}"
@@ -54,6 +58,10 @@
     </queries>
     <!-- Provide required visibility configuration for API level 30 and above -->
     <queries>
+        <!-- speech_to_text：Android 11+ 要能查到系統語音辨識服務 -->
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
         <!-- checks for Mail support -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
