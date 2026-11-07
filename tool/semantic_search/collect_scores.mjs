@@ -14,6 +14,9 @@ for (const line of readFileSync(log, "utf8").split("\n")) {
   } else if ((m = line.match(/^EVAL_Q (.*)$/))) {
     const q = JSON.parse(m[1]);
     (out.variants[q.variant] ??= {})[q.id] = { ms: q.ms, scores: q.scores };
+  } else if ((m = line.match(/^EVAL_OOS (.*)$/))) {
+    const q = JSON.parse(m[1]);
+    (out.variants["oos"] ??= {})[q.id] = { scores: { outOfScope: q.score } };
   } else if ((m = line.match(/^EVAL_ERROR (.*)$/))) throw new Error(`量測程式出錯：${m[1]}`);
 }
 if (!out.meta.prepare || out.meta.prepare.status !== "ready") throw new Error("模型沒有準備好，沒有分數可存");

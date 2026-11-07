@@ -13,6 +13,9 @@ import 'package:flutter_edge_ai/flutter_edge_ai.dart' show TaskType;
 
 const _queriesJson = String.fromEnvironment('QUERIES_JSON');
 
+// 實驗用：「不在服務範圍內」的例句（JSON 字串陣列）。沒給就不量。
+const _oosJson = String.fromEnvironment('OOS_JSON');
+
 void _out(String tag, Object json) => debugPrint('$tag ${jsonEncode(json)}');
 
 Future<void> main() async {
@@ -76,6 +79,23 @@ Future<void> main() async {
           'ms': qw.elapsedMilliseconds,
           'scores': scores,
         });
+      }
+    }
+    // 3) 實驗：每題對「範圍外例句」的相似度（只用 sim-sim 這種向量用法）
+    if (_oosJson.isNotEmpty) {
+      final oosTexts = (jsonDecode(_oosJson) as List).cast<String>();
+      final oosEmbedder = variants['sim-sim']!;
+      final oosIndex = await ServiceRankEngine.buildIndex(
+        embedder: oosEmbedder,
+        docs: [ServiceDoc(id: 'outOfScope', texts: oosTexts)],
+      );
+      final oosEngine = ServiceRankEngine(
+        embedder: oosEmbedder,
+        index: oosIndex,
+      );
+      for (final q in queries) {
+        final scores = await oosEngine.rank(q['text'] as String);
+        _out('EVAL_OOS', {'id': q['id'], 'score': scores['outOfScope']});
       }
     }
     _out('EVAL_DONE', {'ok': true});

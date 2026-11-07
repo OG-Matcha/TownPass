@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "說明": "實驗用的「資料裡沒有對應服務」測試題，共 24 題。在看到任何分數之前寫好，主題與 out_of_scope_phrases.json 刻意錯開。",
+    "判定": "依 21 個服務的名稱與說明，這些都沒有對應服務；4 題「像市政但 App 沒有」是最難的一類。",
+    "更新日": "2026-11-08"
+  },
+  "queries": [
+    {"id": "o01", "text": "最近有什麼好看的影集", "category": "entertainment", "expectNone": true},
+    {"id": "o02", "text": "這部電影的結局是什麼", "category": "entertainment", "expectNone": true},
+    {"id": "o03", "text": "幫我推薦一支好用的手機", "category": "shopping", "expectNone": true},
+    {"id": "o04", "text": "台積電股價今天多少", "category": "finance", "expectNone": true},
+    {"id": "o05", "text": "想知道比特幣會不會漲", "category": "finance", "expectNone": true},
+    {"id": "o06", "text": "筆電螢幕一直閃爍", "category": "tech", "expectNone": true},
+    {"id": "o07", "text": "我失眠好幾天了", "category": "life", "expectNone": true},
+    {"id": "o08", "text": "怎麼跟朋友道歉", "category": "life", "expectNone": true},
+    {"id": "o09", "text": "研究所推甄怎麼準備", "category": "study", "expectNone": true},
+    {"id": "o10", "text": "能不能教我做數學題", "category": "study", "expectNone": true},
+    {"id": "o11", "text": "我想學吉他", "category": "study", "expectNone": true},
+    {"id": "o12", "text": "世界盃今年在哪裡舉辦", "category": "sports", "expectNone": true},
+    {"id": "o13", "text": "怎麼報名路跑", "category": "sports", "expectNone": true},
+    {"id": "o14", "text": "牛肉麵怎麼煮才好吃", "category": "food", "expectNone": true},
+    {"id": "o15", "text": "去京都玩三天兩夜行程", "category": "travel", "expectNone": true},
+    {"id": "o16", "text": "哪裡可以買到便宜的機票", "category": "travel", "expectNone": true},
+    {"id": "o17", "text": "水瓶座今天運勢", "category": "life", "expectNone": true},
+    {"id": "o18", "text": "請幫我翻譯這句英文", "category": "work", "expectNone": true},
+    {"id": "o19", "text": "幫我寫一封請假的信", "category": "work", "expectNone": true},
+    {"id": "o20", "text": "想看今晚的流星雨", "category": "life", "expectNone": true},
+    {"id": "o21", "text": "搭捷運要怎麼轉乘", "category": "city-absent", "expectNone": true},
+    {"id": "o22", "text": "機車排氣檢驗要去哪裡", "category": "city-absent", "expectNone": true},
+    {"id": "o23", "text": "辦理汽車過戶要帶什麼", "category": "city-absent", "expectNone": true},
+    {"id": "o24", "text": "我想換手機門號", "category": "city-absent", "expectNone": true}
+  ]
+}

@@ -19,11 +19,15 @@ LOG="$WORK/logcat.txt"
 # 兩份題目合併成一份壓縮 JSON，用 --dart-define 帶進 App（不需要把測試題打包成 asset）
 QUERIES="$(node -e '
 const r=(f)=>require(process.argv[1]+"/tool/semantic_search/"+f).queries.map(x=>({id:x.id,text:x.text}));
-let q=r("queries.json"); try{q=q.concat(r("queries_holdout.json"))}catch(e){}
+let q=r("queries.json"); for(const f of ["queries_holdout.json","queries_oos.json","queries_v2.json"]){try{q=q.concat(r(f))}catch(e){}}
 process.stdout.write(JSON.stringify(q));' "$PWD")"
 
+# 實驗：範圍外例句（有這個檔才量）
+OOS="$(node -e '
+try{process.stdout.write(JSON.stringify(require(process.argv[1]+"/tool/semantic_search/out_of_scope_phrases.json").phrases))}catch(e){}' "$PWD")"
+
 echo "建置量測用 APK…"
-"$FLUTTER" build apk --debug -t tool/semantic_search/eval_main.dart --dart-define="QUERIES_JSON=$QUERIES"
+"$FLUTTER" build apk --debug -t tool/semantic_search/eval_main.dart --dart-define="QUERIES_JSON=$QUERIES" --dart-define="OOS_JSON=$OOS"
 
 echo "安裝到 ${DEVICE}（會先移除舊的 com.example.townpass，等於第一次啟動）"
 "$ADB" -s "$DEVICE" uninstall com.example.townpass >/dev/null 2>&1 || true
