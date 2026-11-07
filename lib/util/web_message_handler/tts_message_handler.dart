@@ -14,6 +14,27 @@ class TtsMessageHandler extends TPWebMessageHandler {
   @override
   String get name => 'tts';
 
+  /// 同語言（zh-TW ≈ zh_TW ≈ cmn-TW）、不需要網路、已安裝的語音；找不到回 null。
+  Future<Map<String, String>?> _offlineVoice(String locale) async {
+    final want = locale.toLowerCase().replaceAll('_', '-');
+    final region = want.contains('-') ? want.split('-').last : '';
+    final lang = want.split('-').first;
+    final voices = ((await _tts.getVoices) as List?) ?? const [];
+    for (final v in voices) {
+      if (v is! Map) continue;
+      final loc = '${v['locale'] ?? ''}'.toLowerCase().replaceAll('_', '-');
+      final sameLang = loc.startsWith('$lang-') || loc == lang || (lang == 'zh' && loc.startsWith('cmn-'));
+      if (!sameLang || (region.isNotEmpty && !loc.endsWith('-$region'))) continue;
+      final network = '${v['network_required'] ?? ''}';
+      final features = '${v['features'] ?? ''}';
+      final name = '${v['name'] ?? ''}';
+      if (network == '1' || network == 'true' || name.contains('network') || name.endsWith('-server')) continue;
+      if (features.contains('notInstalled')) continue;
+      return {'name': name, 'locale': '${v['locale']}'};
+    }
+    return null;
+  }
+
   @override
   Future<void> handle({
     required Object? message,
@@ -38,6 +59,15 @@ class TtsMessageHandler extends TPWebMessageHandler {
           return;
         }
         await _tts.setLanguage(locale);
+        // 只用裝置端語音：Google 語音引擎在沒有離線語音時會改用雲端合成（例如 cmn-tw-x-ctc-server），
+        // 違反「執行時推論在裝置端」，飛航模式也念不出來 → 明確挑一個不需要網路、已安裝的同語言語音。
+        final voice = await _offlineVoice(locale);
+        if (voice == null) {
+          _locale = null;
+          onReply?.call(replyWebMessage(data: {'error': '這台手機沒有離線中文語音，請到設定的「文字轉語音」下載中文語音'}));
+          return;
+        }
+        await _tts.setVoice(voice);
         _locale = locale;
       }
       await _tts.setSpeechRate(rate * 0.5);

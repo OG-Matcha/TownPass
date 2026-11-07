@@ -54,7 +54,7 @@ Here are some quick setup guide.
 | 輸入長度 | 向量用 `sentenceSimilarity` 任務，文件與問題同一顆模型、同一種用法；模型上限 1024 tokens，問題超過 200 字不送進模型 |
 | 推論框架 | `flutter_edge_ai` 2.5.5 ＋ `flutter_edge_ai_litertlm` 1.19.1（Google LiteRT-LM），CPU 推論 |
 | 來源 URL | https://huggingface.co/litert-community/embeddinggemma-2-text-270m-litert-lm |
-| 授權 | 該 Hugging Face repo 標示 Apache-2.0（公開、不需 token）；基礎模型為 Google EmbeddingGemma（受 Gemma Terms of Use 約束，已確認接受）。上線前請再核對 repo 的 LICENSE 頁 |
+| 授權 | Apache-2.0：轉換版 repo 與基礎模型 [google/embeddinggemma-2](https://huggingface.co/google/embeddinggemma-2) 的 model card 都標示 `license: apache-2.0`、不需登入（2026-11-08 以 Hugging Face API 核對）。不是舊版 EmbeddingGemma 的 Gemma Terms of Use |
 | 廠牌 | Google（非中國廠牌；未使用 Qwen、DeepSeek、BGE 等） |
 
 模型檔不進 git。取得：`bash tool/semantic_search/fetch_model.sh`（固定修訂版並驗證 SHA-256，會放到 `assets/models/`）。
