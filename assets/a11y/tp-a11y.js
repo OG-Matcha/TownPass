@@ -659,18 +659,23 @@
       showView("main", false);
       findBtn.hidden = false;
       findBtn.style.pointerEvents = "";
-      animate(findBtn, [{ opacity: 0, transform: "translateX(24px) scale(.6)" }, { opacity: 1, transform: "none" }], {
-        duration: 300,
-        delay: 60,
-        easing: EASE.pop,
-        fill: "backwards",
-      });
-      setFab(true);
-      // 從「輔助」鈕的位置彈出（transform-origin 跟著慣用手）
-      animate(panel, [
-        { opacity: 0, transform: "translateY(16px) scale(.85)" },
+      // 水珠分裂：從「關閉」的位置被拉長、甩出去，再彈回圓形
+      var d = findOffset();
+      animate(findBtn, [
+        { opacity: 0, transform: "translateX(" + d + "px) scale(.5)" },
+        { opacity: 1, transform: "translateX(" + d * 0.3 + "px) scale(1.28,.78)", offset: 0.45 },
+        { transform: "translateX(" + -d * 0.06 + "px) scale(.93,1.07)", offset: 0.72 },
+        { transform: "scale(1.03,.97)", offset: 0.88 },
         { opacity: 1, transform: "none" },
-      ], { duration: 320, easing: EASE.pop });
+      ], { duration: 600, delay: 40, easing: "cubic-bezier(.3,.7,.4,1)", fill: "backwards" });
+      setFab(true);
+      // 像一滴水從「輔助」鈕的位置擴散開：圓形遮罩由鈕心長到整個選單，再帶一點回彈
+      var c = dropCenter(panel);
+      animate(panel, [
+        { clipPath: "circle(30px at " + c.x + "px " + c.y + "px)", transform: "scale(.96)", opacity: 0.6 },
+        { clipPath: "circle(" + c.r * 0.92 + "px at " + c.x + "px " + c.y + "px)", transform: "scale(1.012)", opacity: 1, offset: 0.7 },
+        { clipPath: "circle(" + c.r + "px at " + c.x + "px " + c.y + "px)", transform: "none", opacity: 1 },
+      ], { duration: 520, easing: "cubic-bezier(.22,.9,.3,1)" });
       // 格子由靠近拇指的那一格開始依序浮現（GSAP stagger from: "end"）
       var tiles = panel.querySelectorAll(".tile");
       for (var i = 0; i < tiles.length; i++) {
@@ -690,18 +695,24 @@
       scrim.style.pointerEvents = "none";
       panel.style.pointerEvents = "none";
       findBtn.style.pointerEvents = "none";
-      animate(findBtn, [{ opacity: 1 }, { opacity: 0, transform: "scale(.6)" }], { duration: 140, easing: EASE.in });
+      // 水珠被吸回「關閉」裡
+      animate(findBtn, [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateX(" + findOffset() + "px) scale(.4,.6)" }], {
+        duration: 220,
+        easing: EASE.in,
+      });
       var done = function () {
         if (panelOpen) return;
         panel.hidden = true;
         scrim.hidden = true;
         findBtn.hidden = true;
       };
-      var a = (panelOut = animate(panel, [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(10px) scale(.92)" }], {
-        duration: 140,
-        easing: EASE.in,
-      }));
-      animate(scrim, [{ opacity: 1 }, { opacity: 0 }], { duration: 140 });
+      // 收回成一滴水，縮進「輔助」鈕
+      var c = dropCenter(panel);
+      var a = (panelOut = animate(panel, [
+        { clipPath: "circle(" + c.r + "px at " + c.x + "px " + c.y + "px)", opacity: 1 },
+        { clipPath: "circle(28px at " + c.x + "px " + c.y + "px)", opacity: 0.4 },
+      ], { duration: 240, easing: EASE.in }));
+      animate(scrim, [{ opacity: 1 }, { opacity: 0 }], { duration: 240 });
       if (a) a.finished.then(done, done);
       else done();
       if (focusFab) fab.focus();
@@ -714,6 +725,51 @@
     scrim.addEventListener("click", function () {
       closePanel(true);
     });
+
+    /** 「找服務」相對「關閉」的水平距離（右手：在左邊 76px；左手：在右邊）。 */
+    function findOffset() {
+      return settings.hand === "left" ? -76 : 76;
+    }
+    /** 浮動鈕中心在 el 座標系的位置，以及能蓋滿 el 的圓半徑（水滴擴散用）。 */
+    function dropCenter(el) {
+      var pr = el.getBoundingClientRect();
+      var fr = fab.getBoundingClientRect();
+      var x = Math.round(fr.left + fr.width / 2 - pr.left);
+      var y = Math.round(fr.top + fr.height / 2 - pr.top);
+      var r = Math.ceil(Math.hypot(Math.max(x, pr.width - x), Math.max(y, pr.height - y)));
+      return { x: x, y: y, r: r };
+    }
+    /** 果凍回彈：用獨立的 scale 屬性，不跟按壓時的 transform 打架。 */
+    function jelly(el, amount) {
+      var k = amount || 1;
+      animate(el, [
+        { scale: "1" },
+        { scale: 1 + 0.06 * k + " " + (1 - 0.06 * k), offset: 0.25 },
+        { scale: 1 - 0.03 * k + " " + (1 + 0.03 * k), offset: 0.5 },
+        { scale: 1 + 0.012 * k + " " + (1 - 0.012 * k), offset: 0.75 },
+        { scale: "1" },
+      ], { duration: 520, easing: "ease-out" });
+    }
+    // 放開手指時，按到的按鈕像果凍晃一下
+    root.addEventListener("pointerup", function (ev) {
+      var b = ev.target && ev.target.closest && ev.target.closest("button");
+      if (b && !b.disabled && b.id !== "q-clear") jelly(b, b.id === "fab" || b.id === "find" ? 1.4 : 1);
+    });
+    // 玻璃上的光澤跟著手指流動
+    var sheenRaf = 0;
+    function sheen(el) {
+      el.addEventListener("pointermove", function (ev) {
+        if (sheenRaf || reducedMotion()) return;
+        sheenRaf = requestAnimationFrame(function () {
+          sheenRaf = 0;
+          var rc = el.getBoundingClientRect();
+          el.style.setProperty("--mx", Math.round(ev.clientX - rc.left) + "px");
+          el.style.setProperty("--my", Math.round(ev.clientY - rc.top) + "px");
+        });
+      });
+    }
+    sheen(panel);
+    sheen(dock);
 
     /** 被調整的那一項輕輕彈一下當作回饋（不另外跳泡泡蓋住畫面）。 */
     function flash(el) {
@@ -732,7 +788,12 @@
       dockOut = null;
       dock.hidden = false;
       fab.hidden = true; // 調整列有自己的「完成」，浮動鈕先讓位
-      animate(dock, [{ transform: "translateY(100%)" }, { transform: "none" }], { duration: 340, easing: EASE.soft });
+      animate(dock, [
+        { transform: "translateY(100%) scaleY(.9)" },
+        { transform: "translateY(-10px) scaleY(1.02)", offset: 0.65 },
+        { transform: "translateY(2px)", offset: 0.85 },
+        { transform: "none" },
+      ], { duration: 520, easing: "cubic-bezier(.22,.9,.3,1)" });
       var checked = dock.querySelector("[role=radio][aria-checked=true]");
       if (checked) checked.focus();
       say("字級與對比，調整後頁面會馬上變化");
@@ -753,7 +814,12 @@
     function pickLevel(id) {
       if (id === settings.fontLevel) return;
       update({ fontLevel: id });
-      flash($(".seg .thumb"));
+      animate($(".seg .thumb"), [
+        { scale: "1" },
+        { scale: "1.3 .84", offset: 0.35 },
+        { scale: ".95 1.05", offset: 0.7 },
+        { scale: "1" },
+      ], { duration: 500, easing: "ease-out" });
       say("字級：" + FONT_LEVELS[levelIndex(id)].label);
     }
     var radios = root.querySelectorAll(".seg [role=radio]");
@@ -773,6 +839,10 @@
     });
     $("#contrast").addEventListener("click", function () {
       update({ highContrast: !settings.highContrast });
+      animate($(".knob"), [{ scale: "1" }, { scale: "1.5 .78", offset: 0.4 }, { scale: ".92 1.08", offset: 0.75 }, { scale: "1" }], {
+        duration: 440,
+        easing: "ease-out",
+      });
       say(settings.highContrast ? "已開啟高對比" : "已關閉高對比");
     });
     $("#dock-done").addEventListener("click", function () {
@@ -1013,7 +1083,11 @@
       closeDock(false);
       toast.hidden = true;
       el.hidden = false;
-      animate(el, [{ opacity: 0, transform: "translateY(24px)" }, { opacity: 1, transform: "none" }], { duration: 220 });
+      animate(el, [
+        { opacity: 0, transform: "translateY(40px) scale(.94,.9)" },
+        { opacity: 1, transform: "translateY(-6px) scale(1.01,1.02)", offset: 0.65 },
+        { transform: "none" },
+      ], { duration: 460, easing: "cubic-bezier(.22,.9,.3,1)" });
       var f = el.querySelector(focusSel);
       if (f) f.focus();
     }
@@ -1734,6 +1808,8 @@
     "#panel,#dock,.sheet{background:var(--glass);-webkit-backdrop-filter:blur(28px) saturate(1.8);backdrop-filter:blur(28px) saturate(1.8);" +
     "border:1px solid rgba(255,255,255,.7);box-shadow:var(--glass-shadow)}" +
     "#dock{border-bottom:0}" +
+    "#panel,#dock{background:radial-gradient(circle 220px at var(--mx,22%) var(--my,0px),rgba(255,255,255,.7),rgba(255,255,255,0) 70%),var(--glass)}" +
+    ":host([data-contrast]) #panel,:host([data-contrast]) #dock{background:#fff}" +
     ".tile,.result,#search-back,#examples button{background:var(--glass-tile);border:1px solid rgba(255,255,255,.85);" +
     "box-shadow:inset 0 1px 0 #fff,0 1px 3px rgba(11,13,14,.08)}" +
     ".tile[aria-pressed=true]{background:var(--chip);border-color:var(--primary-800)}" +

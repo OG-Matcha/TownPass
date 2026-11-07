@@ -152,7 +152,7 @@ async function smallTargets(page) {
   const live = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.getElementById("live").textContent);
   check("報讀器仍會收到通知", live.includes("手邊"), live);
   await page.mouse.click(40, 60);
-  await page.waitForTimeout(250); // 等淡出結束
+  await page.waitForTimeout(400); // 等收起動畫結束
   check("點虛化的背景會收起操作列", !(await visibleIn(page, "#panel")) && !(await visibleIn(page, "#scrim")));
   check("點背景不會誤觸頁面", (await page.locator("#step1").isVisible()));
   await ctx.close();
@@ -434,7 +434,7 @@ async function smallTargets(page) {
   });
   check("展開時 Tab 只在操作列、找服務與浮動鈕之間循環", inside);
   await page.keyboard.press("Escape");
-  await page.waitForTimeout(250); // 等淡出結束
+  await page.waitForTimeout(400); // 等收起動畫結束
   const back = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
   check("Esc 收起並把焦點還給浮動鈕", back === "fab" && !(await visibleIn(page, "#panel")));
   await ctx.close();
