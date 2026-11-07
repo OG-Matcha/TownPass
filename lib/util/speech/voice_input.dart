@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
+
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -15,6 +17,9 @@ class VoiceInput {
   final SpeechToText _stt;
   bool _ready = false;
   Completer<Map<String, String>>? _pending;
+  /// 這一次聽到的最新文字（含中間結果）。Google 裝置端辨識有時「結束」通知比「最終結果」先到，
+  /// 結束時有字就用它，不要回「沒聽到」。
+  String _heard = '';
 
   bool get isListening => _stt.isListening;
 
@@ -25,16 +30,22 @@ class VoiceInput {
 
   void _onStatus(String status) {
     // 停止聆聽卻沒有最終結果 → 視為沒聽到
+    debugPrint('TPVoice status=$status heard=${_heard.length}');
     if (status == SpeechToText.doneStatus ||
         status == SpeechToText.notListeningStatus) {
       Future.delayed(
-        const Duration(milliseconds: 300),
-        () => _finish({'error': '沒有聽到聲音，請再說一次'}),
+        const Duration(milliseconds: 1200),
+        () => _finish(_heard.isNotEmpty ? {'text': _heard} : {'error': '沒有聽到聲音，請再說一次'}),
       );
     }
   }
 
   void _onError(SpeechRecognitionError error) {
+    debugPrint('TPVoice error=${error.errorMsg} permanent=${error.permanent} heard=${_heard.length}');
+    if (_heard.isNotEmpty) {
+      _finish({'text': _heard});
+      return;
+    }
     if (error.errorMsg == 'error_language_unavailable' ||
         error.errorMsg == 'error_language_not_supported') {
       _finish({'error': '手機還沒有下載中文離線語音', 'code': 'needs_pack'});
@@ -65,6 +76,7 @@ class VoiceInput {
       if (_stt.isListening) await _stt.cancel();
 
       _pending = Completer<Map<String, String>>();
+      _heard = '';
       await _stt.listen(
         listenOptions: SpeechListenOptions(
           // Google 裝置端辨識的中文（台灣）語音包登記為 cmn-Hant-TW。傳 zh-TW 時，若剛好等於手機系統語言，
@@ -73,11 +85,13 @@ class VoiceInput {
           listenFor: const Duration(seconds: 15),
           pauseFor: const Duration(seconds: 3),
           onDevice: true,
-          partialResults: false,
+          partialResults: true,
           cancelOnError: true,
           listenMode: ListenMode.search,
         ),
         onResult: (SpeechRecognitionResult r) {
+          debugPrint('TPVoice result final=${r.finalResult} len=${r.recognizedWords.length}');
+          if (r.recognizedWords.isNotEmpty) _heard = r.recognizedWords;
           if (r.finalResult && r.recognizedWords.isNotEmpty) {
             _finish({'text': r.recognizedWords});
           }
@@ -85,7 +99,7 @@ class VoiceInput {
       );
       return await _pending!.future.timeout(
         const Duration(seconds: 20),
-        onTimeout: () => {'error': '沒有聽到聲音，請再說一次'},
+        onTimeout: () => _heard.isNotEmpty ? {'text': _heard} : {'error': '沒有聽到聲音，請再說一次'},
       );
     } catch (_) {
       return {'error': '語音辨識失敗，請改用打字'};
