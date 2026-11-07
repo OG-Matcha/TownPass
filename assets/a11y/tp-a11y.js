@@ -948,9 +948,16 @@
     $("#q").addEventListener("input", function () {
       clearTimeout(searchTimer);
       var v = this.value;
+      $("#q-clear").hidden = !v;
       searchTimer = setTimeout(function () {
         renderResults(v);
       }, 250);
+    });
+    $("#q-clear").addEventListener("click", function () {
+      $("#q").value = "";
+      $("#q-clear").hidden = true;
+      renderResults("");
+      $("#q").focus();
     });
     $("#search-form").addEventListener("submit", function (ev) {
       ev.preventDefault();
@@ -962,6 +969,7 @@
     Array.prototype.forEach.call(root.querySelectorAll("#examples button"), function (b) {
       b.addEventListener("click", function () {
         $("#q").value = b.textContent;
+        $("#q-clear").hidden = false;
         renderResults(b.textContent);
       });
     });
@@ -980,6 +988,7 @@
       listenOnce().then(
         function (text) {
           $("#q").value = text;
+          $("#q-clear").hidden = false;
           renderResults(text);
         },
         function (err) {
@@ -1603,7 +1612,7 @@
     "[hidden]{display:none !important}" +
     "button,input{font:inherit;color:inherit}" +
     "button{cursor:pointer;-webkit-tap-highlight-color:transparent}" +
-    "button:focus-visible,input:focus-visible{outline:3px solid var(--ring);outline-offset:3px}" +
+    "button:focus-visible,input:focus-visible{outline:2px solid var(--ring);outline-offset:3px}" +
     "button:disabled{cursor:not-allowed;opacity:.45}" +
     // 浮動鈕：64×64，主色底＋深字（7.2:1）；展開時圖示轉成 ×、字變「關閉」
     "#fab{pointer-events:auto;position:fixed;bottom:var(--lift);right:var(--side);width:64px;height:64px;border-radius:32px;" +
@@ -1718,6 +1727,40 @@
     "background:#171b1d;color:#fff;border-radius:12px;padding:12px 16px;font-size:17px;box-shadow:var(--shadow)}" +
     "#hl{position:fixed;left:0;top:0;border:4px solid #f5ba4b;outline:2px solid #171b1d;border-radius:10px;transition:transform .2s ease,width .2s ease,height .2s ease}" +
     ".sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}" +
+    // ===== 液態玻璃與細框線（參考 iOS Liquid Glass；用 backdrop-filter，不用 WebGL） =====
+    // 文字一律在 78% 以上不透明的白色玻璃上，對比維持 7:1；高對比、降低透明度時改回實心。
+    ":host{--glass:rgba(255,255,255,.8);--glass-tile:rgba(255,255,255,.62);--hair:rgba(11,13,14,.14);--hi:rgba(255,255,255,.9);" +
+    "--glass-shadow:inset 0 1px 0 var(--hi),inset 0 -1px 0 rgba(11,13,14,.06),0 18px 48px rgba(11,13,14,.24),0 2px 6px rgba(11,13,14,.08)}" +
+    "#panel,#dock,.sheet{background:var(--glass);-webkit-backdrop-filter:blur(28px) saturate(1.8);backdrop-filter:blur(28px) saturate(1.8);" +
+    "border:1px solid rgba(255,255,255,.7);box-shadow:var(--glass-shadow)}" +
+    "#dock{border-bottom:0}" +
+    ".tile,.result,#search-back,#examples button{background:var(--glass-tile);border:1px solid rgba(255,255,255,.85);" +
+    "box-shadow:inset 0 1px 0 #fff,0 1px 3px rgba(11,13,14,.08)}" +
+    ".tile[aria-pressed=true]{background:var(--chip);border-color:var(--primary-800)}" +
+    ".seg{background:var(--glass-tile);border:1px solid var(--hair)}" +
+    ".seg .thumb{border:1px solid rgba(255,255,255,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 6px 16px rgba(34,71,78,.28)}" +
+    "#contrast,.btn.secondary,#call-1999{border:1px solid var(--hair);background:var(--glass-tile);box-shadow:inset 0 1px 0 #fff}" +
+    ".btn.primary,#q-go,form button[type=submit]{border:1px solid rgba(34,71,78,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 2px 8px rgba(34,71,78,.25)}" +
+    "#q-mic{border:1px solid var(--hair);background:var(--glass-tile);box-shadow:inset 0 1px 0 #fff}" +
+    // 浮動鈕：有色玻璃膠囊
+    "#fab{background:rgba(90,180,197,.88);border:1px solid rgba(255,255,255,.65);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);" +
+    "box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -2px 6px rgba(34,71,78,.25),0 10px 28px rgba(11,13,14,.28)}" +
+    "#find{background:var(--glass);border:1px solid rgba(255,255,255,.75);-webkit-backdrop-filter:blur(16px) saturate(1.6);backdrop-filter:blur(16px) saturate(1.6);" +
+    "box-shadow:inset 0 1px 0 #fff,0 10px 28px rgba(11,13,14,.22)}" +
+    "#find[aria-pressed=true]{background:rgba(90,180,197,.88)}" +
+    // 輸入框：維持 3:1 的實線邊框（看得出是輸入框）；聚焦時加深邊框＋外圍光暈，不再疊兩層框
+    "#q,#typed{border:1px solid #738995;background:rgba(255,255,255,.92)}" +
+    "#q:focus-visible,#typed:focus-visible{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px rgba(34,71,78,.28)}" +
+    ".qwrap{position:relative}#q{min-height:72px;padding-right:72px}" +
+    "#q::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}" +
+    "#q-clear{position:absolute;right:4px;top:4px;width:64px;height:64px;border:0;border-radius:14px;background:transparent;color:#475259;display:flex;align-items:center;justify-content:center}" +
+    "#q-clear:focus-visible{outline-offset:-3px}" +
+    // 高對比、使用者要求降低透明度：改回實心，框線加粗
+    ":host([data-contrast]) #panel,:host([data-contrast]) #dock,:host([data-contrast]) .sheet{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border:2px solid #0b0d0e;box-shadow:none}" +
+    ":host([data-contrast]) .tile,:host([data-contrast]) .result,:host([data-contrast]) #examples button,:host([data-contrast]) #contrast,:host([data-contrast]) .btn,:host([data-contrast]) #q-mic,:host([data-contrast]) #call-1999{background:#fff;border:2px solid #0b0d0e;box-shadow:none}" +
+    ":host([data-contrast]) #fab,:host([data-contrast]) #find{background:#0b0d0e;color:#fff;border:2px solid #fff;-webkit-backdrop-filter:none;backdrop-filter:none}" +
+    "@media (prefers-reduced-transparency:reduce){#panel,#dock,.sheet{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}" +
+    ".tile,.result,#examples button,#contrast,.btn.secondary,#q-mic,#call-1999{background:#f1f3f4}#fab{background:#5ab4c5}#find{background:#fff}}" +
     "@keyframes pulse{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.25);opacity:0}}" +
     "@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}" +
     "</style>" +
@@ -1736,7 +1779,8 @@
     "</div></div>" +
     '<div id="view-search" hidden><div class="sh"><button id="search-back" type="button" aria-label="回到操作輔助選單">' + icon(I.back) + '</button><b>找服務</b></div>' +
     '<form id="search-form" role="search"><label for="q">想辦什麼事</label>' +
-    '<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="想辦什麼事？例如：繳水費">' +
+    '<div class="qwrap"><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="想辦什麼事？例如：繳水費">' +
+    '<button id="q-clear" type="button" aria-label="清除" hidden>' + icon(I.close) + "</button></div>" +
     '<div class="qa"><button id="q-mic" type="button">' + icon(I.mic) + "用講的</button>" +
     '<button id="q-go" type="submit">' + icon(I.search) + "搜尋</button></div></form>" +
     '<p id="search-status" role="status" aria-live="polite"></p>' +

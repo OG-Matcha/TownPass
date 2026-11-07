@@ -202,6 +202,16 @@ async function smallTargets(page) {
   check("切換成搜尋頁、主選單格子隱藏", (await visibleIn(page, "#view-search")) && !(await visibleIn(page, "#view-main")));
   const focused = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
   check("焦點在輸入框", focused === "q", focused);
+  const ring = await page.evaluate(() => {
+    const q = document.querySelector("tp-a11y-layer").shadowRoot.getElementById("q");
+    const cs = getComputedStyle(q);
+    return { outline: cs.outlineStyle, shadow: cs.boxShadow, border: cs.borderTopWidth };
+  });
+  check("輸入框聚焦時只有一層框（不再疊外框）", ring.outline === "none" && ring.shadow !== "none" && ring.border === "1px", JSON.stringify(ring));
+  await layer(page).locator("#q").fill("借書");
+  check("輸入後出現清除鈕", await visibleIn(page, "#q-clear"));
+  await layer(page).locator("#q-clear").click();
+  check("按清除會清空並回到常見問題", (await layer(page).locator("#q").inputValue()) === "" && (await visibleIn(page, "#examples")) && !(await visibleIn(page, "#q-clear")));
   check("還沒輸入時顯示常見問題", await visibleIn(page, "#examples"));
   const m = await layer(page).locator("#q-mic").boundingBox();
   const g = await layer(page).locator("#q-go").boundingBox();
