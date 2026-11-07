@@ -83,5 +83,23 @@ eq("設定清理", core.sanitizeSettings({ fontLevel: "huge", hand: "left", high
 eq("字級往上到頂不再變", core.stepLevel("xlarge", 1), "xlarge");
 eq("字級往下", core.stepLevel("large", -1), "normal");
 
+// 找服務：市民的一句話 → 第一個推薦的服務
+const top = (q) => core.searchServices(q)[0]?.service.id ?? null;
+for (const [q, want] of [
+  ["路燈壞了", "reportIssue"],
+  ["我要預約臨櫃", "reservation"],
+  ["戶政事務所要排隊嗎", "reservation"],
+  ["家門口淹水", "disasterReport"],
+  ["附近的無障礙廁所", "surrounding"],
+  ["申請身障補助", "districtOffice"],
+  ["借書", "library"],
+  ["我不知道要找誰，想問人", "dedicatedLine"],
+  ["臨櫃叫號", "reservation"],
+  ["今天天氣很好", null],
+  ["", null],
+]) eq(`找服務「${q}」`, top(q), want);
+eq("推薦理由列出命中的關鍵字", core.searchServices("路燈壞了")[0].reasons, ["路燈", "壞了"]);
+eq("最多 5 個結果", core.searchServices("附近 申請 預約 淹水 借書 路燈 電話").length <= 5, true);
+
 console.log(fail ? `\n${fail} 項失敗` : "\n全部通過");
 process.exit(fail ? 1 : 0);

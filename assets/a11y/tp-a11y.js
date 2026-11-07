@@ -212,7 +212,59 @@
     return Math.round((String(text).length / (4 * (rate || 1))) * 1000) + 1500;
   }
 
+  // 找服務：服務名稱、說明、網址取自 App 的 lib/page/city_service/model/my_service_model.dart（只列有網址的）；
+  // keywords 是我們整理的「市民會怎麼說」對照表（不是官方資料）。之後改由 App 透過 handler 提供完整清單。
+  var SERVICES = [
+    { id: "districtOffice", title: "申辦服務", desc: "線上申辦市政府各項服務", url: "https://taipei-pass-service.vercel.app/",
+      keywords: ["申請", "申辦", "補助", "津貼", "證明", "身障", "身心障礙", "手冊", "低收", "謄本", "線上辦", "表單"] },
+    { id: "reportIssue", title: "有話要說", desc: "陳情、反映市政問題", url: "https://taipei-pass-service.vercel.app/citizen-report/",
+      keywords: ["陳情", "檢舉", "反映", "抱怨", "建議", "路燈", "壞了", "坑洞", "噪音", "違停", "垃圾", "人行道"] },
+    { id: "reservation", title: "臨櫃叫號", desc: "查看臨櫃叫號、預約臨櫃時段", url: "https://taipei-pass-service.vercel.app/counter-calling/",
+      keywords: ["叫號", "排隊", "預約", "臨櫃", "櫃台", "戶政", "區公所", "號碼", "等多久", "現場"] },
+    { id: "disasterReport", title: "災情通報", desc: "立即通報發生災情的地點", url: "https://taipei-pass-service.vercel.app/disaster-report",
+      keywords: ["災情", "淹水", "積水", "倒樹", "颱風", "地震", "坍方", "土石", "停電", "危險", "通報"] },
+    { id: "library", title: "圖書借閱", desc: "查詢與借閱市立圖書館館藏", url: "https://taipei-pass-service.vercel.app/library-service/",
+      keywords: ["借書", "還書", "圖書館", "書", "館藏", "續借"] },
+    { id: "surrounding", title: "找地點", desc: "找附近的公共設施與地點", url: "https://taipei-pass-service.vercel.app/surrounding-service/",
+      keywords: ["附近", "地點", "哪裡", "廁所", "無障礙", "電梯", "停車", "公園", "怎麼去", "地圖", "設施"] },
+    { id: "dedicatedLine", title: "1999 市民熱線", desc: "打電話請專人協助", tel: "1999",
+      keywords: ["電話", "打電話", "客服", "問人", "專人", "熱線", "不知道", "不會用", "幫忙"] },
+  ];
+  var SEARCH_EXAMPLES = ["預約臨櫃", "路燈壞了", "家門口淹水", "附近的無障礙廁所", "申請身障補助", "借書"];
+
+  /**
+   * 依市民的一句話找出可能的服務，回傳 [{ service, score, reasons }]（分數高的在前、最多 5 個）。
+   * 規則：說到關鍵字 +3（越長越準），提到服務名稱 +5，與名稱或說明有相同的兩字詞 +1。
+   */
+  function searchServices(query, catalog) {
+    var q = norm(query).replace(/^(我要|我想|請問|要怎麼|怎麼|如何|幫我)+/, "");
+    if (!q) return [];
+    var out = [];
+    (catalog || SERVICES).forEach(function (sv) {
+      var score = 0;
+      var reasons = [];
+      sv.keywords.forEach(function (k) {
+        if (q.indexOf(norm(k)) >= 0) {
+          score += 2 + Math.min(k.length, 4);
+          reasons.push(k);
+        }
+      });
+      var title = norm(sv.title);
+      if (q.indexOf(title) >= 0 || (q.length >= 2 && title.indexOf(q) >= 0)) {
+        score += 5;
+        if (reasons.indexOf(sv.title) < 0) reasons.push(sv.title);
+      }
+      var hay = title + norm(sv.desc);
+      for (var i = 0; i + 1 < q.length; i++) if (hay.indexOf(q.slice(i, i + 2)) >= 0) score += 1;
+      if (score > 0) out.push({ service: sv, score: score, reasons: reasons.slice(0, 3) });
+    });
+    out.sort(function (a, b) { return b.score - a.score; });
+    return out.slice(0, 5);
+  }
+
   var core = {
+    SERVICES: SERVICES,
+    searchServices: searchServices,
     FONT_LEVELS: FONT_LEVELS,
     MISS: MISS,
     DEFAULTS: DEFAULTS,
@@ -352,6 +404,9 @@
     var highlight = $("#hl");
     var scrim = $("#scrim");
     var dock = $("#dock");
+    var findBtn = $("#find");
+    var viewMain = $("#view-main");
+    var viewSearch = $("#view-search");
 
     // ---------------- 設定套用 ----------------
     var pageStyle = document.createElement("style");
@@ -580,6 +635,15 @@
       scrim.hidden = false;
       animate(scrim, [{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: EASE.out });
       panel.hidden = false;
+      showView("main", false);
+      findBtn.hidden = false;
+      findBtn.style.pointerEvents = "";
+      animate(findBtn, [{ opacity: 0, transform: "translateX(24px) scale(.6)" }, { opacity: 1, transform: "none" }], {
+        duration: 300,
+        delay: 60,
+        easing: EASE.pop,
+        fill: "backwards",
+      });
       setFab(true);
       // 從「輔助」鈕的位置彈出（transform-origin 跟著慣用手）
       animate(panel, [
@@ -604,10 +668,13 @@
       // 淡出的這段時間不能擋住頁面：一開始收起就不再攔截點擊
       scrim.style.pointerEvents = "none";
       panel.style.pointerEvents = "none";
+      findBtn.style.pointerEvents = "none";
+      animate(findBtn, [{ opacity: 1 }, { opacity: 0, transform: "scale(.6)" }], { duration: 140, easing: EASE.in });
       var done = function () {
         if (panelOpen) return;
         panel.hidden = true;
         scrim.hidden = true;
+        findBtn.hidden = true;
       };
       var a = (panelOut = animate(panel, [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(10px) scale(.92)" }], {
         duration: 140,
@@ -703,7 +770,10 @@
     );
     root.addEventListener("keydown", function (ev) {
       if (ev.key === "Tab" && isOpen()) {
-        var list = Array.prototype.slice.call(panel.querySelectorAll("button:not([disabled])")).concat([fab]);
+        var list = Array.prototype.slice
+          .call(panel.querySelectorAll("button:not([disabled]), input"))
+          .filter(function (el) { return el.getClientRects().length > 0; })
+          .concat([findBtn, fab]);
         var i = list.indexOf(root.activeElement);
         var next = ev.shiftKey ? (i <= 0 ? list.length - 1 : i - 1) : i === list.length - 1 ? 0 : i + 1;
         ev.preventDefault();
@@ -711,7 +781,8 @@
         return;
       }
       if (ev.key !== "Escape") return;
-      if (isOpen()) closePanel(true);
+      if (isOpen() && currentView === "search") showView("main", true);
+      else if (isOpen()) closePanel(true);
       else if (dockOpen) closeDock(true);
       else if (!ask.hidden || !listenSheet.hidden || !confirmSheet.hidden) {
         closeSheets();
@@ -741,6 +812,144 @@
         easing: EASE.soft,
       });
       $("#hand").focus();
+    });
+
+    // ---------------- 找服務（主選單切換成搜尋頁） ----------------
+    var currentView = "main";
+    function showView(name, animated) {
+      var toSearch = name === "search";
+      if (currentView === name && animated) return;
+      currentView = name;
+      viewMain.hidden = toSearch;
+      viewSearch.hidden = !toSearch;
+      findBtn.setAttribute("aria-pressed", String(toSearch));
+      findBtn.setAttribute("aria-label", toSearch ? "回到操作輔助選單" : "找服務");
+      $("#find-label").textContent = toSearch ? "選單" : "找服務";
+      animate(findBtn.querySelector(toSearch ? ".i-menu" : ".i-find"), [{ transform: "scale(.4) rotate(-45deg)", opacity: 0 }, { transform: "none", opacity: 1 }], {
+        duration: 240,
+        easing: EASE.pop,
+      });
+      if (animated) {
+        animate(toSearch ? viewSearch : viewMain, [
+          { opacity: 0, transform: "translateX(" + (toSearch ? 40 : -40) + "px)" },
+          { opacity: 1, transform: "none" },
+        ], { duration: 260, easing: EASE.soft });
+      }
+      if (toSearch) {
+        $("#q-mic").hidden = voiceSource() === "none";
+        renderResults($("#q").value);
+        if (animated) $("#q").focus();
+      } else if (animated) {
+        var t = panel.querySelector("#display");
+        if (t) t.focus();
+      }
+    }
+    findBtn.addEventListener("click", function () {
+      showView(currentView === "search" ? "main" : "search", true);
+    });
+    $("#search-back").addEventListener("click", function () {
+      showView("main", true);
+    });
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function goService(sv) {
+      if (sv.tel) {
+        var f = flutter();
+        if (f) f.postMessage(JSON.stringify({ name: "phone_call", data: sv.tel }));
+        else location.href = "tel:" + sv.tel;
+        return;
+      }
+      say("前往「" + sv.title + "」");
+      closePanel(false);
+      // 在同一個 WebView 裡打開，App 左上角的返回鍵可以回到這裡
+      setTimeout(function () {
+        location.href = sv.url;
+      }, reducedMotion() ? 0 : 180);
+    }
+
+    var searchTimer = null;
+    function renderResults(query) {
+      var list = $("#results");
+      var examples = $("#examples");
+      list.textContent = "";
+      var q = String(query || "").trim();
+      examples.hidden = !!q;
+      $("#search-help").hidden = !q;
+      if (!q) {
+        $("#search-status").textContent = "";
+        return;
+      }
+      var hits = searchServices(q);
+      $("#search-status").textContent = hits.length ? "找到 " + hits.length + " 個可能的服務" : "找不到相關的服務，可以換個說法，或打電話問 1999";
+      hits.forEach(function (h, i) {
+        var li = el("li");
+        var b = el("button", "result");
+        b.type = "button";
+        var ic = el("span", "ic", h.service.title.slice(0, 1));
+        ic.setAttribute("aria-hidden", "true");
+        var t = el("span", "t");
+        t.appendChild(el("span", "l", h.service.title));
+        t.appendChild(el("span", "s", h.service.desc));
+        if (h.reasons.length) t.appendChild(el("span", "why", "因為提到「" + h.reasons.join("」「") + "」"));
+        var go = el("span", "go", h.service.tel ? "撥打" : "前往");
+        go.setAttribute("aria-hidden", "true");
+        b.appendChild(ic);
+        b.appendChild(t);
+        b.appendChild(go);
+        b.addEventListener("click", function () {
+          goService(h.service);
+        });
+        li.appendChild(b);
+        list.appendChild(li);
+        animate(li, [{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }], {
+          duration: 240,
+          delay: i * 40,
+          easing: EASE.out,
+          fill: "backwards",
+        });
+      });
+    }
+    $("#q").addEventListener("input", function () {
+      clearTimeout(searchTimer);
+      var v = this.value;
+      searchTimer = setTimeout(function () {
+        renderResults(v);
+      }, 250);
+    });
+    $("#search-form").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      clearTimeout(searchTimer);
+      renderResults($("#q").value);
+      var first = $("#results button");
+      if (first) first.focus();
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("#examples button"), function (b) {
+      b.addEventListener("click", function () {
+        $("#q").value = b.textContent;
+        renderResults(b.textContent);
+      });
+    });
+    $("#call-1999").addEventListener("click", function () {
+      goService(SERVICES[SERVICES.length - 1]);
+    });
+    // 用講的輸入問題（裝置端辨識；瀏覽器只在本機開發時可用）
+    $("#q-mic").addEventListener("click", function () {
+      $("#search-status").textContent = "請說你想辦什麼事";
+      listenOnce().then(
+        function (text) {
+          $("#q").value = text;
+          renderResults(text);
+        },
+        function (err) {
+          $("#search-status").textContent = err.message;
+        },
+      );
     });
 
     function goBack() {
@@ -1325,6 +1534,9 @@
     swap: '<path d="M4 8h14l-3-3M20 16H6l3 3"/>',
     close: '<path d="M6 6l12 12M18 6 6 18"/>',
     send: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    grid: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+    search: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+    phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
     textsize: '<path d="M3 7V5h11v2M8.5 5v14M6.5 19h4"/><path d="M14 12v-1.5h7V12M17.5 10.5V19M16 19h3"/>',
   };
 
@@ -1373,6 +1585,42 @@
     ".tile .s{font-size:15px;color:var(--sub)}" +
     ".tile .go{margin-left:auto;font-size:26px;line-height:1;color:var(--sub)}" +
     ".tile[aria-pressed=true]{background:var(--chip);border-color:var(--primary-800)}" +
+    // 「找服務」鈕：主選單打開時出現在「關閉」旁邊
+    "#find{pointer-events:auto;position:fixed;bottom:var(--lift);right:calc(var(--side) + 76px);width:64px;height:64px;border-radius:32px;" +
+    "border:2px solid var(--primary-800);background:var(--surface);color:var(--primary-800);box-shadow:var(--shadow);" +
+    "display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;font-size:13px;font-weight:600;" +
+    "transition:transform .18s cubic-bezier(.175,.885,.32,1.275)}" +
+    "#find:active{transform:scale(.9)}#find svg{width:24px;height:24px}" +
+    "#find .i-find,#find .i-menu{display:block;height:24px}#find .i-menu{display:none}#find[aria-pressed=true] .i-menu{display:block}#find[aria-pressed=true] .i-find{display:none}" +
+    "#find[aria-pressed=true]{background:var(--primary);color:var(--on-primary)}" +
+    ":host([data-hand=left]) #find{right:auto;left:calc(var(--side) + 76px)}" +
+    // 搜尋頁
+    ".sh{display:flex;align-items:center;gap:8px;margin:-4px 0 10px}" +
+    "#search-back{min-width:64px;min-height:64px;border:0;border-radius:16px;background:var(--tile);display:flex;align-items:center;justify-content:center}" +
+    ".sh b{font-size:20px}" +
+    "#search-form{display:flex;flex-direction:column;gap:8px;margin:0 0 10px}" +
+    ".qa{display:flex;gap:8px}" +
+    "#search-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}" +
+    "#q{width:100%;min-height:64px;border:2px solid var(--line);border-radius:16px;padding:0 14px;background:var(--surface);font-size:18px}" +
+    "#q::placeholder{color:#5e6d76}" +
+    "#q-mic,#q-go{flex:1;min-height:64px;border-radius:16px;border:2px solid var(--primary-800);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600}" +
+    "#q-mic{background:var(--surface);color:var(--primary-800)}#q-go{background:var(--primary);color:var(--on-primary)}" +
+    "#search-status{margin:0 4px 8px;font-size:16px;font-weight:600;min-height:1em}" +
+    "#search-status:empty{display:none}" +
+    "#examples .cap{display:block;font-size:15px;color:var(--sub);margin:4px 4px 8px}" +
+    "#examples .chips{display:flex;flex-wrap:wrap;gap:8px}" +
+    "#examples button{min-height:64px;padding:8px 16px;border-radius:32px;border:2px solid var(--line);background:var(--tile);font-weight:600}" +
+    "#results{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}" +
+    ".result{width:100%;display:flex;align-items:center;gap:12px;min-height:80px;padding:12px;border:2px solid transparent;border-radius:18px;background:var(--tile);text-align:left;" +
+    "transition:transform .18s cubic-bezier(.175,.885,.32,1.275)}" +
+    ".result:active{transform:scale(.97)}" +
+    ".result .ic{flex:none;width:48px;height:48px;border-radius:24px;background:var(--chip);color:var(--primary-800);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}" +
+    ".result .t{flex:1;display:flex;flex-direction:column;min-width:0}.result .l{font-weight:600;font-size:18px}.result .s{font-size:15px;color:var(--sub)}" +
+    ".result .why{font-size:14px;color:var(--primary-800);margin-top:2px}" +
+    ".result .go{flex:none;padding:6px 12px;border-radius:16px;background:var(--primary);color:var(--on-primary);font-weight:600;font-size:15px}" +
+    ":host([data-contrast]) .result{border-color:#0b0d0e}" +
+    "#search-help{margin-top:10px}" +
+    "#call-1999{width:100%;min-height:64px;border-radius:16px;border:2px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600}" +
     // 調整列：貼底、不虛化背景，邊調邊看
     "#dock{pointer-events:auto;position:fixed;left:0;right:0;bottom:0;max-width:560px;margin:0 auto;background:var(--surface);" +
     "border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0;box-shadow:0 -10px 32px rgba(11,13,14,.22);" +
@@ -1426,7 +1674,7 @@
     '<div id="hl" hidden></div>' +
     '<div id="scrim" aria-hidden="true" hidden></div>' +
     '<div id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>' +
-    '<div class="ph"><b id="panel-title">操作輔助</b></div><div class="grid">' +
+    '<div id="view-main"><div class="ph"><b id="panel-title">操作輔助</b></div><div class="grid">' +
     '<button class="tile" id="read" type="button" aria-pressed="false"><span class="ic">' + icon(I.speaker) + '</span>' +
     '<span class="t"><span class="l" id="read-label">念這頁</span><span class="s">再按一次停止</span></span></button>' +
     '<button class="tile" id="voice" type="button"><span class="ic">' + icon(I.mic) + '</span>' +
@@ -1436,6 +1684,19 @@
     '<button class="tile" id="back" type="button"><span class="ic">' + icon(I.back) + '</span><span class="t"><span class="l">回上一頁</span></span></button>' +
     '<button class="tile" id="hand" type="button"><span class="ic">' + icon(I.swap) + '</span><span class="t"><span class="l" id="hand-label">換到左手</span></span></button>' +
     "</div></div>" +
+    '<div id="view-search" hidden><div class="sh"><button id="search-back" type="button" aria-label="回到操作輔助選單">' + icon(I.back) + '</button><b>找服務</b></div>' +
+    '<form id="search-form" role="search"><label for="q">想辦什麼事</label>' +
+    '<input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="想辦什麼事？例如：繳水費">' +
+    '<div class="qa"><button id="q-mic" type="button">' + icon(I.mic) + "用講的</button>" +
+    '<button id="q-go" type="submit">' + icon(I.search) + "搜尋</button></div></form>" +
+    '<p id="search-status" role="status" aria-live="polite"></p>' +
+    '<div id="examples"><span class="cap">常見的問題，點一下就幫你找</span><div class="chips">' +
+    SEARCH_EXAMPLES.map(function (t) { return '<button type="button">' + t + "</button>"; }).join("") +
+    "</div></div>" +
+    '<ul id="results" aria-label="可能的服務"></ul>' +
+    '<div id="search-help" hidden><button id="call-1999" type="button">' + icon(I.phone) + "都不是？打電話問 1999</button></div>" +
+    "</div></div>" +
+    '<button id="find" type="button" aria-pressed="false" aria-label="找服務" hidden><span class="i-find">' + icon(I.search) + '</span><span class="i-menu">' + icon(I.grid) + '</span><span id="find-label" aria-hidden="true">找服務</span></button>' +
     '<div id="dock" role="dialog" aria-modal="false" aria-labelledby="dock-title" aria-describedby="dock-desc" hidden>' +
     '<div class="grab" aria-hidden="true"></div><h2 id="dock-title">字級與對比</h2><p class="ds" id="dock-desc">邊調邊看，頁面會馬上變化</p>' +
     '<div class="seg" role="radiogroup" aria-label="字級" data-i="0"><span class="thumb" aria-hidden="true"></span>' +

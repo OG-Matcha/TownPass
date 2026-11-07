@@ -182,6 +182,53 @@ async function smallTargets(page) {
   await ctx.close();
 }
 
+// ---------- 找服務：關閉鈕旁的搜尋鈕 → 搜尋頁 → 結果 → 前往 ----------
+{
+  const { ctx, page } = await open(SERVICE);
+  check("主選單沒開時看不到「找服務」", !(await visibleIn(page, "#find")));
+  await layer(page).locator("#fab").click();
+  await settle(page);
+  const f = await layer(page).locator("#find").boundingBox();
+  const c = await layer(page).locator("#fab").boundingBox();
+  check("「找服務」在「關閉」旁邊、同一高度", f && Math.abs(f.y - c.y) < 2 && c.x - (f.x + f.width) > 4 && c.x - (f.x + f.width) < 20, `間距 ${Math.round(c.x - f.x - f.width)}px`);
+  await layer(page).locator("#find").click();
+  await settle(page);
+  check("切換成搜尋頁、主選單格子隱藏", (await visibleIn(page, "#view-search")) && !(await visibleIn(page, "#view-main")));
+  const focused = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
+  check("焦點在輸入框", focused === "q", focused);
+  check("還沒輸入時顯示常見問題", await visibleIn(page, "#examples"));
+  check("搜尋頁觸控目標 ≥ 64px", (await smallTargets(page)).length === 0, (await smallTargets(page)).join("、"));
+  const own = async () => (await axe(page)).filter((v) => v.includes("tp-a11y-layer")); // 只看操作輔助層自己（模擬頁本身的淺灰字另計）
+  check("搜尋頁 axe 沒有違規", (await own()).length === 0, (await own()).slice(0, 3).join("；"));
+  await layer(page).locator("#q").fill("路燈壞了");
+  await layer(page).locator("#q").press("Enter");
+  const first = await layer(page).locator("#results .result").first().textContent();
+  check("「路燈壞了」→ 第一個是有話要說", first.includes("有話要說") && first.includes("路燈"), first);
+  check("有結果時顯示 1999 備案", await visibleIn(page, "#call-1999"));
+  check("結果清單 axe 沒有違規", (await own()).length === 0, (await own()).slice(0, 3).join("；"));
+  check("結果清單觸控目標 ≥ 64px", (await smallTargets(page)).length === 0, (await smallTargets(page)).join("、"));
+  await layer(page).locator("#examples button", { hasText: "家門口淹水" }).count();
+  await layer(page).locator("#q").fill("");
+  await layer(page).locator("#q").press("Enter");
+  await layer(page).locator("#examples button", { hasText: "家門口淹水" }).click();
+  check("點常見問題就搜尋", (await layer(page).locator("#results .result").first().textContent()).includes("災情通報"));
+  await layer(page).locator("#q").fill("今天天氣很好");
+  await layer(page).locator("#q").press("Enter");
+  check("找不到時說明並提供 1999", ((await layer(page).locator("#search-status").textContent()) || "").includes("1999") && (await visibleIn(page, "#call-1999")));
+  await page.keyboard.press("Escape");
+  await settle(page);
+  check("Esc 先回到主選單", (await visibleIn(page, "#view-main")) && (await visibleIn(page, "#panel")));
+  // 前往：攔截對外網址，確認真的導過去
+  await page.route("https://taipei-pass-service.vercel.app/**", (r) => r.fulfill({ contentType: "text/html", body: "<title>臨櫃叫號</title><p>ok</p>" }));
+  await layer(page).locator("#find").click();
+  await layer(page).locator("#q").fill("預約臨櫃");
+  await layer(page).locator("#q").press("Enter");
+  await layer(page).locator("#results .result").first().click();
+  await page.waitForURL("**/counter-calling/**", { timeout: 3000 }).catch(() => {});
+  check("點結果會前往該服務", page.url().includes("counter-calling"), page.url());
+  await ctx.close();
+}
+
 // ---------- 驗收 2：按偏 3 次 → 詢問 → 同意 → 放大，重新開啟仍維持 ----------
 {
   const { ctx, page } = await open(SERVICE);
@@ -341,9 +388,9 @@ async function smallTargets(page) {
   for (let i = 0; i < 12; i++) await page.keyboard.press("Tab");
   const inside = await page.evaluate(() => {
     const r = document.querySelector("tp-a11y-layer").shadowRoot;
-    return !!r.activeElement && (r.getElementById("panel").contains(r.activeElement) || r.activeElement.id === "fab");
+    return !!r.activeElement && (r.getElementById("panel").contains(r.activeElement) || ["fab", "find"].includes(r.activeElement.id));
   });
-  check("展開時 Tab 只在操作列與浮動鈕之間循環", inside);
+  check("展開時 Tab 只在操作列、找服務與浮動鈕之間循環", inside);
   await page.keyboard.press("Escape");
   await page.waitForTimeout(250); // 等淡出結束
   const back = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
