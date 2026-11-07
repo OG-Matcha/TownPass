@@ -61,6 +61,8 @@ void main() {
     await tester.pump(const Duration(milliseconds: 50));
     expect(find.text('寵物安心遛'), findsOneWidget);
     expect(find.textContaining('還沒開通'), findsOneWidget);
+    // 「為什麼找到它」要和「還沒開通」並列，不能被蓋掉。
+    expect(find.text('意思和你說的很接近'), findsOneWidget);
     expect(find.text('撥 1999'), findsOneWidget);
     await tester.tap(find.text('寵物安心遛'));
     expect(calls, ['1999']);

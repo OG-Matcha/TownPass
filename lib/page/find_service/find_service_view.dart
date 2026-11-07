@@ -268,21 +268,30 @@ class _ResultTile extends StatelessWidget {
   final SearchHit hit;
   final VoidCallback onTap;
 
+  /// 為什麼找到它。沒入口的服務也要說明，使用者才知道這個結果怎麼來的。
   String get _why {
-    if (hit.service.unavailable) return '這項服務還沒開通，可以撥 1999 詢問';
     if (hit.reasons.isNotEmpty) return '因為提到「${hit.reasons.join('」「')}」';
     if (hit.semantic) return '意思和你說的很接近';
     return '';
   }
+
+  /// 沒入口（還沒開通）的提醒，與「為什麼找到」分開兩行。
+  String get _notice => hit.service.unavailable ? '這項服務還沒開通，可以撥 1999 詢問' : '';
 
   String get _action => hit.service.unavailable ? '撥 1999' : (hit.service.tel.isNotEmpty ? '撥打' : '前往');
 
   @override
   Widget build(BuildContext context) {
     final why = _why;
+    final notice = _notice;
     return Semantics(
       button: true,
-      label: '${hit.service.title}，${hit.service.desc}。$why。$_action',
+      label: [
+        '${hit.service.title}，${hit.service.desc}',
+        if (why.isNotEmpty) why,
+        if (notice.isNotEmpty) notice,
+        _action,
+      ].join('。'),
       excludeSemantics: true,
       child: _Tile(
         onTap: onTap,
@@ -304,6 +313,8 @@ class _ResultTile extends StatelessWidget {
                   Text(hit.service.title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
                   Text(hit.service.desc, style: const TextStyle(fontSize: 14, color: TPColors.grayscale600)),
                   if (why.isNotEmpty) Text(why, style: const TextStyle(fontSize: 14, color: TPColors.primary800)),
+                  if (notice.isNotEmpty)
+                    Text(notice, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: TPColors.grayscale700)),
                 ],
               ),
             ),
