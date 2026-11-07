@@ -203,6 +203,18 @@ async function smallTargets(page) {
   const focused = await page.evaluate(() => document.querySelector("tp-a11y-layer").shadowRoot.activeElement?.id);
   check("焦點在輸入框", focused === "q", focused);
   check("還沒輸入時顯示常見問題", await visibleIn(page, "#examples"));
+  const m = await layer(page).locator("#q-mic").boundingBox();
+  const g = await layer(page).locator("#q-go").boundingBox();
+  check("「用講的」在「搜尋」旁邊", m && g && Math.abs(m.y - g.y) < 2 && m.x < g.x);
+  await page.setViewportSize({ width: 360, height: 700 }); // 報告裡模擬手機的高度
+  await settle(page);
+  const cut = await page.evaluate(() => {
+    const r = document.querySelector("tp-a11y-layer").shadowRoot;
+    const pb = r.getElementById("panel").getBoundingClientRect();
+    return [...r.querySelectorAll("#examples button")].filter((b) => b.getBoundingClientRect().bottom > pb.bottom - 4).map((b) => b.textContent);
+  });
+  check("700px 高的手機上常見問題不會被切到", cut.length === 0, cut.join("、"));
+  await page.setViewportSize(VIEW);
   check("搜尋頁觸控目標 ≥ 64px", (await smallTargets(page)).length === 0, (await smallTargets(page)).join("、"));
   const own = async () => (await axe(page)).filter((v) => v.includes("tp-a11y-layer")); // 只看操作輔助層自己（模擬頁本身的淺灰字另計）
   check("搜尋頁 axe 沒有違規", (await own()).length === 0, (await own()).slice(0, 3).join("；"));

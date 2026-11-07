@@ -867,7 +867,6 @@
         ], { duration: 260, easing: EASE.soft });
       }
       if (toSearch) {
-        $("#q-mic").hidden = voiceSource() === "none";
         renderResults($("#q").value);
         if (animated) $("#q").focus();
       } else if (animated) {
@@ -972,6 +971,11 @@
     });
     // 用講的輸入問題（裝置端辨識；瀏覽器只在本機開發時可用）
     $("#q-mic").addEventListener("click", function () {
+      if (voiceSource() === "none") {
+        $("#search-status").textContent = "這台裝置不能用講的，請在上面打字";
+        $("#q").focus();
+        return;
+      }
       $("#search-status").textContent = "請說你想辦什麼事";
       listenOnce().then(
         function (text) {
@@ -1613,7 +1617,7 @@
     "#fab[data-busy]::after{content:'';position:absolute;inset:-6px;border-radius:40px;border:3px solid var(--primary-800);animation:pulse 1.6s ease-out infinite}" +
     // 主選單：2 欄大格子，從浮動鈕的位置彈出
     "#panel{pointer-events:auto;position:fixed;bottom:calc(var(--lift) + 76px);right:var(--side);width:min(344px,calc(100vw - 32px));" +
-    "max-height:calc(100vh - var(--lift) - 96px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:24px;" +
+    "max-height:calc(100vh - var(--lift) - 96px);overflow:auto;overscroll-behavior:contain;background:var(--surface);border:1px solid var(--line);border-radius:24px;" +
     "box-shadow:0 18px 48px rgba(11,13,14,.28);padding:14px;transform-origin:calc(100% - 32px) calc(100% + 44px)}" +
     ":host([data-hand=left]) #panel{right:auto;left:var(--side);transform-origin:32px calc(100% + 44px)}" +
     ".ph{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:2px 6px 12px}" +
@@ -1654,8 +1658,8 @@
     "#search-status{margin:0 4px 8px;font-size:16px;font-weight:600;min-height:1em}" +
     "#search-status:empty{display:none}" +
     "#examples .cap{display:block;font-size:15px;color:var(--sub);margin:4px 4px 8px}" +
-    "#examples .chips{display:flex;flex-wrap:wrap;gap:8px}" +
-    "#examples button{min-height:64px;padding:8px 16px;border-radius:32px;border:2px solid var(--line);background:var(--tile);font-weight:600}" +
+    "#examples .chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}" +
+    "#examples button{min-height:64px;padding:6px 10px;border-radius:20px;border:2px solid var(--line);background:var(--tile);font-weight:600;line-height:1.25}" +
     "#results{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}" +
     ".result{width:100%;display:flex;align-items:center;gap:12px;min-height:80px;padding:12px;border:2px solid transparent;border-radius:18px;background:var(--tile);text-align:left;" +
     "transition:transform .18s cubic-bezier(.175,.885,.32,1.275)}" +
