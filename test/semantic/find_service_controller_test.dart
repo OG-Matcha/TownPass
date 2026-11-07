@@ -62,11 +62,11 @@ void main() {
       }
     });
 
-    test('模型好了 → 沒有關鍵字的口語句靠語意找到（寵物安心遛）', () async {
-      final r = StubRanker(result: prominent('petFriendlyMap'));
+    test('模型好了 → 沒有關鍵字的口語句靠語意找到（捷伴）', () async {
+      final r = StubRanker(result: prominent('mrtAccess'));
       final c = make(ranker: r);
-      await c.search('我家毛小孩想出去透透氣');
-      expect(c.hits.first.service.id, 'petFriendlyMap');
+      await c.search('我腿不方便想出門走走');
+      expect(c.hits.first.service.id, 'mrtAccess');
       expect(c.hits.first.semantic, isTrue);
       expect(r.calls.single.ids, hasLength(MyServiceItemId.values.length));
     });
@@ -96,11 +96,11 @@ void main() {
       final first = c.search('借書');
       await Future<void>.delayed(const Duration(milliseconds: 20));
       slow
-        ..result = prominent('zoo')
+        ..result = prominent('mrtAccess')
         ..delay = Duration.zero;
-      await c.search('想去看動物');
+      await c.search('我腿不方便想出門走走');
       await first;
-      expect(c.hits.first.service.id, 'zoo');
+      expect(c.hits.first.service.id, 'mrtAccess');
     });
 
     test('沒有任何結果 → 說明並提到 1999', () async {

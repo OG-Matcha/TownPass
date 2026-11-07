@@ -54,20 +54,14 @@ void main() {
     expect(opened.single, contains('citizen-report'));
   });
 
-  testWidgets('語意找到、沒入口的服務 → 說明「還沒開通」，按鈕是「撥 1999」，點了撥號', (tester) async {
+  testWidgets('語意找到、沒入口（還沒開通）的服務 → 不列出來，不給死路', (tester) async {
     final catalog = buildSearchCatalog();
     final scores = {for (var i = 0; i < catalog.length; i++) catalog[i].id: 0.8 + (i % 3) * 0.004, 'petFriendlyMap': 0.95};
     await pumpView(tester, ranker: StubRanker(result: scores));
     await typeQuery(tester, '我家毛茸茸的想出去透透氣'); // 刻意不含任何關鍵字，才是純語意命中
     await tester.pump(const Duration(milliseconds: 50));
-    expect(find.text('寵物安心遛'), findsOneWidget);
-    expect(find.textContaining('還沒開通'), findsOneWidget);
-    // 「為什麼找到它」要和「還沒開通」並列，不能被蓋掉。
-    expect(find.text('意思和你說的很接近'), findsOneWidget);
-    expect(find.text('撥 1999'), findsOneWidget);
-    await tester.tap(find.text('寵物安心遛'));
-    expect(calls, ['1999']);
-    expect(opened, isEmpty);
+    expect(find.text('寵物安心遛'), findsNothing);
+    expect(find.textContaining('還沒開通'), findsNothing);
   });
 
   testWidgets('模型失敗時畫面照樣有規則結果，沒有錯誤字眼', (tester) async {

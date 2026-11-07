@@ -157,6 +157,8 @@ class FindServiceViewController extends GetxController {
     } catch (_) {
       merged = rule;
     }
+    // 還沒開通（沒網址也沒電話）的服務不列出來：點了是死路；全部找不到時下面會引導撥 1999
+    merged = merged.where((h) => !h.service.unavailable).toList();
     hits.assignAll(merged);
     status.value = merged.isEmpty
         ? '找不到相關的服務，可以換個說法，或打電話問 1999'
