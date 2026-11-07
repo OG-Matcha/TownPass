@@ -348,6 +348,7 @@
     mergeRanking: mergeRanking,
     SERVICES: SERVICES,
     KEYWORDS: KEYWORDS,
+    SEARCH_EXAMPLES: SEARCH_EXAMPLES,
     toCatalog: toCatalog,
     searchServices: searchServices,
     FONT_LEVELS: FONT_LEVELS,
@@ -1053,7 +1054,20 @@
       }
     }
     findBtn.addEventListener("click", function () {
-      showView(currentView === "search" ? "main" : "search", true);
+      if (currentView === "search") {
+        showView("main", true);
+        return;
+      }
+      // 在 App 內：請 App 打開 Flutter 版的「找服務」（與首頁共用同一份，語意搜尋也在那裡）。
+      // App 沒回應或拒絕（舊版 App、內嵌頁面）就用這裡內建的搜尋頁，使用者不會卡住。
+      if (flutter()) {
+        askApp("open_find_service", null, 1500).then(function (ok) {
+          if (ok === true) closePanel(false);
+          else showView("search", true);
+        });
+        return;
+      }
+      showView("search", true);
     });
     $("#search-back").addEventListener("click", function () {
       showView("main", true);

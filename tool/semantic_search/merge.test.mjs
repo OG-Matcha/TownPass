@@ -2,6 +2,7 @@
 // 用法：node tool/semantic_search/merge.test.mjs（不需要安裝套件）
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
+import { spawnSync } from "node:child_process";
 
 const src = readFileSync(new URL("../../assets/a11y/tp-a11y.js", import.meta.url), "utf8");
 const ctx = { globalThis: {} };
@@ -81,6 +82,11 @@ eq("有網址或電話的不是 unavailable", c.map((x) => !!x.unavailable), [fa
 eq("javascript: 網址被丟掉、怪電話被丟掉（因此標成尚未開通，而不是可點的連結）", [c[3].url, c[4].tel], ["", ""]);
 eq("不是陣列 → null（網頁會用備用清單）", core.toCatalog({}), null);
 eq("空陣列 → null", core.toCatalog([]), null);
+
+// ---- parity.json 要是用最新的 JS 算出來的（Dart 測試拿它當標準答案）----
+const parity = spawnSync(process.execPath, [new URL("./make_parity.mjs", import.meta.url).pathname, "--check"], { encoding: "utf8" });
+eq("parity.json 是用最新的 JS 與題目算出來的（過期了要重跑 make_parity.mjs）", parity.status, 0);
+if (parity.status !== 0) console.log(parity.stderr);
 
 console.log(fail ? `\n${fail} 項失敗` : "\n全部通過");
 process.exit(fail ? 1 : 0);

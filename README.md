@@ -64,7 +64,9 @@ Here are some quick setup guide.
 
 1. 每個服務有團隊整理的「市民會怎麼說」例句（`tool/semantic_search/phrases.json`，不是官方資料），第一次啟動時在背景轉成向量並快取（快取鍵＝服務清單與例句＋模型版本＋用法）。
 2. 使用者說一句話 → 網頁送 `service_rank` 給 App → App 回每個服務的相似度 → `tp-a11y.js` 的 `mergeRanking` 與規則分數合併排序。
-3. App 的 21 個服務全部參與；沒有入口的服務（`destinationUrl` 為空）標示「還沒開通」，按鈕改為撥 1999。
+3. **畫面只有一份（Flutter）**：首頁右下角的「找服務」浮動鈕，以及微服務網頁輔助選單裡的「找服務」（網頁會送 `open_find_service` 請 App 開同一個頁面），都是 `lib/page/find_service/`。網頁內建的搜尋頁只在一般瀏覽器（桌面開發）或舊版 App 沒回應時當備援。
+   規則搜尋與合併邏輯目前在 JS 與 Dart 各有一份，以 `tool/semantic_search/parity.json`（JS 算出的標準答案）逐題比對防止漂移；改任一邊後執行 `node tool/semantic_search/make_parity.mjs` 並讓兩邊測試通過。
+4. App 的 21 個服務全部參與；沒有入口的服務（`destinationUrl` 為空）標示「還沒開通」，按鈕改為撥 1999。
 
 ## 量測（`tool/semantic_search/`）
 
