@@ -46,6 +46,7 @@ dependencies:
   geolocator: ^14.1.1
   # 裝置端語音辨識（BSD-3-Clause）；版本寫死，比賽中不升級
   speech_to_text: 7.5.0
+  flutter_tts: 4.2.5
   intl: ^0.20.3
   image_picker: ^1.2.4
   json_annotation: ^4.12.0

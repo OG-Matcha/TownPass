@@ -62,6 +62,10 @@
         <intent>
             <action android:name="android.speech.RecognitionService" />
         </intent>
+        <!-- flutter_tts：Android 11+ 要能查到系統文字轉語音服務 -->
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
         <!-- checks for Mail support -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
