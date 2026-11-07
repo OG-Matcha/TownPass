@@ -50,6 +50,12 @@ class VoiceInput {
     _finish({'error': msg});
   }
 
+  static String _packTag(String locale) {
+    final l = locale.replaceAll('_', '-').toLowerCase();
+    if (l == 'zh-tw' || l == 'zh-hant-tw' || l == 'zh-hant') return 'cmn-Hant-TW';
+    return locale;
+  }
+
   Future<Map<String, String>> listenOnce({String locale = 'zh-TW'}) async {
     try {
       if (!_ready) {
@@ -61,7 +67,9 @@ class VoiceInput {
       _pending = Completer<Map<String, String>>();
       await _stt.listen(
         listenOptions: SpeechListenOptions(
-          localeId: locale.replaceAll('-', '_'),
+          // Google 裝置端辨識的中文（台灣）語音包登記為 cmn-Hant-TW。傳 zh-TW 時，若剛好等於手機系統語言，
+          // speech_to_text 會省略 EXTRA_LANGUAGE，辨識器就退回英文 → 一律換成語音包的標籤。
+          localeId: _packTag(locale).replaceAll('-', '_'),
           listenFor: const Duration(seconds: 15),
           pauseFor: const Duration(seconds: 3),
           onDevice: true,
