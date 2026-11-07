@@ -66,6 +66,10 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>用講的操作微服務（例如說出要去的捷運站）時需要使用麥克風。</string>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>把你說的話轉成文字，只在手機上處理。</string>
 		<key>NSLocationWhenInUseUsageDescription</key>
 		<string>TownPass 需要定位權限才可正常使用</string>
 		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

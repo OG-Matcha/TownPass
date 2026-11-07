@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:town_pass/util/web_message_handler/a11y_settings_message_handler.dart';
+import 'package:town_pass/util/web_message_handler/speech_to_text_message_handler.dart';
+import 'package:town_pass/util/web_message_handler/tts_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
@@ -18,6 +20,8 @@ abstract class TPWebMessageListener {
         NotifyMessageHandler(),
         QRCodeScanMessageHandler(),
         A11ySettingsMessageHandler(),
+        SpeechToTextMessageHandler(),
+        TtsMessageHandler(),
       ];
 
   static List<TPWebMessageHandler> get messageHandler => _cachedMessageHandlers;
