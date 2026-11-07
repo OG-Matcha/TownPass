@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "說明": "保留題組：合併參數（門檻、權重）定案之後才量，定參數時沒看過這些題的分數，用來檢查 queries.json 的數字是不是只對那 30 題有效。團隊自行擬定，不是官方資料。格式同 queries.json。",
+    "簡體字": "h14 的簡體字是刻意的測試內容。",
+    "版本": 1,
+    "更新日": "2026-11-08"
+  },
+  "queries": [
+    { "id": "h01", "text": "我要掛號", "category": "direct", "expected": ["medicalAppointment"] },
+    { "id": "h02", "text": "想借一本書", "category": "direct", "expected": ["library"] },
+    { "id": "h03", "text": "家裡的路燈整晚閃個不停", "category": "colloquial", "expected": ["reportIssue"] },
+    { "id": "h04", "text": "外面下大雨路上都是水", "category": "colloquial", "expected": ["disasterReport"] },
+    { "id": "h05", "text": "想帶孩子去看動物", "category": "colloquial", "expected": ["zoo"] },
+    { "id": "h06", "text": "附近哪裡有廁所", "category": "colloquial", "expected": ["locationSearch"] },
+    { "id": "h07", "text": "我家狗狗要出去散步", "category": "colloquial", "expected": ["petFriendlyMap"] },
+    { "id": "h08", "text": "想知道水費怎麼算", "category": "colloquial", "expected": ["waterMeter"] },
+    { "id": "h09", "text": "好像有人一直跟蹤我", "category": "colloquial", "expected": ["police"] },
+    { "id": "h10", "text": "想聽廣播放鬆一下", "category": "colloquial", "expected": ["cityRadio"] },
+    { "id": "h11", "text": "我外婆要預約打流感針", "category": "family", "expected": ["vaccineAppointment"] },
+    { "id": "h12", "text": "爸爸想領敬老福利，要去哪申請", "category": "family", "expected": ["districtOffice"] },
+    { "id": "h13", "text": "我不太會用這個，可以跟我說話嗎", "category": "vague", "expected": ["dedicatedLine"] },
+    { "id": "h14", "text": "我要报案", "category": "simplified", "expected": ["police"] },
+    { "id": "h15", "text": "想看今年有哪些市政議題可以投票", "category": "colloquial", "expected": ["iVoting"] },
+    { "id": "h16", "text": "里長辦公室在哪裡", "category": "colloquial", "expected": ["neighborhood"] },
+    { "id": "h17", "text": "想知道最近北市的物價", "category": "colloquial", "expected": ["essentialGoods"] },
+    { "id": "h18", "text": "想去走走看看樹林", "category": "colloquial", "expected": ["greenMap"] },
+    { "id": "h19", "text": "我想填市民滿意度問卷", "category": "colloquial", "expected": ["survey"] },
+    { "id": "h20", "text": "我想查詢明天的天氣", "category": "none", "expectNone": true },
+    { "id": "h21", "text": "怎麼辦理出國簽證", "category": "none", "expectNone": true },
+    { "id": "h22", "text": "推薦好吃的火鍋", "category": "none", "expectNone": true }
+  ]
+}

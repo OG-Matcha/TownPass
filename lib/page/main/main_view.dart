@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:town_pass/page/find_service/find_service_button.dart';
 import 'package:town_pass/page/main/main_view_controller.dart';
 import 'package:town_pass/service/shared_preferences_service.dart';
 import 'package:town_pass/util/tp_bottom_navigation_factory.dart';
@@ -11,6 +12,11 @@ class MainView extends GetView<MainViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Obx(() {
+        // 讀 currentIndex：切換分頁時會重新判斷操作輔助有沒有開（設定頁改了開關，回來切一下分頁就會更新）
+        controller.currentIndex.value;
+        return const FindServiceButton();
+      }),
       body: Obx(
         () => IndexedStack(
           index: controller.currentIndex.value,

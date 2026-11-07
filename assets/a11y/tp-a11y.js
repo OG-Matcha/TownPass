@@ -221,9 +221,22 @@
     reservation: ["叫號", "排隊", "預約", "臨櫃", "櫃台", "戶政", "區公所", "號碼", "等多久", "現場"],
     disasterReport: ["災情", "淹水", "積水", "倒樹", "颱風", "地震", "坍方", "土石", "停電", "危險", "通報"],
     library: ["借書", "還書", "圖書館", "書", "館藏", "續借"],
-    locationSearch: ["附近", "地點", "哪裡", "廁所", "無障礙", "電梯", "停車", "公園", "怎麼去", "地圖", "設施"],
-    dedicatedLine: ["電話", "打電話", "客服", "問人", "專人", "熱線", "不知道", "不會用", "幫忙"],
+    locationSearch: ["附近", "地點", "廁所", "無障礙", "電梯", "停車", "公園", "怎麼去", "地圖", "設施"],
+    dedicatedLine: ["電話", "打電話", "客服", "問人", "專人", "熱線", "不知道", "不會用", "幫忙", "找人", "找個人", "跟我說話"],
     dashboard: ["數據", "統計", "空氣", "資料"],
+    iVoting: ["投票", "表決", "公投", "民意"],
+    survey: ["問卷", "調查", "滿意度"],
+    police: ["報案", "警察", "詐騙", "被騙", "被偷", "失竊", "跟蹤", "搶劫"],
+    neighborhood: ["里長", "里辦", "里民"],
+    vaccineAppointment: ["疫苗", "接種", "打針"],
+    medicalAppointment: ["掛號", "看診", "看病", "門診", "聯合醫院"],
+    cityRadio: ["廣播", "電台", "收音機"],
+    familyCenter: ["親子", "寶寶", "育兒", "遊戲室"],
+    greenMap: ["賞花", "看花", "看樹", "綠化", "樹林", "步道"],
+    petFriendlyMap: ["寵物", "毛小孩", "遛狗", "帶狗", "狗狗", "貓咪"],
+    waterMeter: ["水費", "水錶", "用水", "度數"],
+    essentialGoods: ["菜價", "物價", "漲價"],
+    zoo: ["動物園", "大象", "長頸鹿", "貓熊"],
   };
   var SERVICES = [
     { id: "dedicatedLine", title: "1999", desc: "播打網路語音通話", tel: "1999" },
@@ -236,7 +249,10 @@
     { id: "locationSearch", title: "找地點", desc: "提供各區日常服務地圖查找", url: "https://taipei-pass-service.vercel.app/surrounding-service/" },
   ];
 
-  /** App 回傳的服務清單 → 搜尋用的格式；只收 http(s) 網址或電話號碼，其他一律丟掉。 */
+  /**
+   * App 回傳的服務清單 → 搜尋用的格式。網址只收 http(s)、電話只收數字符號，其他一律丟掉。
+   * 兩者都沒有的服務（App 裡點了沒反應的）照樣留下，標 unavailable：搜得到，但畫面要說「尚未開通」並建議撥 1999。
+   */
   function toCatalog(list) {
     if (!Array.isArray(list)) return null;
     var out = [];
@@ -244,8 +260,7 @@
       if (!x || typeof x.title !== "string" || typeof x.id !== "string") return;
       var url = typeof x.url === "string" && /^https?:\/\//.test(x.url) ? x.url : "";
       var tel = typeof x.tel === "string" && /^[0-9+#*]{3,15}$/.test(x.tel) ? x.tel : "";
-      if (!url && !tel) return;
-      out.push({ id: x.id, title: x.title, desc: String(x.description || x.desc || ""), url: url, tel: tel });
+      out.push({ id: x.id, title: x.title, desc: String(x.description || x.desc || ""), url: url, tel: tel, unavailable: !url && !tel });
     });
     return out.length ? out : null;
   }
@@ -281,9 +296,72 @@
     return out.slice(0, 5);
   }
 
+  /**
+   * 語意分數與規則分數合併參數。
+   *
+   * 向量模型的相似度刻度被壓縮（實測：對的服務約 0.86～0.95，毫無關係的題目最高也有 0.84～0.89），
+   * 所以不用固定門檻，而是看「這一題裡，這個服務比其他服務高出幾個標準差」（z 值）：
+   *   abstainZ：最高的 z 值低於它，代表沒有哪個服務特別像 → 語意不表態（沒有關鍵字就回「找不到」）
+   *   showZ／fullZ：z 值從 showZ 起算語意分數、到 fullZ 滿分
+   *   weight：語意分數占的比重（其餘為規則分數）
+   *   minScores：參與比較的服務少於這個數字就不算 z 值（分數太少沒意義）
+   * 這些數字依 tool/semantic_search/queries.json 的實測分布定（abstainZ 位在 1.91 與 2.07 之間，餘裕很薄）；
+   * 另有 queries_holdout.json 作定案後的驗證，見 README。
+   */
+  var SEMANTIC = { abstainZ: 2.0, showZ: 1.5, fullZ: 3.0, weight: 0.7, minScores: 5 };
+
+  /**
+   * 把 App 回傳的語意相似度（scores：服務 id → 0～1）與規則結果（ruleHits）合併排序，最多 5 個。
+   * 兩邊都不信的服務不列（語意不夠突出且沒有關鍵字或名稱命中）；其餘依加權分數排序。
+   * scores 不可用（App 沒回、模型沒準備好、格式不對、分數太少）就原封不動回傳規則結果，使用者看不到差別。
+   */
+  function mergeRanking(ruleHits, scores, catalog, cfg) {
+    if (!scores || typeof scores !== "object" || Array.isArray(scores)) return ruleHits;
+    cfg = cfg || SEMANTIC;
+    var list = catalog || SERVICES;
+    var vals = [];
+    list.forEach(function (sv) {
+      var s = scores[sv.id];
+      if (typeof s === "number" && isFinite(s)) vals.push(s);
+    });
+    if (vals.length < cfg.minScores) return ruleHits;
+    var mean = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+    var sd = Math.sqrt(vals.reduce(function (a, b) { return a + (b - mean) * (b - mean); }, 0) / vals.length);
+    if (!(sd > 1e-6)) return ruleHits;
+    var confident = (Math.max.apply(null, vals) - mean) / sd >= cfg.abstainZ;
+
+    var byId = {};
+    ruleHits.forEach(function (h) {
+      byId[h.service.id] = h;
+    });
+    var out = [];
+    list.forEach(function (sv) {
+      var s = scores[sv.id];
+      var z = typeof s === "number" && isFinite(s) ? (s - mean) / sd : -Infinity;
+      var rule = byId[sv.id];
+      var named = !!(rule && rule.reasons.length); // 說到關鍵字或服務名稱
+      var sem = confident ? Math.max(0, Math.min(1, (z - cfg.showZ) / (cfg.fullZ - cfg.showZ))) : 0;
+      if (sem <= 0 && !named) return;
+      var ruleNorm = rule ? Math.min(rule.score, 8) / 8 : 0;
+      out.push({
+        service: sv,
+        score: cfg.weight * sem + (1 - cfg.weight) * ruleNorm,
+        reasons: rule ? rule.reasons : [],
+        semantic: sem > 0,
+      });
+    });
+    out.sort(function (a, b) {
+      return b.score - a.score;
+    });
+    return out.slice(0, 5);
+  }
+
   var core = {
+    SEMANTIC: SEMANTIC,
+    mergeRanking: mergeRanking,
     SERVICES: SERVICES,
     KEYWORDS: KEYWORDS,
+    SEARCH_EXAMPLES: SEARCH_EXAMPLES,
     toCatalog: toCatalog,
     searchServices: searchServices,
     FONT_LEVELS: FONT_LEVELS,
@@ -364,6 +442,50 @@
       }, timeoutMs || 10000);
       f.addEventListener("message", onMessage);
       f.postMessage(JSON.stringify({ name: name, data: data }));
+    });
+  }
+
+  var rankSeq = 0;
+  /**
+   * 向 App 要「這句話和每個服務有多像」（裝置端向量比對）。
+   * 任何狀況（沒有 App、模型沒準備好、逾時、格式不對）都回 null，呼叫端退回規則搜尋，不顯示錯誤。
+   * 每次查詢帶 rid，只收自己那次的回覆（使用者連續打字時不會收到上一句的結果）。
+   */
+  function askRank(query, ids, timeoutMs) {
+    var f = flutter();
+    if (!f) return Promise.resolve(null);
+    var rid = ++rankSeq;
+    return new Promise(function (resolve) {
+      var timer;
+      var done = false;
+      var finish = function (v) {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        try {
+          f.removeEventListener("message", onMessage);
+        } catch (e) {}
+        resolve(v);
+      };
+      var onMessage = function (e) {
+        var msg;
+        try {
+          msg = JSON.parse(e.data);
+        } catch (err) {
+          return;
+        }
+        if (!msg || msg.name !== "service_rank" || !msg.data || msg.data.rid !== rid) return;
+        finish(msg.data.ok === true && msg.data.scores && typeof msg.data.scores === "object" ? msg.data.scores : null);
+      };
+      timer = setTimeout(function () {
+        finish(null);
+      }, timeoutMs || 2000);
+      try {
+        f.addEventListener("message", onMessage);
+        f.postMessage(JSON.stringify({ name: "service_rank", data: { query: query, ids: ids, rid: rid } }));
+      } catch (e) {
+        finish(null);
+      }
     });
   }
 
@@ -945,7 +1067,20 @@
       }
     }
     findBtn.addEventListener("click", function () {
-      showView(currentView === "search" ? "main" : "search", true);
+      if (currentView === "search") {
+        showView("main", true);
+        return;
+      }
+      // 在 App 內：請 App 打開 Flutter 版的「找服務」（與首頁共用同一份，語意搜尋也在那裡）。
+      // App 沒回應或拒絕（舊版 App、內嵌頁面）就用這裡內建的搜尋頁，使用者不會卡住。
+      if (flutter()) {
+        askApp("open_find_service", null, 1500).then(function (ok) {
+          if (ok === true) closePanel(false);
+          else showView("search", true);
+        });
+        return;
+      }
+      showView("search", true);
     });
     $("#search-back").addEventListener("click", function () {
       showView("main", true);
@@ -958,7 +1093,13 @@
       return n;
     }
 
+    /** 1999 專線（App 給的清單裡有 tel 的那一項；沒有就用備用清單）。 */
+    function line1999() {
+      return catalog.filter(function (x) { return x.tel; })[0] || SERVICES[0];
+    }
     function goService(sv) {
+      // 尚未開通的服務（App 裡點了沒反應）：不假裝打得開，改撥 1999 詢問
+      if (sv.unavailable) sv = line1999();
       if (sv.tel) {
         var f = flutter();
         if (f) f.postMessage(JSON.stringify({ name: "phone_call", data: sv.tel }));
@@ -974,18 +1115,42 @@
     }
 
     var searchTimer = null;
+    var searchToken = 0;
     function renderResults(query) {
       var list = $("#results");
       var examples = $("#examples");
-      list.textContent = "";
       var q = String(query || "").trim();
-      examples.hidden = !!q;
-      $("#search-help").hidden = !q;
+      var token = ++searchToken; // 只畫最新一次查詢的結果
       if (!q) {
+        list.textContent = "";
+        examples.hidden = false;
+        $("#search-help").hidden = true;
         $("#search-status").textContent = "";
         return;
       }
-      var hits = searchServices(q, catalog);
+      examples.hidden = true;
+      $("#search-help").hidden = false;
+      var ruleHits = searchServices(q, catalog);
+      if (!flutter()) {
+        paintResults(ruleHits); // 一般瀏覽器：只有規則搜尋
+        return;
+      }
+      // App 內：先向裝置端要語意分數；要不到（沒準備好、逾時、出錯）就用規則結果，不顯示任何錯誤
+      $("#search-status").textContent = "找找看…";
+      askRank(q, catalog.map(function (x) { return x.id; }), 2000).then(function (scores) {
+        if (token !== searchToken) return;
+        var hits;
+        try {
+          hits = mergeRanking(ruleHits, scores, catalog);
+        } catch (e) {
+          hits = ruleHits;
+        }
+        paintResults(hits);
+      });
+    }
+    function paintResults(hits) {
+      var list = $("#results");
+      list.textContent = "";
       $("#search-status").textContent = hits.length ? "找到 " + hits.length + " 個可能的服務" : "找不到相關的服務，可以換個說法，或打電話問 1999";
       hits.forEach(function (h, i) {
         var li = el("li");
@@ -996,8 +1161,10 @@
         var t = el("span", "t");
         t.appendChild(el("span", "l", h.service.title));
         t.appendChild(el("span", "s", h.service.desc));
-        if (h.reasons.length) t.appendChild(el("span", "why", "因為提到「" + h.reasons.join("」「") + "」"));
-        var go = el("span", "go", h.service.tel ? "撥打" : "前往");
+        if (h.service.unavailable) t.appendChild(el("span", "why", "這項服務還沒開通，可以撥 1999 詢問"));
+        else if (h.reasons.length) t.appendChild(el("span", "why", "因為提到「" + h.reasons.join("」「") + "」"));
+        else if (h.semantic) t.appendChild(el("span", "why", "意思和你說的很接近"));
+        var go = el("span", "go", h.service.unavailable ? "撥 1999" : h.service.tel ? "撥打" : "前往");
         go.setAttribute("aria-hidden", "true");
         b.appendChild(ic);
         b.appendChild(t);
@@ -1044,8 +1211,7 @@
       });
     });
     $("#call-1999").addEventListener("click", function () {
-      var line = catalog.filter(function (x) { return x.tel; })[0] || SERVICES[0];
-      goService(line);
+      goService(line1999());
     });
     // 用講的輸入問題（裝置端辨識；瀏覽器只在本機開發時可用）
     $("#q-mic").addEventListener("click", function () {

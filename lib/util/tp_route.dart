@@ -13,6 +13,8 @@ import 'package:town_pass/page/city_service/widget/pinned_service_widget_control
 import 'package:town_pass/page/city_service_edit/city_service_edit_view.dart';
 import 'package:town_pass/page/city_service_edit/city_service_edit_view_controller.dart';
 import 'package:town_pass/page/feedback/feedback_view.dart';
+import 'package:town_pass/page/find_service/find_service_view.dart';
+import 'package:town_pass/page/find_service/find_service_view_controller.dart';
 import 'package:town_pass/page/feedback/feedback_view_controller.dart';
 import 'package:town_pass/page/invoice_receipt/invoice_receipt_view.dart';
 import 'package:town_pass/page/language/language_view.dart';
@@ -43,6 +45,7 @@ abstract class TPRoute {
   static const String basicInfo = '/basic_info';
   static const String basicInfoEdit = '/basic_info_edit';
   static const String feedback = '/feedback';
+  static const String findService = '/find_service';
   static const String invoiceReceipt = '/invoice_receipt';
   static const String home = '/home';
   static const String language = '/language';
@@ -100,6 +103,13 @@ abstract class TPRoute {
     GetPage(
       name: invoiceReceipt,
       page: () => const InvoiceReceiptView(),
+    ),
+    GetPage(
+      name: findService,
+      page: () => const FindServiceView(),
+      binding: BindingsBuilder(() {
+        Get.put<FindServiceViewController>(FindServiceViewController());
+      }),
     ),
     GetPage(
       name: language,
