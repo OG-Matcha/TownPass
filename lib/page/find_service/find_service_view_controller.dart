@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:town_pass/page/city_service/model/my_service_model.dart';
 import 'package:town_pass/service/service_rank_service.dart';
 import 'package:town_pass/util/semantic/service_search.dart';
+import 'package:town_pass/util/speech/speech_pack.dart';
 import 'package:town_pass/util/speech/voice_input.dart';
 import 'package:town_pass/util/tp_route.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -23,6 +25,23 @@ List<SearchService> buildSearchCatalog() {
   ];
 }
 
+/// 這個服務的網頁要連網才開得了（本機打包的頁面、電話、沒入口的都不用）。
+bool needsInternet(SearchService s) {
+  if (s.tel.isNotEmpty || s.url.isEmpty) return false;
+  final host = Uri.tryParse(s.url)?.host ?? '';
+  return host != 'localhost' && host != '127.0.0.1';
+}
+
+/// 便宜的連網檢查：短逾時的 DNS 查詢，不需新套件。
+Future<bool> defaultIsOnline() async {
+  try {
+    final r = await InternetAddress.lookup('one.one.one.one').timeout(const Duration(seconds: 2));
+    return r.isNotEmpty && r.first.rawAddress.isNotEmpty;
+  } catch (_) {
+    return false;
+  }
+}
+
 /// 「找服務」畫面的邏輯。首頁與微服務網頁共用這一份。
 ///
 /// 流程：先算規則結果（永遠可用），模型準備好時再向 [ServiceRanker] 要語意分數合併；
@@ -35,17 +54,23 @@ class FindServiceViewController extends GetxController {
     VoiceInput? voice,
     Future<void> Function(String tel)? onCall,
     Future<void> Function(String url)? onOpenUrl,
+    Future<bool> Function()? isOnline,
+    Future<Map<String, String>> Function()? onDownloadPack,
     this.debounce = const Duration(milliseconds: 250),
     this.rankTimeout = const Duration(seconds: 2),
   }) : _voice = voice ?? VoiceInput(),
        catalog = catalog ?? buildSearchCatalog(),
        _onCall = onCall ?? ((tel) async => launchUrlString('tel://$tel')),
-       _onOpenUrl = onOpenUrl ?? ((url) async => TPRoute.openUri(uri: url));
+       _onOpenUrl = onOpenUrl ?? ((url) async => TPRoute.openUri(uri: url)),
+       _isOnline = isOnline ?? defaultIsOnline,
+       _onDownloadPack = onDownloadPack ?? SpeechPack.download;
 
   final ServiceRanker? _ranker;
   final VoiceInput _voice;
   final Future<void> Function(String tel) _onCall;
   final Future<void> Function(String url) _onOpenUrl;
+  final Future<bool> Function() _isOnline;
+  final Future<Map<String, String>> Function() _onDownloadPack;
   final List<SearchService> catalog;
   final Duration debounce;
   final Duration rankTimeout;
@@ -56,6 +81,18 @@ class FindServiceViewController extends GetxController {
   final RxString status = ''.obs;
   final RxBool hasQuery = false.obs;
   final RxBool listening = false.obs;
+  final RxBool online = true.obs;
+  final RxBool needsPack = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    unawaited(refreshOnline());
+  }
+
+  Future<void> refreshOnline() async {
+    online.value = await _isOnline();
+  }
 
   Timer? _timer;
   int _token = 0;
@@ -131,6 +168,13 @@ class FindServiceViewController extends GetxController {
     final sv = hit.service;
     if (sv.tel.isNotEmpty) return _onCall(sv.tel);
     if (sv.unavailable) return _onCall(line1999.tel);
+    if (needsInternet(sv)) {
+      await refreshOnline();
+      if (!online.value) {
+        status.value = '現在沒有網路，「${sv.title}」要連網才能用。連上網路後再試，或打電話問 1999';
+        return;
+      }
+    }
     return _onOpenUrl(sv.url);
   }
 
@@ -143,6 +187,7 @@ class FindServiceViewController extends GetxController {
       return;
     }
     listening.value = true;
+    needsPack.value = false;
     status.value = '請說你想辦什麼事';
     final result = await _voice.listenOnce();
     listening.value = false;
@@ -153,7 +198,19 @@ class FindServiceViewController extends GetxController {
       await search(spoken);
     } else {
       status.value = result['error'] ?? '沒有聽清楚，請再說一次';
+      needsPack.value = result['code'] == 'needs_pack';
       focus.requestFocus();
+    }
+  }
+
+  /// 一鍵下載離線語音包（要網路，只需一次）。
+  Future<void> downloadPack() async {
+    final r = await _onDownloadPack();
+    if (r['ok'] != null) {
+      needsPack.value = false;
+      status.value = '已開始下載離線語音，完成後再按「用講的」';
+    } else {
+      status.value = r['error'] ?? '無法開始下載';
     }
   }
 

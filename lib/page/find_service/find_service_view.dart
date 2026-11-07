@@ -44,6 +44,31 @@ class FindServiceView extends GetView<FindServiceViewController> {
                   ),
                 ),
               ),
+              Obx(
+                () => controller.needsPack.value
+                    ? Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: _Tile(
+                          key: const Key('downloadPack'),
+                          color: TPColors.primary500,
+                          onTap: controller.downloadPack,
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.download, size: 28, color: TPColors.grayscale950),
+                              SizedBox(width: 10),
+                              Flexible(
+                                child: Text(
+                                  '下載離線語音（只要一次，需要網路）',
+                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: TPColors.grayscale950),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+              ),
               const SizedBox(height: 8),
               Expanded(
                 child: Obx(() {
@@ -55,6 +80,7 @@ class FindServiceView extends GetView<FindServiceViewController> {
                     separatorBuilder: (_, _) => const SizedBox(height: 10),
                     itemBuilder: (_, i) => _ResultTile(
                       hit: controller.hits[i],
+                      offline: !controller.online.value && needsInternet(controller.hits[i].service),
                       onTap: () => controller.open(controller.hits[i]),
                     ),
                   );
@@ -263,9 +289,10 @@ class _Examples extends StatelessWidget {
 }
 
 class _ResultTile extends StatelessWidget {
-  const _ResultTile({required this.hit, required this.onTap});
+  const _ResultTile({required this.hit, required this.onTap, this.offline = false});
 
   final SearchHit hit;
+  final bool offline;
   final VoidCallback onTap;
 
   /// 為什麼找到它。沒入口的服務也要說明，使用者才知道這個結果怎麼來的。
@@ -276,7 +303,9 @@ class _ResultTile extends StatelessWidget {
   }
 
   /// 沒入口（還沒開通）的提醒，與「為什麼找到」分開兩行。
-  String get _notice => hit.service.unavailable ? '這項服務還沒開通，可以撥 1999 詢問' : '';
+  String get _notice => hit.service.unavailable
+      ? '這項服務還沒開通，可以撥 1999 詢問'
+      : (offline ? '要連網' : '');
 
   String get _action => hit.service.unavailable ? '撥 1999' : (hit.service.tel.isNotEmpty ? '撥打' : '前往');
 

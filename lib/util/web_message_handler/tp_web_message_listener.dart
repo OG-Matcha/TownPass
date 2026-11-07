@@ -5,6 +5,7 @@ import 'package:town_pass/util/web_message_handler/embed_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/open_find_service_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/service_catalog_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/service_rank_message_handler.dart';
+import 'package:town_pass/util/web_message_handler/speech_pack_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/speech_to_text_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/tts_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
@@ -29,6 +30,7 @@ abstract class TPWebMessageListener {
         EmbedMessageHandler(),
         OpenFindServiceMessageHandler(),
         SpeechToTextMessageHandler(),
+        SpeechPackMessageHandler(),
         TtsMessageHandler(),
       ];
 

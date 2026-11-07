@@ -2,6 +2,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
+import 'package:town_pass/page/city_service/model/my_service_model.dart';
 import 'package:town_pass/page/find_service/find_service_view_controller.dart';
 import 'package:town_pass/service/service_rank_service.dart';
 import 'package:town_pass/util/semantic/service_search.dart';
@@ -27,6 +28,7 @@ void main() {
       voice: voice,
       onCall: (tel) async => calls.add(tel),
       onOpenUrl: (url) async => opened.add(url),
+      isOnline: () async => true,
       debounce: const Duration(milliseconds: 20),
       rankTimeout: rankTimeout,
     );
@@ -66,7 +68,7 @@ void main() {
       await c.search('我家毛小孩想出去透透氣');
       expect(c.hits.first.service.id, 'petFriendlyMap');
       expect(c.hits.first.semantic, isTrue);
-      expect(r.calls.single.ids, hasLength(21));
+      expect(r.calls.single.ids, hasLength(MyServiceItemId.values.length));
     });
 
     test('排名器丟例外 → 無聲退回規則結果', () async {
@@ -127,6 +129,30 @@ void main() {
       await c.open(hit(c, 'library'));
       expect(opened, ['https://taipei-pass-service.vercel.app/library-service/']);
       expect(calls, isEmpty);
+    });
+    test('離線：要連網的服務不開網頁並說明；打包在本機的自在出發照開', () async {
+      final c = FindServiceViewController(
+        voice: FakeVoice({}),
+        onOpenUrl: (url) async => opened.add(url),
+        isOnline: () async => false,
+      );
+      opened = [];
+      await c.open(hit(c, 'library'));
+      expect(opened, isEmpty);
+      expect(c.status.value, contains('沒有網路'));
+      await c.open(hit(c, 'mrtAccess'));
+      expect(opened, ['http://localhost:8080/mrt/index.html']);
+    });
+    test('缺離線語音包 → 顯示下載鈕狀態，下載後清除', () async {
+      final c = FindServiceViewController(
+        voice: FakeVoice({'error': 'x', 'code': 'needs_pack'}),
+        isOnline: () async => true,
+        onDownloadPack: () async => {'ok': 'true'},
+      );
+      await c.speak();
+      expect(c.needsPack.value, isTrue);
+      await c.downloadPack();
+      expect(c.needsPack.value, isFalse);
     });
     test('尚未開通的服務 → 改撥 1999，不會開網頁', () async {
       final c = make();

@@ -19,6 +19,7 @@ Future<FindServiceViewController> pumpView(WidgetTester tester, {StubRanker? ran
     ranker: ranker,
     voice: FakeVoice({'text': '借書'}),
     onCall: (tel) async => calls.add(tel),
+    isOnline: () async => true,
     onOpenUrl: (url) async => opened.add(url),
     debounce: const Duration(milliseconds: 10),
   );

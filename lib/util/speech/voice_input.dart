@@ -35,6 +35,11 @@ class VoiceInput {
   }
 
   void _onError(SpeechRecognitionError error) {
+    if (error.errorMsg == 'error_language_unavailable' ||
+        error.errorMsg == 'error_language_not_supported') {
+      _finish({'error': '手機還沒有下載中文離線語音', 'code': 'needs_pack'});
+      return;
+    }
     final msg = switch (error.errorMsg) {
       'error_language_unavailable' ||
       'error_language_not_supported' => '手機還沒有下載中文離線語音，請先用打字的',
