@@ -503,6 +503,21 @@
     } catch (e) {}
   }
 
+  // 浮動鈕位置：存「右手座標系」的比例（0..1），左手只是水平鏡射
+  var POS_KEY = "tp-a11y-pos";
+  function readPos() {
+    try {
+      var p = JSON.parse(localStorage.getItem(POS_KEY) || "null");
+      if (p && isFinite(p.x) && isFinite(p.y)) return { x: Math.min(1, Math.max(0, +p.x)), y: Math.min(1, Math.max(0, +p.y)) };
+    } catch (e) {}
+    return null;
+  }
+  function writePos(p) {
+    try {
+      localStorage.setItem(POS_KEY, JSON.stringify(p));
+    } catch (e) {}
+  }
+
   function reducedMotion() {
     return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }
@@ -557,6 +572,10 @@
     (document.head || document.documentElement).appendChild(pageStyle);
 
     // 動態曲線：參考 GSAP 常用的 back.out／power3.out／expo.out，用 Web Animations API 實作
+    var pos = readPos();
+    var FAB = 64;
+    var dragMoved = false;
+
     var EASE = {
       pop: "cubic-bezier(.175,.885,.32,1.275)", // back.out：彈出時稍微超過再回來
       out: "cubic-bezier(.215,.61,.355,1)", // power3.out
@@ -599,6 +618,7 @@
 
     function applyHand() {
       host.setAttribute("data-hand", settings.hand);
+      applyPos();
       $("#hand-label").textContent = settings.hand === "right" ? "換到左手" : "換到右手";
     }
 
@@ -840,6 +860,7 @@
       if (focusFab) fab.focus();
     }
     fab.addEventListener("click", function () {
+      if (dragMoved) return;
       if (isOpen()) closePanel(true);
       else openPanel();
     });
@@ -850,8 +871,91 @@
 
     /** 「找服務」相對「關閉」的水平距離（右手：在左邊 76px；左手：在右邊）。 */
     function findOffset() {
+      if (pos && curFab) return curFab.left + FAB / 2 > window.innerWidth / 2 ? 76 : -76;
       return settings.hand === "left" ? -76 : 76;
     }
+    var curFab = null;
+    function clampN(v, lo, hi) {
+      return Math.max(lo, Math.min(hi, v));
+    }
+    /** 依位置（或預設）排好浮動鈕、「找服務」鈕與選單。可拖曳後選單要看浮動鈕在上半或下半決定往哪邊長。 */
+    function applyPos() {
+      var W = window.innerWidth, H = window.innerHeight;
+      var els = [fab, findBtn, panel];
+      if (!pos) {
+        curFab = null;
+        els.forEach(function (e) {
+          e.style.left = e.style.top = e.style.right = e.style.bottom = e.style.maxHeight = "";
+        });
+        return;
+      }
+      var fx = settings.hand === "left" ? 1 - pos.x : pos.x;
+      var left = clampN(Math.round(fx * (W - FAB)), 0, Math.max(0, W - FAB));
+      var top = clampN(Math.round(pos.y * (H - FAB)), 0, Math.max(0, H - FAB));
+      curFab = { left: left, top: top };
+      fab.style.left = left + "px";
+      fab.style.top = top + "px";
+      fab.style.right = fab.style.bottom = "auto";
+      var onRight = left + FAB / 2 > W / 2;
+      var fl = onRight ? left - 76 : left + 76;
+      findBtn.style.left = clampN(fl, 0, Math.max(0, W - FAB)) + "px";
+      findBtn.style.top = top + "px";
+      findBtn.style.right = findBtn.style.bottom = "auto";
+      var pw = Math.min(344, W - 32);
+      var pl = onRight ? left + FAB - pw : left;
+      panel.style.left = clampN(pl, 8, Math.max(8, W - pw - 8)) + "px";
+      panel.style.right = "auto";
+      var above = top - 12, below = H - (top + FAB) - 12;
+      if (above >= below) {
+        panel.style.top = "auto";
+        panel.style.bottom = H - top + 12 + "px";
+        panel.style.maxHeight = Math.max(160, above) + "px";
+      } else {
+        panel.style.bottom = "auto";
+        panel.style.top = top + FAB + 12 + "px";
+        panel.style.maxHeight = Math.max(160, below) + "px";
+      }
+    }
+    window.addEventListener("resize", applyPos);
+
+    // 拖曳浮動鈕：移動超過 8px 才算拖曳，否則視為點擊
+    (function () {
+      var sx = 0, sy = 0, l0 = 0, t0 = 0, id = null, dragging = false;
+      fab.style.touchAction = "none";
+      fab.addEventListener("pointerdown", function (ev) {
+        if (ev.pointerType === "mouse" && ev.button !== 0) return;
+        var r = fab.getBoundingClientRect();
+        sx = ev.clientX; sy = ev.clientY; l0 = r.left; t0 = r.top; id = ev.pointerId; dragging = false;
+      });
+      fab.addEventListener("pointermove", function (ev) {
+        if (id === null || ev.pointerId !== id) return;
+        var dx = ev.clientX - sx, dy = ev.clientY - sy;
+        if (!dragging) {
+          if (Math.hypot(dx, dy) < 8) return;
+          dragging = true;
+          try { fab.setPointerCapture(id); } catch (e) {}
+        }
+        var W = window.innerWidth, H = window.innerHeight;
+        var left = clampN(l0 + dx, 0, Math.max(0, W - FAB));
+        var top = clampN(t0 + dy, 0, Math.max(0, H - FAB));
+        var fx = W > FAB ? left / (W - FAB) : 0;
+        pos = { x: settings.hand === "left" ? 1 - fx : fx, y: H > FAB ? top / (H - FAB) : 0 };
+        applyPos();
+      });
+      function end(ev) {
+        if (id === null || ev.pointerId !== id) return;
+        id = null;
+        if (dragging) {
+          dragging = false;
+          dragMoved = true;
+          setTimeout(function () { dragMoved = false; }, 350);
+          if (pos) writePos(pos);
+          say("操作鈕已移動");
+        }
+      }
+      fab.addEventListener("pointerup", end);
+      fab.addEventListener("pointercancel", end);
+    })();
     /** 浮動鈕中心在 el 座標系的位置，以及能蓋滿 el 的圓半徑（水滴擴散用）。 */
     function dropCenter(el) {
       var pr = el.getBoundingClientRect();
@@ -1235,7 +1339,11 @@
 
     function goBack() {
       if (history.length > 1) history.back();
-      else say("這是第一頁了，要離開請按右上角的關閉");
+      else {
+        // 第一頁：直接離開微服務（App 內由 a11y_settings 的 close 處理；瀏覽器沒有 App 時只提示）
+        say("這是第一頁，離開微服務");
+        askApp("a11y_settings", { action: "close" }, 1000);
+      }
     }
 
     // ---------------- 底部詢問卡（按偏、確認） ----------------
@@ -2001,6 +2109,11 @@
     ":host([data-contrast]) #panel,:host([data-contrast]) #dock,:host([data-contrast]) .sheet{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border:2px solid #0b0d0e;box-shadow:none}" +
     ":host([data-contrast]) .tile,:host([data-contrast]) .result,:host([data-contrast]) #examples button,:host([data-contrast]) #contrast,:host([data-contrast]) .btn,:host([data-contrast]) #q-mic,:host([data-contrast]) #call-1999{background:#fff;border:2px solid #0b0d0e;box-shadow:none}" +
     ":host([data-contrast]) #fab,:host([data-contrast]) #find{background:#0b0d0e;color:#fff;border:2px solid #fff;-webkit-backdrop-filter:none;backdrop-filter:none}" +
+    ":host([data-contrast]) .btn.primary,:host([data-contrast]) #q-go,:host([data-contrast]) #dock-done{background:#0b0d0e !important;color:#fff !important;border:2px solid #0b0d0e}" +
+    ":host([data-contrast]) .btn.secondary,:host([data-contrast]) #q-mic,:host([data-contrast]) #call-1999,:host([data-contrast]) #contrast{color:#0b0d0e}" +
+    ":host([data-contrast]) .seg{background:#fff;border:2px solid #0b0d0e}:host([data-contrast]) .seg .thumb{background:#0b0d0e;border-color:#0b0d0e}" +
+    ":host([data-contrast]) .seg button{color:#0b0d0e}:host([data-contrast]) .seg button[aria-checked=true]{color:#fff}" +
+    ":host([data-contrast]) #find[aria-pressed=true]{background:#fff;color:#0b0d0e;border:2px solid #0b0d0e}" +
     "@media (prefers-reduced-transparency:reduce){#panel,#dock,.sheet{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}" +
     ".tile,.result,#examples button,#contrast,.btn.secondary,#q-mic,#call-1999{background:#f1f3f4}#fab{background:#5ab4c5}#find{background:#fff}}" +
     "@keyframes pulse{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.25);opacity:0}}" +

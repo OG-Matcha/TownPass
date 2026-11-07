@@ -103,7 +103,7 @@ class FeedbackView extends GetView<FeedbackViewController> {
           Expanded(
             child: ColoredBox(
               color: TPColors.white,
-              child: Padding(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,8 +139,8 @@ class FeedbackView extends GetView<FeedbackViewController> {
                         Assets.svg.iconInfo.svg(height: 24, width: 24),
                         const SizedBox(width: 8),
                         Flexible(
-                          child: RichText(
-                            text: TextSpan(
+                          child: Text.rich(
+                            TextSpan(
                               text: '若您對市政府有任何建議或問題請至',
                               style: const TextStyle(color: TPColors.grayscale700),
                               children: [
@@ -170,6 +170,7 @@ class FeedbackView extends GetView<FeedbackViewController> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 16),
                   ],
                 ),
               ),

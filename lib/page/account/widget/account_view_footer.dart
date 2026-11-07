@@ -18,18 +18,20 @@ class AccountViewFooter extends GetView<AccountViewController> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TPText(
+          Flexible(
+              child: TPText(
             '隱私權政策',
             style: TPTextStyles.h3Regular.copyWith(decoration: TextDecoration.underline),
             color: TPColors.grayscale950,
             onTap: () async => await TPRoute.openUri(
               uri: 'https://id.taipei/tpcd/about/policies/privacy',
             ),
-          ),
-          const SizedBox(width: 24),
+          )),
+          const SizedBox(width: 12),
           const TPLine.vertical(color: TPColors.grayscale400),
-          const SizedBox(width: 24),
-          TPText(
+          const SizedBox(width: 12),
+          Flexible(
+              child: TPText(
             '與我們聯絡',
             style: TPTextStyles.h3Regular.copyWith(decoration: TextDecoration.underline),
             color: TPColors.grayscale950,
@@ -46,7 +48,7 @@ class AccountViewFooter extends GetView<AccountViewController> {
                 Fluttertoast.showToast(msg: '無法開啟郵件 App');
               }
             },
-          ),
+          )),
         ],
       ),
     );

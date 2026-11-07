@@ -50,13 +50,15 @@ class _MessageListRow extends StatelessWidget {
                           children: [
                             const SizedBox(width: 10),
                             const SizedBox(width: 16),
-                            TPText(
-                              item.datetime.format(),
-                              style: TPTextStyles.h3SemiBold,
-                              color: switch (item.hasRead) {
-                                true => TPColors.grayscale400,
-                                false => TPColors.grayscale500,
-                              },
+                            Flexible(
+                              child: TPText(
+                                item.datetime.format(),
+                                style: TPTextStyles.h3SemiBold,
+                                color: switch (item.hasRead) {
+                                  true => TPColors.grayscale400,
+                                  false => TPColors.grayscale500,
+                                },
+                              ),
                             ),
                           ],
                         ),

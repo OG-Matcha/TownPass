@@ -1,4 +1,5 @@
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:get/get.dart';
 import 'package:town_pass/util/a11y/a11y_layer.dart';
 import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
 
@@ -7,6 +8,7 @@ import 'package:town_pass/util/web_message_handler/tp_web_message_handler.dart';
 /// 網頁 → App：
 ///   `{ name: 'a11y_settings', data: { action: 'get' } }`
 ///   `{ name: 'a11y_settings', data: { action: 'set', settings: { fontLevel, highContrast, hand } } }`
+///   `{ name: 'a11y_settings', data: { action: 'close' } }`（關閉目前的微服務頁）
 /// App → 網頁：`{ name: 'a11y_settings', data: { enabled, fontLevel, highContrast, hand } }`
 ///
 /// 只存四個顯示偏好，不含個資；網頁不能透過這裡關掉操作輔助（`enabled` 只能在 App 設定頁改），
@@ -23,6 +25,11 @@ class A11ySettingsMessageHandler extends TPWebMessageHandler {
     required Function(WebMessage replyWebMessage)? onReply,
   }) async {
     final data = message is Map ? message : const {};
+    if (data['action'] == 'close' && isMainFrame) {
+      // 微服務第一頁按「回上一頁」：關掉微服務（等同右上角關閉）
+      Get.back();
+      return;
+    }
     final current = A11yLayer.settings;
     if (data['action'] == 'set' && isMainFrame) {
       final incoming = data['settings'] is Map ? Map.of(data['settings'] as Map) : <dynamic, dynamic>{};

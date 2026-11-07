@@ -49,6 +49,19 @@ class TPWebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Obx(
+      () => PopScope(
+        // 有上一頁就回上一頁；第一頁才真的離開微服務
+        canPop: !canGoBack.value,
+        onPopInvokedWithResult: (didPop, _) async {
+          if (!didPop) await webViewController.value?.goBack();
+        },
+        child: _buildScaffold(),
+      ),
+    );
+  }
+
+  Widget _buildScaffold() {
     return Scaffold(
       appBar: TPAppBar(
         backgroundColor: TPColors.primary500,
