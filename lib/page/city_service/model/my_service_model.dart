@@ -37,7 +37,7 @@ extension MyServiceIdExt on MyServiceItemId {
   MyServiceItem get item {
     return switch (this) {
       MyServiceItemId.mrtAccess => MyServiceItem(
-          title: '自在出發',
+          title: '捷伴',
           description: '想去哪裡、想做什麼：找官方場館與服務，查電梯路線，再接官方下一步',
           icon: Assets.svg.iconMrtAccess.svg(),
           category: MyServiceCategory.cityService,
