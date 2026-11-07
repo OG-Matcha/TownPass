@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:town_pass/util/web_message_handler/a11y_settings_message_handler.dart';
+import 'package:town_pass/util/web_message_handler/embed_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/open_find_service_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/service_catalog_message_handler.dart';
 import 'package:town_pass/util/web_message_handler/service_rank_message_handler.dart';
@@ -25,6 +26,7 @@ abstract class TPWebMessageListener {
         A11ySettingsMessageHandler(),
         ServiceCatalogMessageHandler(),
         ServiceRankMessageHandler(),
+        EmbedMessageHandler(),
         OpenFindServiceMessageHandler(),
         SpeechToTextMessageHandler(),
         TtsMessageHandler(),

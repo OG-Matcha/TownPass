@@ -131,6 +131,7 @@ class ServiceRankService extends GetxService implements ServiceRanker {
     _status.value = ServiceRankStatus.preparing;
     try {
       final TextEmbedder embedder = _testEmbedder ?? await _loadRealEmbedder();
+      _sharedEmbedder = embedder;
       final docs = await _docsLoader();
       final key = serviceIndexCacheKey(docs: docs, modelId: embedder.modelId);
       final store = ServiceIndexStore(
@@ -197,6 +198,11 @@ class ServiceRankService extends GetxService implements ServiceRanker {
     if (engine == null || _status.value != ServiceRankStatus.ready) return null;
     return engine.rank(query, ids: ids);
   }
+
+  /// 已載入的向量模型（真模型或測試用的假模型），給共用向量服務 `embed` handler 用：
+  /// 網頁（捷運陪伴）與找服務共用同一個實例，App 裡只有一顆向量模型。準備好之前為 null。
+  TextEmbedder? get sharedEmbedder => _sharedEmbedder;
+  TextEmbedder? _sharedEmbedder;
 
   /// 真實模型的 embedder，只給 tool/semantic_search/eval_main.dart 量測用（測試用的假 embedder 時為 null）。
   EdgeAiTextEmbedder? get edgeEmbedder => _edgeEmbedder;

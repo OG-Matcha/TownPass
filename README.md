@@ -57,6 +57,8 @@ Here are some quick setup guide.
 | 授權 | Apache-2.0：轉換版 repo 與基礎模型 [google/embeddinggemma-2](https://huggingface.co/google/embeddinggemma-2) 的 model card 都標示 `license: apache-2.0`、不需登入（2026-11-08 以 Hugging Face API 核對）。不是舊版 EmbeddingGemma 的 Gemma Terms of Use |
 | 廠牌 | Google（非中國廠牌；未使用 Qwen、DeepSeek、BGE 等） |
 
+**App 裡只有這一顆向量模型。** 捷運陪伴微服務（`assets/web/mrt/`）的語音指令與目的地語意搜尋也透過 `embed` handler（`lib/util/web_message_handler/embed_message_handler.dart`）共用同一個已載入的實例；網頁原本自帶的 multilingual-e5-small 不再打包進 App（只留給一般瀏覽器部署）。選它的量測：同一組題目上兩顆模型的比較見主工作區 `docs/research/17_向量模型二選一.md`。
+
 模型檔不進 git。取得：`bash tool/semantic_search/fetch_model.sh`（固定修訂版並驗證 SHA-256，會放到 `assets/models/`）。
 打包進 App 後，第一次啟動複製到 App 私有目錄再載入，不依賴執行時下載。
 
