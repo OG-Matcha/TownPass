@@ -1,0 +1,261 @@
+[
+ {
+  "id": "report-1999",
+  "title": "反映設施故障",
+  "does": "電梯壞了、人行道破損或斜坡被占用，用 1999 線上登錄案件，不用會員也能送出。",
+  "who": "所有人；輪椅、嬰兒車使用者最常用",
+  "when": "any",
+  "placeKinds": [],
+  "keywords": [
+   "電梯壞了",
+   "電梯故障",
+   "人行道壞掉",
+   "斜坡被擋",
+   "路不能走",
+   "陳情",
+   "1999",
+   "檢舉",
+   "反映問題",
+   "有話要說"
+  ],
+  "url": "https://1999.gov.taipei/Front/main",
+  "phone": "1999",
+  "loginRequired": false,
+  "org": "臺北市政府",
+  "source": "https://1999.gov.taipei/Front/main（頁面寫「非會員亦可登錄案件」；實名制類別會導到單一身分驗證）",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "metro-feedback",
+  "title": "向捷運反映意見",
+  "does": "捷運站內設施或服務的問題，填臺北捷運公司的意見反映表單。",
+  "who": "搭捷運的所有人",
+  "when": "trip",
+  "placeKinds": [],
+  "keywords": [
+   "捷運客服",
+   "捷運意見",
+   "站內電梯",
+   "閘門",
+   "站務員",
+   "臺北捷運"
+  ],
+  "url": "https://www.metro.taipei/cp.aspx?n=F67D379C71019212",
+  "phone": null,
+  "loginRequired": false,
+  "org": "臺北大眾捷運股份有限公司",
+  "source": "https://www.metro.taipei/ 首頁「客服信箱／意見反映線上填寫」連結；24 小時客服電話本次未在網頁上查到【未查證】",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "metro-a11y-guide",
+  "title": "看捷運無障礙說明",
+  "does": "查捷運站內、站外與車廂的無障礙設施說明，例如無障礙閘門在詢問處旁、輪椅候車位置。",
+  "who": "輪椅、嬰兒車、長者、視障者",
+  "when": "before",
+  "placeKinds": [],
+  "keywords": [
+   "無障礙閘門",
+   "輪椅上車",
+   "月台門",
+   "無障礙電梯",
+   "站外坡道",
+   "捷運無障礙"
+  ],
+  "url": "https://www.metro.taipei/News.aspx?n=C0EB9D07B84907D9&sms=07FD8B85332F8262",
+  "phone": null,
+  "loginRequired": false,
+  "org": "臺北大眾捷運股份有限公司",
+  "source": "https://www.metro.taipei/News.aspx?n=C0EB9D07B84907D9&sms=07FD8B85332F8262（含站內、站外、車廂三頁，站外頁更新日 107-06-15）",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "fgbus-book",
+  "title": "預約復康巴士",
+  "does": "領有身心障礙證明的市民，用網路或電話預約小型復康巴士到府接送。",
+  "who": "身心障礙證明持有者；出站後路程太遠或天候不佳時的替代方案",
+  "when": "before",
+  "placeKinds": [],
+  "keywords": [
+   "復康巴士",
+   "叫車",
+   "接送",
+   "無法走路",
+   "輪椅車",
+   "預約車"
+  ],
+  "url": "https://0809080650.gov.taipei/",
+  "phone": "0809-080-650",
+  "loginRequired": true,
+  "org": "臺北市公共運輸處",
+  "source": "https://dosw.gov.taipei/News_Content.aspx?n=E76EE035FB30679A&sms=9DB69DA964B89A34&s=81989229842DD928 → https://0809080650.gov.taipei/（帳號為身心障礙證明編號；語音訂車 0800-065-165）",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "tpech-register",
+  "title": "掛號聯合醫院",
+  "does": "臺北市立聯合醫院各院區的網路掛號；也可打 24 小時語音掛號。",
+  "who": "要去聯合醫院看診的人",
+  "when": "before",
+  "placeKinds": [
+   "醫院"
+  ],
+  "keywords": [
+   "掛號",
+   "聯合醫院",
+   "仁愛院區",
+   "看診",
+   "門診",
+   "預約看病"
+  ],
+  "url": "https://webreg.tpech.gov.tw/RegOnline1_1.aspx?ChaId=A105&tab=1&ZCode=RA",
+  "phone": "02-2181-1995",
+  "loginRequired": false,
+  "org": "臺北市立聯合醫院",
+  "source": "https://tpech.gov.taipei/（頁尾「24 小時語音掛號 (02)2181-1995」「1999 轉 888 客服中心」）；掛號頁 HTTP 200",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "ntuh-register",
+  "title": "掛號臺大醫院",
+  "does": "國立臺灣大學醫學院附設醫院總院的網路掛號。",
+  "who": "要去臺大醫院看診的人",
+  "when": "before",
+  "placeKinds": [
+   "醫院"
+  ],
+  "keywords": [
+   "掛號",
+   "臺大醫院",
+   "台大",
+   "看診",
+   "門診"
+  ],
+  "url": "https://reg.ntuh.gov.tw/WebReg/WebReg/BranchIndex?vHospCode=T0",
+  "phone": "02-2312-3456",
+  "loginRequired": false,
+  "org": "國立臺灣大學醫學院附設醫院",
+  "source": "https://reg.ntuh.gov.tw/WebReg（HTTP 200）；電話取自 public/data/places.json",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "district-queue",
+  "title": "看區公所叫號",
+  "does": "出發前先看區公所櫃檯目前叫到幾號，避免白跑或久等。",
+  "who": "要去區公所辦事的人，尤其行動不便、不耐久站者",
+  "when": "before",
+  "placeKinds": [
+   "區公所"
+  ],
+  "keywords": [
+   "叫號",
+   "區公所",
+   "排隊",
+   "幾號",
+   "等多久",
+   "櫃檯"
+  ],
+  "url": "https://cloud.taipei/web_toe_getContent",
+  "phone": null,
+  "loginRequired": false,
+  "org": "臺北市政府民政局",
+  "source": "https://ca.gov.taipei/ 首頁「區公所櫃檯叫號進度查詢」連結（http 轉 https，HTTP 200）",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "senior-card",
+  "title": "申辦敬老卡",
+  "does": "年滿 65 歲設籍臺北市，到任一區公所辦敬老悠遊卡，每月 600 點搭捷運、公車、計程車。",
+  "who": "65 歲以上長者、55 歲以上原住民",
+  "when": "before",
+  "placeKinds": [
+   "區公所"
+  ],
+  "keywords": [
+   "敬老卡",
+   "敬老悠遊卡",
+   "老人卡",
+   "65歲",
+   "免費搭車",
+   "點數"
+  ],
+  "url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1",
+  "phone": "1999",
+  "loginRequired": false,
+  "org": "臺北市政府社會局",
+  "source": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1（資料更新 115-05-11）",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "love-card",
+  "title": "申辦愛心卡",
+  "does": "領有身心障礙證明的市民，到任一區公所或線上申請愛心悠遊卡，每月 480 點交通優惠。",
+  "who": "身心障礙證明持有者及陪伴者",
+  "when": "before",
+  "placeKinds": [
+   "區公所"
+  ],
+  "keywords": [
+   "愛心卡",
+   "愛心悠遊卡",
+   "愛陪卡",
+   "身障乘車優待",
+   "陪伴卡"
+  ],
+  "url": "https://dosw.gov.taipei/cp.aspx?n=98EA840859DF5D7F",
+  "phone": "02-2727-4168#8223",
+  "loginRequired": false,
+  "org": "臺北市公共運輸處、臺北市政府社會局",
+  "source": "https://dosw.gov.taipei/cp.aspx?n=98EA840859DF5D7F（HTTP 200）；頁面另列台北服務通線上申辦 https://service.taipei/case-detail/EO008，本次 curl 回 404【未查證】",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "aid-center-book",
+  "title": "預約輔具中心",
+  "does": "線上預約輔具評估、維修、借用爬梯機或二手輔具；也可直接打電話。",
+  "who": "身心障礙者、長照對象、需要輪椅或助行器的人",
+  "when": "before",
+  "placeKinds": [
+   "輔具中心"
+  ],
+  "keywords": [
+   "輔具",
+   "輪椅借用",
+   "助行器",
+   "輔具維修",
+   "爬梯機",
+   "二手輔具",
+   "輔具補助"
+  ],
+  "url": "https://tpap.gov.taipei/app37/rentView/index",
+  "phone": "02-7713-7760",
+  "loginRequired": false,
+  "org": "臺北市政府社會局（委託合宜輔具中心）",
+  "source": "https://tpap.gov.taipei/app37/rentView/index（HTTP 200，需 JavaScript；是否需登入【未查證】）；電話取自 data.taipei「臺北市二手輔具資源提供單位」",
+  "checkedAt": "2026-11-08"
+ },
+ {
+  "id": "library-blind",
+  "title": "用視障電子圖書館",
+  "does": "臺北市立圖書館的視障電子圖書館，可線上借閱有聲書與電子書，不用到館。",
+  "who": "視障、閱讀困難者",
+  "when": "any",
+  "placeKinds": [
+   "圖書館"
+  ],
+  "keywords": [
+   "有聲書",
+   "視障",
+   "點字",
+   "電子書",
+   "圖書館",
+   "借書"
+  ],
+  "url": "https://blind.tpml.edu.tw/",
+  "phone": "02-2755-2823",
+  "loginRequired": true,
+  "org": "臺北市立圖書館",
+  "source": "https://tpml.gov.taipei/ 首頁連結 → https://blind.tpml.edu.tw/TaipeiLib/wSite/mp?mp=2（HTTP 200）；借閱需讀者帳號",
+  "checkedAt": "2026-11-08"
+ }
+]

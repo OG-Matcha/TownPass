@@ -1,0 +1,46 @@
+{
+  "name": "map-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "a11y": "node scripts/a11y-check.mjs",
+    "check:behavior": "node scripts/behavior-check.mjs",
+    "check:unit": "node --experimental-strip-types scripts/voice-check.mts && node --experimental-strip-types scripts/trip-check.mts && node --experimental-strip-types scripts/route-check.mts && node scripts/worker-check.mjs && node --experimental-strip-types scripts/lines-check.mts && node --experimental-strip-types scripts/place-search-check.mts scripts/place-dev.json",
+    "check:combo": "node scripts/combo-check.mjs",
+    "check:places": "node --experimental-strip-types scripts/place-search-check.mts && node scripts/place-semantic-check.mjs",
+    "check": "npm run check:unit && npm run check:behavior && npm run a11y && npm run check:offline",
+    "check:offline": "node scripts/offline-check.mjs",
+    "fetch:data": "node scripts/fetch-data.mjs",
+    "fetch:poi": "node scripts/fetch-poi.mjs",
+    "fetch:aliases": "node --experimental-strip-types scripts/fetch-aliases.mjs",
+    "fetch:tiles": "node scripts/fetch-tiles.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "fetch:model": "node scripts/fetch-model.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.2",
+    "@vueuse/core": "^15.0.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^1.0.0",
+    "maplibre-gl": "^6.16.0",
+    "tailwind-merge": "^3.7.0",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "playwright": "^1.65.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.6",
+    "vue-tsc": "^3.3.14",
+    "wrangler": "^4.158.0"
+  }
+}

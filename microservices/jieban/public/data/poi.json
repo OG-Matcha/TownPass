@@ -1,0 +1,3524 @@
+{
+ "fetchedAt": "2026-11-07T17:34:22.765Z",
+ "sources": [
+  {
+   "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+   "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+  },
+  {
+   "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+   "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+  },
+  {
+   "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+   "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+  },
+  {
+   "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+   "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+  },
+  {
+   "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+   "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+  },
+  {
+   "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+   "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+  }
+ ],
+ "items": [
+  {
+   "id": "h-國立台灣大學醫學院附設醫院",
+   "name": "台大醫院（東址）",
+   "fullName": "國立台灣大學醫學院附設醫院",
+   "kind": "醫院",
+   "address": "臺北市中正區中山南路7、8號；常德街1號",
+   "phone": "(02)23123456",
+   "lat": 25.03553921,
+   "lng": 121.5183428,
+   "aliases": [
+    "台大醫院",
+    "台大",
+    "台大醫院東址",
+    "台大東址"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-國立臺灣大學醫學院附設醫院兒童醫院",
+   "name": "台大兒童醫院",
+   "fullName": "國立臺灣大學醫學院附設醫院兒童醫院",
+   "kind": "醫院",
+   "address": "臺北市中正區中山南路8號",
+   "phone": "(02)23123456",
+   "lat": 25.04434314,
+   "lng": 121.5187506,
+   "aliases": [
+    "台大兒醫",
+    "兒童醫院"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-郵政醫院-委託中英醫療社團法人經營",
+   "name": "郵政醫院",
+   "fullName": "郵政醫院（委託中英醫療社團法人經營）",
+   "kind": "醫院",
+   "address": "臺北市中正區福州街14號",
+   "phone": "(02)23956755",
+   "lat": 25.02874869,
+   "lng": 121.5186982,
+   "aliases": [],
+   "rank": 29,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北市立聯合醫院",
+   "name": "聯合醫院中興院區",
+   "fullName": "臺北市立聯合醫院",
+   "kind": "醫院",
+   "address": "臺北市大同區鄭州路145號",
+   "phone": "(02)25523234",
+   "lat": 25.05069244,
+   "lng": 121.5088874,
+   "aliases": [
+    "聯合醫院",
+    "聯醫",
+    "中興院區",
+    "中興醫院",
+    "聯醫中興",
+    "市立聯合醫院"
+   ],
+   "rank": 11,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-台灣基督長老教會馬偕醫療財團法人馬偕紀念醫院",
+   "name": "馬偕紀念醫院",
+   "fullName": "台灣基督長老教會馬偕醫療財團法人馬偕紀念醫院",
+   "kind": "醫院",
+   "address": "臺北市中山區中山北路2段92號",
+   "phone": "(02)25433535",
+   "lat": 25.05888423,
+   "lng": 121.522558,
+   "aliases": [
+    "馬偕",
+    "馬偕醫院",
+    "台北馬偕"
+   ],
+   "rank": 4,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-台灣基督長老教會馬偕醫療財團法人馬偕兒童醫院",
+   "name": "台灣基督長老教會馬偕醫療財團法人馬偕兒童醫院",
+   "fullName": "台灣基督長老教會馬偕醫療財團法人馬偕兒童醫院",
+   "kind": "醫院",
+   "address": "臺北市中山區中山北路2段92號",
+   "phone": "(02)25433535",
+   "lat": 25.05888423,
+   "lng": 121.522558,
+   "aliases": [],
+   "rank": 99,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-協和婦女醫院",
+   "name": "協和婦女醫院",
+   "fullName": "協和婦女醫院",
+   "kind": "醫院",
+   "address": "臺北市中山區松江路85巷5號1，2，3，4樓、93巷6號1，2，4樓",
+   "phone": "(02)25072222",
+   "lat": 25.05027331,
+   "lng": 121.5339434,
+   "aliases": [],
+   "rank": 33,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-三軍總醫院松山分院附設民眾診療服務處",
+   "name": "三總松山分院",
+   "fullName": "三軍總醫院松山分院附設民眾診療服務處",
+   "kind": "醫院",
+   "address": "臺北市松山區健康路131號",
+   "phone": "(02)27462151",
+   "lat": 25.05394015,
+   "lng": 121.5577045,
+   "aliases": [
+    "松山分院"
+   ],
+   "rank": 25,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-長庚醫療財團法人台北長庚紀念醫院",
+   "name": "台北長庚醫院",
+   "fullName": "長庚醫療財團法人台北長庚紀念醫院",
+   "kind": "醫院",
+   "address": "199號(暫未開放)、197號(暫未開放)、臺北市松山區敦化北路199巷6號、 臺北市松山區民生東路三段130巷9號2、3、B1、B2樓、臺北市松山區南京東路3段337號5、6、9、10樓",
+   "phone": "(02)27135211",
+   "lat": 25.05023183,
+   "lng": 121.5485556,
+   "aliases": [
+    "長庚",
+    "台北長庚",
+    "長庚醫院"
+   ],
+   "rank": 10,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-基督復臨安息日會醫療財團法人臺安醫院",
+   "name": "臺安醫院",
+   "fullName": "基督復臨安息日會醫療財團法人臺安醫院",
+   "kind": "醫院",
+   "address": "臺北市松山區八德路二段424、426號",
+   "phone": "(02)27718151",
+   "lat": 25.04758836,
+   "lng": 121.5444842,
+   "aliases": [
+    "臺安",
+    "台安醫院"
+   ],
+   "rank": 17,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-博仁綜合醫院",
+   "name": "博仁綜合醫院",
+   "fullName": "博仁綜合醫院",
+   "kind": "醫院",
+   "address": "臺北市松山區光復北路66號、68號地下一層、68號、68號2至7樓、68號2樓之1至7樓之1、68號2樓之2至7樓之2",
+   "phone": "(02)25786677",
+   "lat": 25.04990354,
+   "lng": 121.557695,
+   "aliases": [
+    "博仁"
+   ],
+   "rank": 20,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-培靈醫院",
+   "name": "培靈醫院",
+   "fullName": "培靈醫院",
+   "kind": "醫院",
+   "address": "臺北市松山區八德路四段355號",
+   "phone": "(02)27606116",
+   "lat": 25.04940059,
+   "lng": 121.5682821,
+   "aliases": [],
+   "rank": 32,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-國立臺灣大學醫學院附設醫院癌醫中心分院",
+   "name": "台大癌醫中心",
+   "fullName": "國立臺灣大學醫學院附設醫院癌醫中心分院",
+   "kind": "醫院",
+   "address": "臺北市大安區基隆路 3段155巷57號",
+   "phone": "(02)23220322",
+   "lat": 25.01449586,
+   "lng": 121.5439164,
+   "aliases": [
+    "台大癌醫",
+    "癌醫中心"
+   ],
+   "rank": 13,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-中山醫療社團法人中山醫院",
+   "name": "中山醫院",
+   "fullName": "中山醫療社團法人中山醫院",
+   "kind": "醫院",
+   "address": "臺北市大安區仁愛路四段112巷11號、臺北市仁愛路四段112巷12號",
+   "phone": "(02)27081166",
+   "lat": 25.03655173,
+   "lng": 121.5497106,
+   "aliases": [],
+   "rank": 24,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-國泰醫療財團法人國泰綜合醫院",
+   "name": "國泰綜合醫院",
+   "fullName": "國泰醫療財團法人國泰綜合醫院",
+   "kind": "醫院",
+   "address": "臺北市大安區仁愛路四段266巷6號，280號",
+   "phone": "(02)27082121",
+   "lat": 25.03717848,
+   "lng": 121.5528014,
+   "aliases": [
+    "國泰",
+    "國泰醫院"
+   ],
+   "rank": 5,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-中心診所醫療財團法人中心綜合醫院",
+   "name": "中心綜合醫院",
+   "fullName": "中心診所醫療財團法人中心綜合醫院",
+   "kind": "醫院",
+   "address": "臺北市大安區忠孝東路四段77號",
+   "phone": "(02)27510221",
+   "lat": 25.04186487,
+   "lng": 121.5473297,
+   "aliases": [
+    "中心診所"
+   ],
+   "rank": 22,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-宏恩醫療財團法人宏恩綜合醫院",
+   "name": "宏恩綜合醫院",
+   "fullName": "宏恩醫療財團法人宏恩綜合醫院",
+   "kind": "醫院",
+   "address": "臺北市大安區仁愛路四段71巷1號、仁愛路四段61號、仁愛路四段91巷16號",
+   "phone": "(02)27713161",
+   "lat": 25.03849645,
+   "lng": 121.5470295,
+   "aliases": [
+    "宏恩醫院"
+   ],
+   "rank": 23,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-秀傳醫院",
+   "name": "秀傳醫院",
+   "fullName": "秀傳醫院",
+   "kind": "醫院",
+   "address": "臺北市大安區光復南路116巷1、3、5號1至4樓及地下1樓",
+   "phone": "(02)27717172",
+   "lat": 25.04311217,
+   "lng": 121.5568623,
+   "aliases": [
+    "台北秀傳"
+   ],
+   "rank": 31,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-國立臺灣大學醫學院附設醫院北護分院",
+   "name": "台大北護分院",
+   "fullName": "國立臺灣大學醫學院附設醫院北護分院",
+   "kind": "醫院",
+   "address": "臺北市萬華區康定路37號、臺北市萬華區內江街87號、臺北市萬華區內江街89號 (文教大樓1樓及供應樓1至2樓)",
+   "phone": "(02)23717101",
+   "lat": 25.04222858,
+   "lng": 121.5025511,
+   "aliases": [
+    "北護分院",
+    "台大北護"
+   ],
+   "rank": 14,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-西園醫療社團法人西園醫院",
+   "name": "西園醫院",
+   "fullName": "西園醫療社團法人西園醫院",
+   "kind": "醫院",
+   "address": "臺北市萬華區西園路二段266、268、270、272、276號、185、187、189號",
+   "phone": "(02)23329888",
+   "lat": 25.0277877,
+   "lng": 121.4945402,
+   "aliases": [],
+   "rank": 21,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-財團法人台灣省私立台北仁濟院附設仁濟醫院",
+   "name": "仁濟醫院",
+   "fullName": "財團法人台灣省私立台北仁濟院附設仁濟醫院",
+   "kind": "醫院",
+   "address": "臺北市萬華區廣州街200、243號",
+   "phone": "(02)23021131",
+   "lat": 25.03642709,
+   "lng": 121.5042335,
+   "aliases": [],
+   "rank": 27,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-同仁院醫療財團法人萬華醫院",
+   "name": "萬華醫院",
+   "fullName": "同仁院醫療財團法人萬華醫院",
+   "kind": "醫院",
+   "address": "臺北市萬華區中華路二段606巷6號",
+   "phone": "(02)23059292",
+   "lat": 25.02405006,
+   "lng": 121.5098259,
+   "aliases": [],
+   "rank": 28,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北醫學大學附設醫院",
+   "name": "北醫附設醫院",
+   "fullName": "臺北醫學大學附設醫院",
+   "kind": "醫院",
+   "address": "臺北市信義區吳興街２５2號、250號",
+   "phone": "(02)27372181",
+   "lat": 25.02663801,
+   "lng": 121.5636377,
+   "aliases": [
+    "北醫",
+    "北醫附醫",
+    "台北醫學大學附設醫院"
+   ],
+   "rank": 7,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-新光醫療財團法人新光吳火獅紀念醫院",
+   "name": "新光醫院",
+   "fullName": "新光醫療財團法人新光吳火獅紀念醫院",
+   "kind": "醫院",
+   "address": "臺北市士林區文昌路95號及士商路51號、51號2樓、51號3樓、51號4樓、51號5樓、51號6樓、51號7樓、53號、55號、57號、臺北市士林區基河路252號1樓",
+   "phone": "(02)28332211",
+   "lat": 25.0962409,
+   "lng": 121.5202887,
+   "aliases": [
+    "新光",
+    "新光吳火獅紀念醫院"
+   ],
+   "rank": 6,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-三軍總醫院北投分院附設民眾診療服務處",
+   "name": "三總北投分院",
+   "fullName": "三軍總醫院北投分院附設民眾診療服務處",
+   "kind": "醫院",
+   "address": "臺北市北投區新民路60號、中和街250號1至4樓、永興路二段2號1至2樓",
+   "phone": "(02)28959808",
+   "lat": 25.1398048,
+   "lng": 121.5097013,
+   "aliases": [
+    "北投分院"
+   ],
+   "rank": 26,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北榮民總醫院",
+   "name": "台北榮總",
+   "fullName": "臺北榮民總醫院",
+   "kind": "醫院",
+   "address": "臺北市北投區石牌路二段201號、322號",
+   "phone": "(02)28712121",
+   "lat": 25.11918228,
+   "lng": 121.5191658,
+   "aliases": [
+    "榮總",
+    "北榮",
+    "榮民總醫院",
+    "榮民醫院"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北市立關渡醫院-委託臺北榮民總醫院經營",
+   "name": "關渡醫院",
+   "fullName": "臺北市立關渡醫院─委託臺北榮民總醫院經營",
+   "kind": "醫院",
+   "address": "臺北市北投區知行路225巷12號",
+   "phone": "(02)28587000",
+   "lat": 25.12018758,
+   "lng": 121.4663577,
+   "aliases": [],
+   "rank": 16,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-振興醫療財團法人振興醫院",
+   "name": "振興醫院",
+   "fullName": "振興醫療財團法人振興醫院",
+   "kind": "醫院",
+   "address": "臺北市北投區振興街45號",
+   "phone": "(02)28264400",
+   "lat": 25.11754255,
+   "lng": 121.5224005,
+   "aliases": [
+    "振興"
+   ],
+   "rank": 9,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-醫療財團法人辜公亮基金會和信治癌中心醫院",
+   "name": "和信治癌中心醫院",
+   "fullName": "醫療財團法人辜公亮基金會和信治癌中心醫院",
+   "kind": "醫院",
+   "address": "臺北市北投區立德路125號",
+   "phone": "(02)28970011",
+   "lat": 25.12834055,
+   "lng": 121.4720113,
+   "aliases": [
+    "和信",
+    "和信醫院"
+   ],
+   "rank": 15,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北市北投健康管理醫院",
+   "name": "北投健康管理醫院",
+   "fullName": "臺北市北投健康管理醫院",
+   "kind": "醫院",
+   "address": "臺北市北投區中和街2號",
+   "phone": "(02)28988686",
+   "lat": 25.13758475,
+   "lng": 121.5037059,
+   "aliases": [],
+   "rank": 34,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-三軍總醫院附設民眾診療服務處",
+   "name": "三軍總醫院",
+   "fullName": "三軍總醫院附設民眾診療服務處",
+   "kind": "醫院",
+   "address": "臺北市內湖區成功路二段325號；臺北市中正區汀州路3段40號",
+   "phone": "(02)87923311",
+   "lat": 25.07180042,
+   "lng": 121.5919821,
+   "aliases": [
+    "三總",
+    "內湖三總"
+   ],
+   "rank": 3,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-康寧醫療財團法人康寧醫院",
+   "name": "康寧醫院",
+   "fullName": "康寧醫療財團法人康寧醫院",
+   "kind": "醫院",
+   "address": "臺北市內湖區成功路五段420巷26號",
+   "phone": "(02)26345500",
+   "lat": 25.07595162,
+   "lng": 121.6087792,
+   "aliases": [],
+   "rank": 19,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-中國醫藥大學附設醫院臺北分院",
+   "name": "中國醫藥大學附設醫院臺北分院",
+   "fullName": "中國醫藥大學附設醫院臺北分院",
+   "kind": "醫院",
+   "address": "臺北市內湖區內湖路二段360號、362號",
+   "phone": "(02)27919696",
+   "lat": 25.08212491,
+   "lng": 121.5905997,
+   "aliases": [
+    "中國醫藥大學台北分院",
+    "中國附醫台北"
+   ],
+   "rank": 18,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-德威國際牙醫口腔醫院",
+   "name": "德威牙醫口腔醫院",
+   "fullName": "德威國際牙醫口腔醫院",
+   "kind": "醫院",
+   "address": "臺北市內湖區內湖路一段659號1樓",
+   "phone": "(02)27990123",
+   "lat": 25.08056184,
+   "lng": 121.5751861,
+   "aliases": [],
+   "rank": 35,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-臺北市立萬芳醫院-委託臺北醫學大學辦理",
+   "name": "萬芳醫院",
+   "fullName": "臺北市立萬芳醫院-委託臺北醫學大學辦理",
+   "kind": "醫院",
+   "address": "臺北市文山區興隆路三段111號",
+   "phone": "(02)29307930",
+   "lat": 25.00030628,
+   "lng": 121.5583303,
+   "aliases": [
+    "萬芳",
+    "市立萬芳醫院"
+   ],
+   "rank": 8,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-景美醫院",
+   "name": "景美醫院",
+   "fullName": "景美醫院",
+   "kind": "醫院",
+   "address": "臺北市文山區羅斯福路六段280號、文山區育英街2巷18號、文山區羅斯福路六段276巷1號1樓、文山區萬慶街18號1樓",
+   "phone": "(02)29331010",
+   "lat": 24.99001925,
+   "lng": 121.5405334,
+   "aliases": [],
+   "rank": 30,
+   "source": {
+    "dataset": "臺北市公私立醫院（臺北市政府衛生局）",
+    "url": "https://data.taipei/dataset/detail?id=b02cd6b2-79be-4d7f-ae78-305b2af668f5"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-和平",
+   "name": "聯合醫院和平院區",
+   "fullName": "臺北市立聯合醫院和平婦幼院區(和平)",
+   "kind": "醫院",
+   "address": "臺北市萬華區中華路2段33號",
+   "phone": "(02)23889595",
+   "lat": 25.0354263,
+   "lng": 121.5070287,
+   "aliases": [
+    "和平醫院",
+    "和平院區",
+    "聯醫和平",
+    "聯合醫院和平"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/197316116「臺北市立聯合醫院和平婦幼院區和平院址」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-婦幼",
+   "name": "聯合醫院婦幼院區",
+   "fullName": "臺北市立聯合醫院和平婦幼院區(婦幼)",
+   "kind": "醫院",
+   "address": "臺北市中正福州街12號",
+   "phone": "(02)23916470",
+   "lat": 25.0291425,
+   "lng": 121.5194569,
+   "aliases": [
+    "婦幼醫院",
+    "婦幼院區",
+    "聯醫婦幼",
+    "和平婦幼",
+    "婦幼"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/1004862600「臺北市立聯合醫院和平婦幼院區婦幼院址」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-忠孝",
+   "name": "聯合醫院忠孝院區",
+   "fullName": "臺北市立聯合醫院忠孝院區",
+   "kind": "醫院",
+   "address": "台北市南港區同德路87號",
+   "phone": "(02)27861288",
+   "lat": 25.0465558,
+   "lng": 121.5862323,
+   "aliases": [
+    "忠孝醫院",
+    "忠孝院區",
+    "聯醫忠孝",
+    "聯合醫院忠孝"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/255983133「忠孝院區」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-陽明",
+   "name": "聯合醫院陽明院區",
+   "fullName": "臺北市立聯合醫院陽明院區",
+   "kind": "醫院",
+   "address": "臺北市士林區雨聲街105號",
+   "phone": "(02)28353456",
+   "lat": 25.105162,
+   "lng": 121.5320517,
+   "aliases": [
+    "陽明醫院",
+    "陽明院區",
+    "聯醫陽明",
+    "聯合醫院陽明"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/258418789「臺北市立聯合醫院陽明院區」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-松德",
+   "name": "聯合醫院松德院區",
+   "fullName": "臺北市立聯合醫院松德院區",
+   "kind": "醫院",
+   "address": "臺北市信義區松德路309號",
+   "phone": "(02)27263141",
+   "lat": 25.0294952,
+   "lng": 121.5744517,
+   "aliases": [
+    "松德醫院",
+    "松德院區",
+    "聯醫松德",
+    "市療"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/396909006「臺北市立聯合醫院松德院區」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-林森",
+   "name": "聯合醫院林森院區",
+   "fullName": "臺北市立聯合醫院林森中醫昆明院區(林森)",
+   "kind": "醫院",
+   "address": "臺北市中山區林森北路530號",
+   "phone": "(02)25916681",
+   "lat": 25.0635045,
+   "lng": 121.5254548,
+   "aliases": [
+    "林森醫院",
+    "林森院區",
+    "林森中醫",
+    "聯醫林森"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/307986143「林森中醫昆明院區林森分部」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "h-tpech-昆明",
+   "name": "聯合醫院昆明院區",
+   "fullName": "臺北市立聯合醫院林森中醫昆明院區(中醫中心)",
+   "kind": "醫院",
+   "address": "臺北市萬華區昆明街100號1-2樓",
+   "phone": "(02)23887088",
+   "lat": 25.0442559,
+   "lng": 121.5047338,
+   "aliases": [
+    "昆明醫院",
+    "昆明院區",
+    "聯醫昆明",
+    "中醫醫院",
+    "昆明中醫"
+   ],
+   "rank": 12,
+   "source": {
+    "dataset": "臺北市立聯合醫院門診進度查詢（臺北市政府衛生局；含各院區地址）",
+    "url": "https://data.taipei/dataset/detail?id=8ee49ff0-600b-4e5a-81b2-41f712c5c801"
+   },
+   "coordSource": "OpenStreetMap way/708675111「臺北市立聯合醫院昆明院區」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-北投公園",
+   "name": "北投公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "北投區中山路、光明路所圍範圍",
+   "lat": 25.13656044,
+   "lng": 121.50473022,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 67344,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-北投社三層崎公園",
+   "name": "北投社三層崎公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "北投區秀山路50號旁",
+   "lat": 25.14574,
+   "lng": 121.491156,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 29835,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-石牌公園",
+   "name": "石牌公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "石牌路一段39巷內",
+   "lat": 25.116359711,
+   "lng": 121.51036072,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 23582,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-行義公園",
+   "name": "行義公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "石牌路二段343巷8號",
+   "lat": 25.125389099,
+   "lng": 121.52523041,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 36313,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-東華公園",
+   "name": "東華公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "東華街二段300巷19號對面",
+   "lat": 25.121839523,
+   "lng": 121.50707245,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 75820,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-前山公園",
+   "name": "前山公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "臺北市北投區建國街4號旁及紗帽路117號對面",
+   "lat": 25.150576524,
+   "lng": 121.5484437,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 38328,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-洲美蜆仔港公園",
+   "name": "洲美蜆仔港公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "台北市士林區承德路六段329號",
+   "lat": 25.100997114,
+   "lng": 121.51118635,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 30818,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-崇仰公園",
+   "name": "崇仰公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "崇仰一路、公館路225巷底",
+   "lat": 25.12609,
+   "lng": 121.51106,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 21686,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-復興公園",
+   "name": "復興公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "北投中和街200號",
+   "lat": 25.139690399,
+   "lng": 121.50322723,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 26356,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-陽明公園",
+   "name": "陽明公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "臺北市北投區湖山路二段",
+   "lat": 25.1590167547,
+   "lng": 121.539011156,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 397288,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-福星公園",
+   "name": "福星公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "文林北路255號",
+   "lat": 25.108828,
+   "lng": 121.512326,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 91500,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-關渡公園",
+   "name": "關渡公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "知行路210巷底",
+   "lat": 25.11973,
+   "lng": 121.46369,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 23351,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-嗄嘮別公園",
+   "name": "嗄嘮別公園",
+   "kind": "公園",
+   "district": "北投區",
+   "address": "中央北路三段、桃源國小東北側",
+   "lat": 25.140350342,
+   "lng": 121.48442078,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 21888,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-士林官邸公園",
+   "name": "士林官邸公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "中山北路5段378巷以北/福林路.中山北路交叉口右側(士林官邸)",
+   "lat": 25.094900131,
+   "lng": 121.53015137,
+   "aliases": [
+    "士林官邸"
+   ],
+   "rank": 1,
+   "areaM2": 129965,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-天母公園",
+   "name": "天母公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區中山北路7段141巷旁",
+   "lat": 25.1259089,
+   "lng": 121.530518,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 57815,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-至善公園",
+   "name": "至善公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區福林路、至善路口東北側",
+   "lat": 25.098190308,
+   "lng": 121.53829193,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 24786,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-東和公園",
+   "name": "東和公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區中山北路7段114巷旁",
+   "lat": 25.1226002,
+   "lng": 121.5336861,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 31800,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-芝山公園",
+   "name": "芝山公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "至誠路一段、雨聲街交叉口",
+   "lat": 25.102369308,
+   "lng": 121.53177643,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 100063,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-前港公園",
+   "name": "前港公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區前港街與華齡街交叉口",
+   "lat": 25.0860629,
+   "lng": 121.5201556,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 36129,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-美崙公園",
+   "name": "美崙公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區美崙街152巷",
+   "lat": 25.097379684,
+   "lng": 121.51721954,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 60288,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-原住民文化主題公園",
+   "name": "原住民文化主題公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "臺北市士林區至善路2段221號旁",
+   "lat": 25.101570129,
+   "lng": 121.55075073,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 22899,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-福林公園",
+   "name": "福林公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "中山北路與福林路交叉口",
+   "lat": 25.0958004,
+   "lng": 121.52947235,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 26316,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-雙溪公園",
+   "name": "雙溪公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "福林路至善路口東南側",
+   "lat": 25.098039627,
+   "lng": 121.53591919,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 62486,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-雙溪濕地公園",
+   "name": "雙溪濕地公園",
+   "kind": "公園",
+   "district": "士林區",
+   "address": "台北市士林區承德路五段150巷1號",
+   "lat": 25.096977,
+   "lng": 121.511988,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 25500,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-下塔悠公園",
+   "name": "下塔悠公園",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "樂群一路旁，基隆河截彎取直範圍內(平均地權基金)",
+   "lat": 25.076929092,
+   "lng": 121.55956268,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 24268,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-林森公園",
+   "name": "林森公園",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "南京東路一段、林森北路右側",
+   "lat": 25.052339554,
+   "lng": 121.52587128,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 29331,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-花博公園美術園區",
+   "name": "花博公園美術園區",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "中山北路以東，民族東路以北 (原民族公園)",
+   "lat": 25.07060051,
+   "lng": 121.5239563,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 103220,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-花博公園圓山園區",
+   "name": "花博公園圓山園區",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "捷運圓山站以東、兒育中心以南、爭豔館以北、中山北路以西",
+   "lat": 25.071569443,
+   "lng": 121.52062225,
+   "aliases": [
+    "花博公園",
+    "花博"
+   ],
+   "rank": 1,
+   "areaM2": 159410,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-圓山自然景觀公園",
+   "name": "圓山自然景觀公園",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "台北市中山區玉門街33號",
+   "lat": 25.075055,
+   "lng": 121.52233,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 98000,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-榮星花園公園",
+   "name": "榮星花園公園",
+   "kind": "公園",
+   "district": "中山區",
+   "address": "榮星花園舊址，民權東路建國北路",
+   "lat": 25.062650681,
+   "lng": 121.54049683,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 65192,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-大港墘公園",
+   "name": "大港墘公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "台北市內湖區港墘里瑞光路393號",
+   "lat": 25.0774149,
+   "lng": 121.5729968,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 25504,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-大湖公園",
+   "name": "大湖公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "成功路五段31號",
+   "lat": 25.082976,
+   "lng": 121.602695,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 134135,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-成功公園",
+   "name": "成功公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "成功路四段223巷旁",
+   "lat": 25.084299088,
+   "lng": 121.59662628,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 45954,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-明美公園",
+   "name": "明美公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "南京東路六段北側（羊稠小段五期重劃區）",
+   "lat": 25.06221962,
+   "lng": 121.5861969,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 40250,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-瑞光公園",
+   "name": "瑞光公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "瑞光路132巷旁內（六期重劃區）",
+   "lat": 25.071180344,
+   "lng": 121.5776825,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 33806,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-碧湖公園",
+   "name": "碧湖公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "內湖路二段175號，國立臺灣戲曲學院旁",
+   "lat": 25.08218956,
+   "lng": 121.58428955,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 131749,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-石潭公園",
+   "name": "石潭公園",
+   "kind": "公園",
+   "district": "內湖區",
+   "address": "內湖成功路二段東側（麥帥公路兩側）",
+   "lat": 25.063119888,
+   "lng": 121.59320831,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 55660,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-青年公園",
+   "name": "青年公園",
+   "kind": "公園",
+   "district": "萬華區",
+   "address": "臺北市水源路199號",
+   "lat": 25.025110242,
+   "lng": 121.505861,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 246958,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-二二八和平公園",
+   "name": "二二八和平公園",
+   "kind": "公園",
+   "district": "中正區",
+   "address": "凱達格蘭大道3號",
+   "lat": 25.042286,
+   "lng": 121.514297,
+   "aliases": [
+    "228公園",
+    "二二八公園",
+    "新公園"
+   ],
+   "rank": 1,
+   "areaM2": 76180,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-中央藝文公園",
+   "name": "中央藝文公園",
+   "kind": "公園",
+   "district": "中正區",
+   "address": "北平東路30號前",
+   "lat": 25.046272,
+   "lng": 121.526856,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 26700,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-行旅廣場",
+   "name": "行旅廣場",
+   "kind": "公園",
+   "district": "中正區",
+   "address": "忠孝西路與重慶北路一段路口東北側",
+   "lat": 25.0477977,
+   "lng": 121.5132041,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 39233,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-大安森林公園",
+   "name": "大安森林公園",
+   "kind": "公園",
+   "district": "大安區",
+   "address": "新生南路以東,信義路三段以南",
+   "lat": 25.0333004,
+   "lng": 121.5358429,
+   "aliases": [
+    "大安公園",
+    "森林公園"
+   ],
+   "rank": 1,
+   "areaM2": 259354,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-富陽自然生態公園",
+   "name": "富陽自然生態公園",
+   "kind": "公園",
+   "district": "大安區",
+   "address": "富陽街底、聯勤彈葯庫舊址",
+   "lat": 25.016674,
+   "lng": 121.557488,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 38066,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-福州山公園",
+   "name": "福州山公園",
+   "kind": "公園",
+   "district": "大安區",
+   "address": "辛亥路三段、興隆超市旁(福州山)",
+   "lat": 25.015890121,
+   "lng": 121.55161285,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 172488,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-永春陂濕地公園",
+   "name": "永春陂濕地公園",
+   "kind": "公園",
+   "district": "信義區",
+   "address": "松山路松山家商旁",
+   "lat": 25.032812,
+   "lng": 121.580069,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 39832,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-象山公園",
+   "name": "象山公園",
+   "kind": "公園",
+   "district": "信義區",
+   "address": "信義區信義路5段150巷",
+   "lat": 25.030410767,
+   "lng": 121.57009125,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 41827,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-市民廣場",
+   "name": "市民廣場",
+   "kind": "公園",
+   "district": "信義區",
+   "address": "信義區市府路1號對面",
+   "lat": 25.036640167,
+   "lng": 121.56275177,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 42851,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-玉成公園",
+   "name": "玉成公園",
+   "kind": "公園",
+   "district": "南港區",
+   "address": "南港區中坡南路55號",
+   "lat": 25.042549133,
+   "lng": 121.58550262,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 40587,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-南港公園",
+   "name": "南港公園",
+   "kind": "公園",
+   "district": "南港區",
+   "address": "南港區東新街170之1號",
+   "lat": 25.043069839,
+   "lng": 121.59191132,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 118849,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-後山埤公園",
+   "name": "後山埤公園",
+   "kind": "公園",
+   "district": "南港區",
+   "address": "南港區東新街170之1號",
+   "lat": 25.043710709,
+   "lng": 121.58995056,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 57833,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-胡適公園",
+   "name": "胡適公園",
+   "kind": "公園",
+   "district": "南港區",
+   "address": "南港區研究院路2段130號對面",
+   "lat": 25.039920807,
+   "lng": 121.61791229,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 21124,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-新新公園",
+   "name": "新新公園",
+   "kind": "公園",
+   "district": "南港區",
+   "address": "南港路三段109巷南側",
+   "lat": 25.051391,
+   "lng": 121.588752,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 25373,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-140高地",
+   "name": "140高地",
+   "kind": "公園",
+   "district": "文山區",
+   "address": "文山區萬寧街125號",
+   "lat": 25.003580093,
+   "lng": 121.56960297,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 56965,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-文山森林公園",
+   "name": "文山森林公園",
+   "kind": "公園",
+   "district": "文山區",
+   "address": "臺北市文山區福興路95巷",
+   "lat": 25.00435,
+   "lng": 121.548322,
+   "aliases": [],
+   "rank": 1,
+   "areaM2": 110000,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-木柵公園",
+   "name": "木柵公園",
+   "kind": "公園",
+   "district": "文山區",
+   "address": "文山區興隆路4段50號",
+   "lat": 24.986949921,
+   "lng": 121.56046295,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 40066,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-景美運動公園",
+   "name": "景美運動公園",
+   "kind": "公園",
+   "district": "文山區",
+   "address": "文山區景豐街80號旁",
+   "lat": 25.002540588,
+   "lng": 121.54451752,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 20547,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "p-興泰公園",
+   "name": "興泰公園",
+   "kind": "公園",
+   "district": "文山區",
+   "address": "辛亥路四段166巷內",
+   "lat": 25.004810333,
+   "lng": 121.55548096,
+   "aliases": [],
+   "rank": 2,
+   "areaM2": 32585,
+   "source": {
+    "dataset": "臺北市公園基本資料（臺北市政府工務局公園處；資源連到公園走透透 API）",
+    "url": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-北投分館",
+   "name": "市立圖書館北投分館",
+   "kind": "圖書館",
+   "address": "臺北市北投區光明路251號",
+   "phone": "2897-7682",
+   "lat": 25.136298,
+   "lng": 121.506296,
+   "aliases": [
+    "北投分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-稻香分館",
+   "name": "市立圖書館稻香分館",
+   "kind": "圖書館",
+   "address": "臺北市北投區稻香路81號7-9樓",
+   "phone": "2894-0662",
+   "lat": 25.14102,
+   "lng": 121.489497,
+   "aliases": [
+    "稻香分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-石牌分館",
+   "name": "市立圖書館石牌分館",
+   "kind": "圖書館",
+   "address": "臺北市北投區明德路208巷5號3-10樓",
+   "phone": "2823-9634",
+   "lat": 25.113064,
+   "lng": 121.522763,
+   "aliases": [
+    "石牌分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-清江分館",
+   "name": "市立圖書館清江分館",
+   "kind": "圖書館",
+   "address": "臺北市北投區公館路198號3樓",
+   "phone": "2896-0315",
+   "lat": 25.12794,
+   "lng": 121.507246,
+   "aliases": [
+    "清江分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-吉利分館",
+   "name": "市立圖書館吉利分館",
+   "kind": "圖書館",
+   "address": "臺北市北投區立農街1段366號5-8樓",
+   "phone": "2820-1633",
+   "lat": 25.120021,
+   "lng": 121.504803,
+   "aliases": [
+    "吉利分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-永明民眾閱覽室",
+   "name": "市立圖書館永明民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市北投區石牌路2段115號7-8樓",
+   "phone": "2823-4141",
+   "lat": 25.118068,
+   "lng": 121.517176,
+   "aliases": [
+    "永明民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-秀山民眾閱覽室",
+   "name": "市立圖書館秀山民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市北投區中和街534號5-9樓",
+   "phone": "2892-1475",
+   "lat": 25.145603,
+   "lng": 121.493162,
+   "aliases": [
+    "秀山民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-陽明借還書工作站",
+   "name": "市立圖書館陽明借還書工作站",
+   "kind": "圖書館",
+   "address": "臺北市北投區立農街二段155號",
+   "phone": "2822-1781",
+   "lat": 25.119575,
+   "lng": 121.514386,
+   "aliases": [
+    "陽明借還書工作站"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-關渡宮借還書站",
+   "name": "市立圖書館關渡宮借還書站",
+   "kind": "圖書館",
+   "address": "臺北市北投區知行路360號",
+   "phone": "2858-1281#166",
+   "lat": 25.117391,
+   "lng": 121.46415,
+   "aliases": [
+    "關渡宮借還書站"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-葫蘆堵分館",
+   "name": "市立圖書館葫蘆堵分館",
+   "kind": "圖書館",
+   "address": "臺北市士林區延平北路5段136巷1號3-9樓",
+   "phone": "2812-6513",
+   "lat": 25.082305,
+   "lng": 121.510782,
+   "aliases": [
+    "葫蘆堵分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-天母分館",
+   "name": "市立圖書館天母分館",
+   "kind": "圖書館",
+   "address": "臺北市士林區中山北路7段154巷6號3-4樓",
+   "phone": "2873-6203",
+   "lat": 25.123402,
+   "lng": 121.533057,
+   "aliases": [
+    "天母分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-士林分館",
+   "name": "市立圖書館士林分館",
+   "kind": "圖書館",
+   "address": "臺北市華聲街17號3、4樓",
+   "phone": "2836-1994",
+   "lat": 25.095829,
+   "lng": 121.518299,
+   "aliases": [
+    "士林分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-李科永紀念館",
+   "name": "市立圖書館李科永紀念館",
+   "kind": "圖書館",
+   "address": "臺北市士林區中正路15號",
+   "phone": "2883-3453",
+   "lat": 25.096027,
+   "lng": 121.530766,
+   "aliases": [
+    "李科永紀念館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-內湖分館",
+   "name": "市立圖書館內湖分館",
+   "kind": "圖書館",
+   "address": "臺北市內湖區民權東路6段99號6樓",
+   "phone": "2791-8772",
+   "lat": 25.069319,
+   "lng": 121.589086,
+   "aliases": [
+    "內湖分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-東湖分館",
+   "name": "市立圖書館東湖分館",
+   "kind": "圖書館",
+   "address": "臺北市內湖區五分街6號",
+   "phone": "2632-3378",
+   "lat": 25.067415,
+   "lng": 121.61261,
+   "aliases": [
+    "東湖分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-西湖分館",
+   "name": "市立圖書館西湖分館",
+   "kind": "圖書館",
+   "address": "臺北市內湖區內湖路1段594號",
+   "phone": "2797-3183",
+   "lat": 25.078685,
+   "lng": 121.577242,
+   "aliases": [
+    "西湖分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-西中分館",
+   "name": "市立圖書館西中分館",
+   "kind": "圖書館",
+   "address": "臺北市內湖區內湖路1段285巷66號1-2樓",
+   "phone": "8751-5497",
+   "lat": 25.082382,
+   "lng": 121.566675,
+   "aliases": [
+    "西中分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-民生分館",
+   "name": "市立圖書館民生分館",
+   "kind": "圖書館",
+   "address": "臺北市松山區敦化北路199巷5號4-5樓",
+   "phone": "2713-8083",
+   "lat": 25.057182,
+   "lng": 121.551519,
+   "aliases": [
+    "民生分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-三民分館",
+   "name": "市立圖書館三民分館",
+   "kind": "圖書館",
+   "address": "臺北市松山區民生東路5段163-1號5-6樓",
+   "phone": "2760-0408",
+   "lat": 25.059315,
+   "lng": 121.562908,
+   "aliases": [
+    "三民分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-中崙分館",
+   "name": "市立圖書館中崙分館",
+   "kind": "圖書館",
+   "address": "臺北市松山區長安東路2段229號7-10樓",
+   "phone": "8773-6858",
+   "lat": 25.048427,
+   "lng": 121.54584,
+   "aliases": [
+    "中崙分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-啟明分館",
+   "name": "市立圖書館啟明分館",
+   "kind": "圖書館",
+   "address": "臺北市松山區敦化北路155巷76號",
+   "phone": "2514-8443",
+   "lat": 25.054349,
+   "lng": 121.551818,
+   "aliases": [
+    "啟明分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-永春分館",
+   "name": "市立圖書館永春分館",
+   "kind": "圖書館",
+   "address": "臺北市信義區松山路294號3-4樓",
+   "phone": "2760-9730",
+   "lat": 25.043069,
+   "lng": 121.577577,
+   "aliases": [
+    "永春分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-三興分館",
+   "name": "市立圖書館三興分館",
+   "kind": "圖書館",
+   "address": "臺北市信義區吳興街156巷6號4-5樓",
+   "phone": "8732-1063",
+   "lat": 25.029075,
+   "lng": 121.561188,
+   "aliases": [
+    "三興分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-六合分館",
+   "name": "市立圖書館六合分館",
+   "kind": "圖書館",
+   "address": "臺北市信義區松仁路240巷19號3-5樓",
+   "phone": "2729-2485",
+   "lat": 25.02432,
+   "lng": 121.568838,
+   "aliases": [
+    "六合分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-廣慈分館",
+   "name": "市立圖書館廣慈分館",
+   "kind": "圖書館",
+   "address": "臺北市信義區福德街86號3-4樓",
+   "phone": "2727-7872",
+   "lat": 25.037518,
+   "lng": 121.581939,
+   "aliases": [
+    "廣慈分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-松山分館替代服務處",
+   "name": "市立圖書館松山分館替代服務處",
+   "kind": "圖書館",
+   "address": "臺北市信義區松隆路327號B1",
+   "phone": "2753-1875",
+   "lat": 25.048476,
+   "lng": 121.579108,
+   "aliases": [
+    "松山分館替代服務處"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-南港分館",
+   "name": "市立圖書館南港分館",
+   "kind": "圖書館",
+   "address": "臺北市南港區南港路一段350號",
+   "phone": "2782-5232",
+   "lat": 25.054932,
+   "lng": 121.60804,
+   "aliases": [
+    "南港分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-舊莊分館",
+   "name": "市立圖書館舊莊分館",
+   "kind": "圖書館",
+   "address": "臺北市南港區舊莊街1段91巷11號2-5樓",
+   "phone": "2783-7212",
+   "lat": 25.037034,
+   "lng": 121.624044,
+   "aliases": [
+    "舊莊分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-龍華民眾閱覽室",
+   "name": "市立圖書館龍華民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市南港區東新街63巷8號",
+   "phone": "2785-1740",
+   "lat": 25.047646,
+   "lng": 121.586602,
+   "aliases": [
+    "龍華民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-親子美育數位圖書館",
+   "name": "市立圖書館親子美育數位圖書館",
+   "kind": "圖書館",
+   "address": "臺北市南港區研究院路2段61巷15號",
+   "phone": "2651-8163",
+   "lat": 25.044695,
+   "lng": 121.617272,
+   "aliases": [
+    "親子美育數位圖書館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-北原借還書站",
+   "name": "市立圖書館北原借還書站",
+   "kind": "圖書館",
+   "address": "臺北市南港區向陽路49號4樓",
+   "phone": "2782-8740",
+   "lat": 25.053992,
+   "lng": 121.594465,
+   "aliases": [
+    "北原借還書站"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-中山分館",
+   "name": "市立圖書館中山分館",
+   "kind": "圖書館",
+   "address": "臺北市中山區松江路367號8樓",
+   "phone": "2502-6442",
+   "lat": 25.064444,
+   "lng": 121.533568,
+   "aliases": [
+    "中山分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-長安分館",
+   "name": "市立圖書館長安分館",
+   "kind": "圖書館",
+   "address": "臺北市中山區長安西路3號4樓",
+   "phone": "2562-5540",
+   "lat": 25.050231,
+   "lng": 121.521014,
+   "aliases": [
+    "長安分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-大直分館",
+   "name": "市立圖書館大直分館",
+   "kind": "圖書館",
+   "address": "臺北市中山區大直街25號3-5樓",
+   "phone": "2533-6535",
+   "lat": 25.08185,
+   "lng": 121.546687,
+   "aliases": [
+    "大直分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-恆安民眾閱覽室",
+   "name": "市立圖書館恆安民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市中山區民權東路1段71巷19號",
+   "phone": "2593-5482",
+   "lat": 25.06337,
+   "lng": 121.527194,
+   "aliases": [
+    "恆安民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-龍山分館",
+   "name": "市立圖書館龍山分館",
+   "kind": "圖書館",
+   "address": "臺北市萬華區桂林路65巷6號",
+   "phone": "2331-1497",
+   "lat": 25.038526,
+   "lng": 121.502335,
+   "aliases": [
+    "龍山分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-西園分館",
+   "name": "市立圖書館西園分館",
+   "kind": "圖書館",
+   "address": "臺北市萬華區興寧街6號3-6樓",
+   "phone": "2306-9046",
+   "lat": 25.032193,
+   "lng": 121.501719,
+   "aliases": [
+    "西園分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-萬華分館",
+   "name": "市立圖書館萬華分館",
+   "kind": "圖書館",
+   "address": "臺北市萬華區東園街19號5-7樓",
+   "phone": "2339-1056",
+   "lat": 25.027925,
+   "lng": 121.495727,
+   "aliases": [
+    "萬華分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-柳鄉兒童圖書館",
+   "name": "市立圖書館柳鄉兒童圖書館",
+   "kind": "圖書館",
+   "address": "臺北市萬華區環河南路2段102號4樓",
+   "phone": "2308-0586",
+   "lat": 25.03693,
+   "lng": 121.495459,
+   "aliases": [
+    "柳鄉兒童圖書館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-延平分館",
+   "name": "市立圖書館延平分館",
+   "kind": "圖書館",
+   "address": "臺北市大同區保安街47號",
+   "phone": "2552-8534",
+   "lat": 25.059169,
+   "lng": 121.512092,
+   "aliases": [
+    "延平分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-大同分館",
+   "name": "市立圖書館大同分館",
+   "kind": "圖書館",
+   "address": "臺北市大同區重慶北路3段318號",
+   "phone": "2594-3236",
+   "lat": 25.074263,
+   "lng": 121.513282,
+   "aliases": [
+    "大同分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-建成分館",
+   "name": "市立圖書館建成分館",
+   "kind": "圖書館",
+   "address": "臺北市大同區民生西路198之20號4樓",
+   "phone": "2558-2320",
+   "lat": 25.057036,
+   "lng": 121.51684,
+   "aliases": [
+    "建成分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-蘭州民眾閱覽室",
+   "name": "市立圖書館蘭州民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市大同區昌吉街57號4樓之6",
+   "phone": "2598-1387",
+   "lat": 25.066061,
+   "lng": 121.515106,
+   "aliases": [
+    "蘭州民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-總館",
+   "name": "市立圖書館總館",
+   "kind": "圖書館",
+   "address": "臺北市大安區建國南路2段125號",
+   "phone": "2755-2823",
+   "lat": 25.029152,
+   "lng": 121.538369,
+   "aliases": [
+    "市圖總館",
+    "北市圖",
+    "總圖"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-道藩分館",
+   "name": "市立圖書館道藩分館",
+   "kind": "圖書館",
+   "address": "臺北市大安區辛亥路3段11號3樓",
+   "phone": "2733-4031",
+   "lat": 25.021577,
+   "lng": 121.544049,
+   "aliases": [
+    "道藩分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-延吉民眾閱覽室",
+   "name": "市立圖書館延吉民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市大安區延吉街236巷17號3-4樓",
+   "phone": "2708-1964",
+   "lat": 25.036409,
+   "lng": 121.555088,
+   "aliases": [
+    "延吉民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-成功民眾閱覽室",
+   "name": "市立圖書館成功民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市大安區和平東路2段311巷29號4樓",
+   "phone": "2701-3604",
+   "lat": 25.025435,
+   "lng": 121.545272,
+   "aliases": [
+    "成功民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-龍安民眾閱覽室",
+   "name": "市立圖書館龍安民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市大安區永康街60號2-3樓",
+   "phone": "2394-5485",
+   "lat": 25.028537,
+   "lng": 121.529467,
+   "aliases": [
+    "龍安民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-王貫英紀念館",
+   "name": "市立圖書館王貫英紀念館",
+   "kind": "圖書館",
+   "address": "臺北市中正區汀州路2段265號",
+   "phone": "2367-8734",
+   "lat": 25.022698,
+   "lng": 121.523808,
+   "aliases": [
+    "王貫英紀念館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-城中分館",
+   "name": "市立圖書館城中分館",
+   "kind": "圖書館",
+   "address": "臺北市中正區濟南路2段46號3樓",
+   "phone": "2393-8274",
+   "lat": 25.040082,
+   "lng": 121.531277,
+   "aliases": [
+    "城中分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-南機場借還書站",
+   "name": "市立圖書館南機場借還書站",
+   "kind": "圖書館",
+   "address": "臺北市中正區中華路2段315巷16號1樓",
+   "phone": "2303-2436",
+   "lat": 25.028397,
+   "lng": 121.506896,
+   "aliases": [
+    "南機場借還書站"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-景美分館",
+   "name": "市立圖書館景美分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區羅斯福路5段176巷50號2-4樓",
+   "phone": "2932-8457",
+   "lat": 25.003607,
+   "lng": 121.536345,
+   "aliases": [
+    "景美分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-木柵分館",
+   "name": "市立圖書館木柵分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區保儀路13巷3號3-4樓",
+   "phone": "2939-7520",
+   "lat": 24.988513,
+   "lng": 121.56916,
+   "aliases": [
+    "木柵分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-萬興分館",
+   "name": "市立圖書館萬興分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區萬壽路27號4-5樓",
+   "phone": "2234-5501",
+   "lat": 24.988685,
+   "lng": 121.576501,
+   "aliases": [
+    "萬興分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-文山分館",
+   "name": "市立圖書館文山分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區興隆路2段160號7-9樓",
+   "phone": "2931-5339",
+   "lat": 25.001497,
+   "lng": 121.551575,
+   "aliases": [
+    "文山分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-力行分館",
+   "name": "市立圖書館力行分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區一壽街22號5-8樓",
+   "phone": "8661-2196",
+   "lat": 24.979629,
+   "lng": 121.556314,
+   "aliases": [
+    "力行分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-景新分館",
+   "name": "市立圖書館景新分館",
+   "kind": "圖書館",
+   "address": "臺北市文山區景後街151號5-10樓",
+   "phone": "2933-1244",
+   "lat": 24.989929,
+   "lng": 121.541902,
+   "aliases": [
+    "景新分館"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-安康民眾閱覽室",
+   "name": "市立圖書館安康民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市文山區興隆路4段105巷1號4樓",
+   "phone": "2939-0180",
+   "lat": 24.987525,
+   "lng": 121.560875,
+   "aliases": [
+    "安康民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-萬芳民眾閱覽室",
+   "name": "市立圖書館萬芳民眾閱覽室",
+   "kind": "圖書館",
+   "address": "臺北市文山區萬美街1段25號1-2樓",
+   "phone": "2230-5287",
+   "lat": 25.002215,
+   "lng": 121.569178,
+   "aliases": [
+    "萬芳民眾閱覽室"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-松山機場智慧館",
+   "name": "市立圖書館松山機場智慧館",
+   "kind": "圖書館",
+   "address": "臺北市松山區敦化北路338號B1",
+   "phone": null,
+   "lat": 25.063718,
+   "lng": 121.549643,
+   "aliases": [
+    "松山機場智慧館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-太陽圖書館",
+   "name": "市立圖書館太陽圖書館",
+   "kind": "圖書館",
+   "address": "臺北市萬華區青年路65號",
+   "phone": null,
+   "lat": 25.024936,
+   "lng": 121.503738,
+   "aliases": [
+    "太陽圖書館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-百齡智慧館",
+   "name": "市立圖書館百齡智慧館",
+   "kind": "圖書館",
+   "address": "臺北市士林區福港街205號",
+   "phone": null,
+   "lat": 25.086145,
+   "lng": 121.517869,
+   "aliases": [
+    "百齡智慧館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-東區地下街智慧館",
+   "name": "市立圖書館東區地下街智慧館",
+   "kind": "圖書館",
+   "address": "臺北市大安區大安路1段77號",
+   "phone": null,
+   "lat": 25.041963,
+   "lng": 121.546354,
+   "aliases": [
+    "東區地下街智慧館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-古亭智慧圖書館",
+   "name": "市立圖書館古亭智慧圖書館",
+   "kind": "圖書館",
+   "address": "臺北市中正區寧波西街286號",
+   "phone": null,
+   "lat": 25.02512,
+   "lng": 121.510386,
+   "aliases": [
+    "古亭智慧圖書館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "l-社子島智慧圖書館",
+   "name": "市立圖書館社子島智慧圖書館",
+   "kind": "圖書館",
+   "address": "臺北市士林區延平北路9段80號2樓",
+   "phone": null,
+   "lat": 25.105881,
+   "lng": 121.477627,
+   "aliases": [
+    "社子島智慧圖書館"
+   ],
+   "rank": 2,
+   "source": {
+    "dataset": "臺北市立圖書館各分館暨民眾閱覽室（臺北市政府教育局）",
+    "url": "https://data.taipei/dataset/detail?id=43772803-6504-469c-894d-35904342a53b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-中山運動中心",
+   "name": "中山運動中心",
+   "kind": "運動中心",
+   "address": "臺北市中山區中山北路二段44巷2號",
+   "phone": "(02)25811060",
+   "url": "https://cssc.cyc.org.tw/",
+   "lat": 25.0548,
+   "lng": 121.5192,
+   "aliases": [
+    "中山運動中心",
+    "中山運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-北投運動中心",
+   "name": "北投運動中心",
+   "kind": "運動中心",
+   "address": "臺北市北投區石牌路一段39巷100號",
+   "phone": "(02)28202880",
+   "url": "https://www.btsport.org.tw/",
+   "lat": 25.1126,
+   "lng": 121.5073,
+   "aliases": [
+    "北投運動中心",
+    "北投運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-中正運動中心",
+   "name": "中正運動中心",
+   "kind": "運動中心",
+   "address": "臺北市中正區信義路一段1號",
+   "phone": "(02)23961000",
+   "url": "https://wsjjsc.com.tw/",
+   "lat": 25.0336,
+   "lng": 121.5417,
+   "aliases": [
+    "中正運動中心",
+    "中正運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-南港運動中心",
+   "name": "南港運動中心",
+   "kind": "運動中心",
+   "address": "臺北市南港區玉成街69號",
+   "phone": "(02)26532279",
+   "url": "https://ngsc.cyc.org.tw/",
+   "lat": 25.0489,
+   "lng": 121.5796,
+   "aliases": [
+    "南港運動中心",
+    "南港運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-萬華運動中心",
+   "name": "萬華運動中心",
+   "kind": "運動中心",
+   "address": "臺北市萬華區西寧南路6之1號",
+   "phone": "(02)23759900",
+   "url": "https://whsc.com.tw/",
+   "lat": 25.0474,
+   "lng": 121.5053,
+   "aliases": [
+    "萬華運動中心",
+    "萬華運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-士林運動中心",
+   "name": "士林運動中心",
+   "kind": "運動中心",
+   "address": "臺北市士林區士商路1號",
+   "phone": "(02)28806066",
+   "url": "https://www.slsc-taipei.org/",
+   "lat": 25.0895,
+   "lng": 121.5201,
+   "aliases": [
+    "士林運動中心",
+    "士林運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-內湖運動中心",
+   "name": "內湖運動中心",
+   "kind": "運動中心",
+   "address": "臺北市內湖區洲子街12號",
+   "phone": "(02)26562869",
+   "url": "https://nhsc.cyc.org.tw/",
+   "lat": 25.0781,
+   "lng": 121.573,
+   "aliases": [
+    "內湖運動中心",
+    "內湖運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-信義運動中心",
+   "name": "信義運動中心暨永春活力館",
+   "kind": "運動中心",
+   "address": "臺北市信義區松勤街100號",
+   "phone": "(02)87861911",
+   "url": "https://xysc.teamxports.com/",
+   "lat": 25.0318,
+   "lng": 121.5644,
+   "aliases": [
+    "信義運動中心",
+    "信義運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-松山運動中心",
+   "name": "松山運動中心",
+   "kind": "運動中心",
+   "address": "臺北市松山區敦化北路1號",
+   "phone": "(02)77555058",
+   "url": "https://sssc.com.tw/",
+   "lat": 25.0486,
+   "lng": 121.548,
+   "aliases": [
+    "松山運動中心",
+    "松山運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-大同運動中心",
+   "name": "大同運動中心",
+   "kind": "運動中心",
+   "address": "臺北市大同區大龍街51號",
+   "phone": "(02)25920055",
+   "url": "https://dtsc-wdyg.com.tw/",
+   "lat": 25.0648,
+   "lng": 121.5139,
+   "aliases": [
+    "大同運動中心",
+    "大同運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-大安運動中心",
+   "name": "大安運動中心",
+   "kind": "運動中心",
+   "address": "臺北市大安區辛亥路3段55號",
+   "phone": "(02)23770300",
+   "url": "https://www.daansports.com.tw/",
+   "lat": 25.0207,
+   "lng": 121.5434,
+   "aliases": [
+    "大安運動中心",
+    "大安運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "s-文山運動中心",
+   "name": "文山運動中心暨景美游泳池",
+   "kind": "運動中心",
+   "address": "臺北市文山區興隆路三段222號",
+   "phone": "(02)22308268",
+   "url": "https://wssc.cyc.org.tw/",
+   "lat": 24.997,
+   "lng": 121.5574,
+   "aliases": [
+    "文山運動中心",
+    "文山運中"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市各區運動中心（臺北市政府體育局）",
+    "url": "https://data.taipei/dataset/detail?id=80be7612-593f-4795-9935-a10ce0f7b75b"
+   },
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-松山區",
+   "name": "松山區公所",
+   "fullName": "臺北市松山區公所",
+   "kind": "區公所",
+   "district": "松山區",
+   "address": "臺北市松山區八德路4段692號7-10樓",
+   "phone": "02-87878787#102",
+   "lat": 25.0496547,
+   "lng": 121.577251,
+   "aliases": [
+    "松山區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap node/3924733488「松山區公所」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-大安區",
+   "name": "大安區公所",
+   "fullName": "臺北市大安區公所",
+   "kind": "區公所",
+   "district": "大安區",
+   "address": "臺北市大安區新生南路2段86號8、9樓",
+   "phone": "02-23511711",
+   "lat": 25.0265773,
+   "lng": 121.5344068,
+   "aliases": [
+    "大安區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/232321631「大安區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-大同區",
+   "name": "大同區公所",
+   "fullName": "臺北市大同區公所",
+   "kind": "區公所",
+   "district": "大同區",
+   "address": "臺北市大同區昌吉街57號4樓",
+   "phone": "02-25975323#191",
+   "lat": 25.0661567,
+   "lng": 121.5153898,
+   "aliases": [
+    "大同區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/470239284「大同區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-中山區",
+   "name": "中山區公所",
+   "fullName": "臺北市中山區公所",
+   "kind": "區公所",
+   "district": "中山區",
+   "address": "臺北市中山區松江路367號1、5、6樓",
+   "phone": "02-25031369",
+   "lat": 25.0643703,
+   "lng": 121.5336038,
+   "aliases": [
+    "中山區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/134969647「中山區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-內湖區",
+   "name": "內湖區公所",
+   "fullName": "臺北市內湖區公所",
+   "kind": "區公所",
+   "district": "內湖區",
+   "address": "臺北市內湖區民權東路6段99號4、5樓",
+   "phone": "02-27925828",
+   "lat": 25.0693004,
+   "lng": 121.5891076,
+   "aliases": [
+    "內湖區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap node/4863008494「內湖區公所」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-南港區",
+   "name": "南港區公所",
+   "fullName": "臺北市南港區公所",
+   "kind": "區公所",
+   "district": "南港區",
+   "address": "臺北市南港區南港路1段360號6樓",
+   "phone": "02-27831343#624",
+   "lat": 25.0546679,
+   "lng": 121.6066882,
+   "aliases": [
+    "南港區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/222428544「南港區公所」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-士林區",
+   "name": "士林區公所",
+   "fullName": "臺北市士林區公所",
+   "kind": "區公所",
+   "district": "士林區",
+   "address": "臺北市士林區中正路439號8、9樓",
+   "phone": "02-28826200",
+   "lat": 25.0928024,
+   "lng": 121.5198107,
+   "aliases": [
+    "士林區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/299422100「士林區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-北投區",
+   "name": "北投區公所",
+   "fullName": "臺北市北投區公所",
+   "kind": "區公所",
+   "district": "北投區",
+   "address": "臺北市北投區立功街9號11樓之2",
+   "phone": "02-28912105",
+   "lat": 25.1254464,
+   "lng": 121.4694305,
+   "aliases": [
+    "北投區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/72847348 街道中心點「立功街」（Nominatim，ODbL；粗略）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-信義區",
+   "name": "信義區公所",
+   "fullName": "臺北市信義區公所",
+   "kind": "區公所",
+   "district": "信義區",
+   "address": "臺北市信義區福德街86號9、10樓",
+   "phone": "02-27239777",
+   "lat": 25.0377533,
+   "lng": 121.5820184,
+   "aliases": [
+    "信義區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/1067738131「信義區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-中正區",
+   "name": "中正區公所",
+   "fullName": "臺北市中正區公所",
+   "kind": "區公所",
+   "district": "中正區",
+   "address": "臺北市中正區羅斯福路1段8號6樓",
+   "phone": "02-23416721",
+   "lat": 25.0322069,
+   "lng": 121.5182021,
+   "aliases": [
+    "中正區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap node/4896347421「中正區公所」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-萬華區",
+   "name": "萬華區公所",
+   "fullName": "臺北市萬華區公所",
+   "kind": "區公所",
+   "district": "萬華區",
+   "address": "臺北市萬華區和平西路三段120號10樓~13樓",
+   "phone": "02-23064468",
+   "lat": 25.0347985,
+   "lng": 121.4998853,
+   "aliases": [
+    "萬華區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/215479219「萬華區行政中心」（Nominatim，ODbL）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  },
+  {
+   "id": "o-文山區",
+   "name": "文山區公所",
+   "fullName": "臺北市文山區公所",
+   "kind": "區公所",
+   "district": "文山區",
+   "address": "臺北市文山區木柵路3段220號8、9樓",
+   "phone": "02-29365522",
+   "lat": 24.989799,
+   "lng": 121.5697323,
+   "aliases": [
+    "文山區行政中心"
+   ],
+   "rank": 1,
+   "source": {
+    "dataset": "臺北市政府各機關學校聯絡資訊（臺北市政府秘書處）",
+    "url": "https://data.taipei/dataset/detail?id=6b99dd93-9c63-43c9-96eb-0bfffce97217"
+   },
+   "coordSource": "OpenStreetMap way/111484730 街道中心點「木柵路3段」（Nominatim，ODbL；粗略）",
+   "checkedAt": "2026-11-07T17:34:22.765Z"
+  }
+ ]
+}

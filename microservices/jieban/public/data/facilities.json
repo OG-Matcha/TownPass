@@ -1,0 +1,1230 @@
+{
+ "source": "https://data.taipei/dataset/detail?id=3c799405-4e44-40dd-b747-daed09e88cdb",
+ "fetchedAt": "2026-11-07T18:30:12.176Z",
+ "items": [
+  {
+   "station": "松山機場站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B2)，近詢問處；連通層(B1)，近出口3",
+   "path": null
+  },
+  {
+   "station": "中山國中站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "南京復興站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，近出口7",
+   "path": "3樓大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "南京復興站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口1、2；付費區(B2)，大廳走道中間",
+   "path": null
+  },
+  {
+   "station": "忠孝復興站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，近出口2，高揚層電扶梯",
+   "path": null
+  },
+  {
+   "station": "忠孝復興站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近出口2，板南線及文湖線轉乘通道旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "大安站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，近大廳電梯旁",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "大安站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近出口3；轉乘通道(M)",
+   "path": null
+  },
+  {
+   "station": "科技大樓站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "付費區(3樓)， 近出口1",
+   "path": "出口電梯--大廳無障礙閘門--月臺(註：出口2無導盲設施)"
+  },
+  {
+   "station": "六張犁站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)， 近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "麟光站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)， 近出口",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "辛亥站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)， 近出口",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "萬芳醫院站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)， 近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "萬芳社區站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)， 近出口",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "木柵站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)， 近出口",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "動物園站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(2樓)， 近出口2",
+   "path": "出口電梯--大廳無障礙閘門-天橋層電梯-月臺"
+  },
+  {
+   "station": "大直站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近出口3",
+   "path": null
+  },
+  {
+   "station": "劍南路站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "付費區(3樓)，近出口2、3",
+   "path": null
+  },
+  {
+   "station": "西湖站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(4樓)，近出口1",
+   "path": null
+  },
+  {
+   "station": "港墘站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(3樓)，近出口1",
+   "path": null
+  },
+  {
+   "station": "文德站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(3樓)，近出口2",
+   "path": null
+  },
+  {
+   "station": "內湖站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(3樓)，近出口1",
+   "path": null
+  },
+  {
+   "station": "大湖公園站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(3樓)，近出口2",
+   "path": null
+  },
+  {
+   "station": "葫洲站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(1樓)，近出口1；非付費區(3樓)，近出口2",
+   "path": null
+  },
+  {
+   "station": "東湖站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(2樓)，近出口3",
+   "path": null
+  },
+  {
+   "station": "南港軟體園區站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(2樓)，近出口2",
+   "path": null
+  },
+  {
+   "station": "南港展覽館站",
+   "line": "BR",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "1F主詢問處旁、1F簡易詢問處旁、B1簡易詢問處旁",
+   "toilet": "非付費區(B1)，近出口1；非付費區，近出口2、4站外(配合展覽館活動開放使用)；付費區(1樓)，近出口2、4之間",
+   "path": null
+  },
+  {
+   "station": "南港展覽館站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門，右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "轉乘通道層(B1)，近出口5；非付費區(B2)，近出口5；付費區(B2)，大廳電梯旁",
+   "path": null
+  },
+  {
+   "station": "小碧潭站",
+   "line": "G",
+   "wheelchairCars": "第1節、第3節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(4樓)，近出口1；付費區(4樓)閘門旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "新店站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(1樓)，客運轉運站旁；付費區(1樓)，往月臺電梯旁",
+   "path": "大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "新店區公所站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，大廳層電扶梯旁",
+   "path": "大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "七張站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂【往小碧潭列車(二月臺)-第1節、第3節車廂】",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，大廳層電扶梯旁",
+   "path": "大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "大坪林站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4",
+   "path": null
+  },
+  {
+   "station": "大坪林站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，松山新店線及環狀線轉乘通道旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "景美站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "萬隆站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "公館站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "台電大樓站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4",
+   "path": "出口電梯--大廳無障礙閘門--月臺"
+  },
+  {
+   "station": "古亭站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往蘆洲、迴龍-左側開門，往南勢角-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2、3、4",
+   "path": null
+  },
+  {
+   "station": "古亭站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往松山-右側開門，往新店-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2、3、4",
+   "path": "出口電梯--大廳無障礙閘門-月臺電梯-月臺"
+  },
+  {
+   "station": "中正紀念堂站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往松山-右側開門，往新店-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2、3、4；非付費區(B1)，近出口5、6、7",
+   "path": null
+  },
+  {
+   "station": "中正紀念堂站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往淡水-左側開門，往象山、大安-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2、3、4；非付費區(B1)，近出口5、6、7",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "小南門站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "頂溪站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B3)，近出口1",
+   "path": "出口電梯--大廳無障礙閘門-月臺電梯-月臺"
+  },
+  {
+   "station": "永安市場站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往蘆洲、迴龍-右側開門。往南勢角-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B2)，近閘門區",
+   "path": "出口電梯--大廳無障礙閘門-月臺電梯-月臺"
+  },
+  {
+   "station": "景安站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往蘆洲、迴龍-左側開門，往南勢角-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口",
+   "path": null
+  },
+  {
+   "station": "景安站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": null,
+   "toilet": "付費區(3樓)，近大廳電梯",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "南勢角站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B3)，近出口3、4",
+   "path": "出口電梯--大廳無障礙閘門-月臺電梯-月臺"
+  },
+  {
+   "station": "台大醫院站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "非付費區(B1)，近出口1",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "台北車站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口M5；付費區(B2)，近往淡水信義線樓梯",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "台北車站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口M1、M2；非付費區(B3)，近詢問處；付費區(B3)，往板南線樓梯",
+   "path": null
+  },
+  {
+   "station": "中山站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1(中山藝文廊內)",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "中山站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口6",
+   "path": null
+  },
+  {
+   "station": "雙連站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1，往中山地下街",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "民權西路站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "民權西路站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口5；付費區(B2)，近出口7、8",
+   "path": null
+  },
+  {
+   "station": "圓山站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "劍潭站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "付費區(1樓)，近出口1、出口2",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口3無導盲磚設施)"
+  },
+  {
+   "station": "士林站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "付費區(1樓)，近出口1、出口2",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "芝山站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1、出口2",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "明德站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處、簡易詢問處旁",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2、出口3無導盲磚設施)"
+  },
+  {
+   "station": "石牌站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1、出口2",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "唭哩岸站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "奇岩站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "北投站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂【往新北投列車(四月臺)-第1節、第3節車廂】",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1、出口2",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "新北投站",
+   "line": "R",
+   "wheelchairCars": "第1節、第3節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "復興崗站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "忠義站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁、出口2",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "關渡站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁、出口2",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "竹圍站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁、出口2",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "紅樹林站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁、出口2(僅往停車場)",
+   "toilet": "付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2無導盲磚設施)"
+  },
+  {
+   "station": "淡水站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(1樓)，近站後公園；非付費區(1樓)，近公車站；付費區(1樓)，近出口1",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺(註：出口2、出口3無導盲磚設施)"
+  },
+  {
+   "station": "頂埔站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B3)，近出口3；付費區(B3)，大廳層",
+   "path": null
+  },
+  {
+   "station": "永寧站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)、近出口3；非付費區(B1)、近出口2",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "土城站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)、近出口3",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "海山站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)、大廳電梯後方",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "亞東醫院站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)、大廳電梯後方",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "府中站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往南港展覽館-左側開門，往頂埔-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B2)、詢問處旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "板橋站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口3",
+   "path": null
+  },
+  {
+   "station": "板橋站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(3樓)，近出口5",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "新埔站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)、近出口4、5",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "江子翠站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)、近出口1、2、3",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "龍山寺站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)、大廳電梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "西門站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往南港展覽館-右側開門，往頂埔-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)、大廳電梯後方",
+   "path": null
+  },
+  {
+   "station": "西門站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往松山-左側開門，往新店-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)、大廳電梯後方",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "善導寺站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2、3",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "忠孝新生站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "忠孝新生站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "付費區(B1)，大廳中間",
+   "path": null
+  },
+  {
+   "station": "忠孝敦化站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口1、2、3、4",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "國父紀念館站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4、5",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "市政府站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1、2",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "永春站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4、5",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "後山埤站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3、4",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "昆陽站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，月臺電梯旁",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "南港站",
+   "line": "BL",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口1；付費區(B2)，大廳電梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "廣慈/奉天宮站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門、右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，大廳走道中間",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "象山站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "台北101/世貿站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近往月臺電梯；非付費區(B1)，近出口4，往台北101通道",
+   "path": null
+  },
+  {
+   "station": "信義安和站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "大安森林公園站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口3；非付費區(B1)，近出口5",
+   "path": null
+  },
+  {
+   "station": "北門站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2；非付費區(B2)，近1號詢問處",
+   "path": null
+  },
+  {
+   "station": "台北小巨蛋站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2；付費區(B1)，近出口3、4",
+   "path": null
+  },
+  {
+   "station": "南京三民站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2、3；付費區(B1)，近出口1、4",
+   "path": null
+  },
+  {
+   "station": "松山站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近東側橢圓大廳；付費區(B2)，大廳層中央",
+   "path": null
+  },
+  {
+   "station": "輔大站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口2；付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "新莊站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1；付費區(B1)，近大廳東側",
+   "path": null
+  },
+  {
+   "station": "頭前庄站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": null,
+   "toilet": "付費區(B1)，近出口1；非付費區(B1)，近大廳中間",
+   "path": null
+  },
+  {
+   "station": "頭前庄站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(1樓)，近出口1；付費區(3樓)，近大廳電梯",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "先嗇宮站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近詢問處",
+   "path": null
+  },
+  {
+   "station": "三重站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B3)，近出口1；付費區(B3)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "菜寮站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近出口3",
+   "path": null
+  },
+  {
+   "station": "台北橋站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往迴龍-左側開門，往南勢角-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B4)，近詢問處；付費區(B4)，近大廳東側",
+   "path": null
+  },
+  {
+   "station": "大橋頭站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B2)，近出口1；付費區(B2)，近出口2、3(大廳中間)",
+   "path": null
+  },
+  {
+   "station": "中山國小站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口4(僅有女廁)；付費區(B1)，近出口3、4",
+   "path": null
+  },
+  {
+   "station": "行天宮站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近出口1、4(大廳中間)",
+   "path": null
+  },
+  {
+   "station": "松江南京站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1；非付費區(B1)，近出口2；非付費區(B1)，近出口5、6；付費區(B1)，近出口8",
+   "path": null
+  },
+  {
+   "station": "松江南京站",
+   "line": "G",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1；非付費區(B1)，近出口2；非付費區(B1)，近出口5、6；付費區(B1)，近出口8",
+   "path": null
+  },
+  {
+   "station": "東門站",
+   "line": "R",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往淡水-右側開門，往象山、大安-左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "非付費區(B1)，近出口6；付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "東門站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "往蘆洲、迴龍-右側開門，往南勢角-左側開門",
+   "gate": "主詢問處旁、簡易詢問處旁",
+   "toilet": "非付費區(B1)，近出口6；付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "蘆洲站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1；付費區(B1)，近往月臺電扶梯",
+   "path": null
+  },
+  {
+   "station": "三民高中站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B2)，近往月臺電扶梯",
+   "path": null
+  },
+  {
+   "station": "徐匯中學站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口1",
+   "path": null
+  },
+  {
+   "station": "三和國中站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "三重國小站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(B1)，近出口",
+   "path": null
+  },
+  {
+   "station": "迴龍站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近往月臺電梯",
+   "path": null
+  },
+  {
+   "station": "丹鳳站",
+   "line": "O",
+   "wheelchairCars": "第1節、第6節車廂",
+   "doorSide": "左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(B1)，近大廳南側",
+   "path": null
+  },
+  {
+   "station": "十四張站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(2樓)，近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "秀朗橋站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(4樓)，大廳電梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "景平站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(4樓)，近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "中和站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "往新北產業園區-左側開門。往大坪林-右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，大廳電梯旁",
+   "path": "出口--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "橋和站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "往新北產業園區-右側開門。往大坪林-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(3樓)，出口電梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "中原站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "往新北產業園區-右側開門。往大坪林-左側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(3樓)，出口電梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "板新站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(3樓)，近出口",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "新埔民生站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "付費區(3樓)，近往月臺電扶梯",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "幸福站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(3樓)，近出口電梯",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  },
+  {
+   "station": "新北產業園區站",
+   "line": "Y",
+   "wheelchairCars": "第1節、第4節車廂",
+   "doorSide": "左側開門。右側開門",
+   "gate": "主詢問處旁",
+   "toilet": "非付費區(5樓)，近出口；付費區(5樓)，往月臺電扶梯旁",
+   "path": "出口電梯--大廳無障礙閘門--月臺電梯--月臺"
+  }
+ ]
+}

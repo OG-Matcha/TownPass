@@ -1,0 +1,13 @@
+{
+ "source": "https://data.taipei/dataset/detail?id=d884a9c6-f86c-4854-8da7-e6516ddbe612",
+ "fetchedAt": "2026-11-07T18:30:10.909Z",
+ "items": [
+  {
+   "time": "20261101T224000",
+   "line": "板南線",
+   "station": "頂埔站",
+   "text": "捷運板南線【頂埔站】【月台電梯】已修復完成及開放使用，歡迎搭乘，造成不便，敬請見諒。",
+   "resolved": true
+  }
+ ]
+}

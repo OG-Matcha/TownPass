@@ -1,0 +1,9 @@
+# 已部署到 https://codefest-trip.jushenhuang-jason.workers.dev（在 worker/ 目錄 npx wrangler deploy）
+# 換帳號部署：npx wrangler kv namespace create TRIPS，把 id 換掉，並改 ../.env.production 的 VITE_TRIP_API
+name = "codefest-trip"
+main = "trip-worker.js"
+compatibility_date = "2026-11-01"
+
+[[kv_namespaces]]
+binding = "TRIPS"
+id = "a31e110aeed549a0b52598e3d0dc6bae"

@@ -1,0 +1,2 @@
+# Cloudflare Workers 每個靜態檔上限 25 MiB；語意模型 113 MB 只打包進 App（網頁版語音指令走規則）
+models/

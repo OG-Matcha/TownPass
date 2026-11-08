@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+/*
+ * 城市通（Town Pass）設計 token
+ * Figma UI Kit：figma.com/design/9KutPdy379zdeIUMFimwjM（Foundation & UI kit 頁：Semantic colors 3:390、button 3:4828、text field 3:5149、top navigation 3:5071、card 3:5024）
+ * 色票：refs/TownPass/lib/util/tp_colors.dart（入門指引：「微服務網頁也使用同一組色票」）
+ * 字級：tp_text_styles.dart — h1 36、h2 24、title 18、h3 16、body 14、caption 12
+ *
+ * 無障礙調整（對比依 WCAG 2.x 計算，見 docs/ideation/01_用不了_想法確認.md 第 16 節）：
+ * - 城市通按鈕是 primary500 底＋白字，對比只有 2.39:1，不到 AA 4.5:1
+ *   → 保留 primary500 底色（城市通的樣子），字改用 on-primary 深色 #171b1d（7.2:1，AAA）
+ * - 次要文字不用 grayscale500（3.66:1），改 grayscale600（5.35:1）
+ * - 輸入框邊框用 grayscale500（3.66:1，符合非文字元素 3:1）
+ * - 字級以 body 14 為 1rem 的比例換算；根字級 16px（標準），之後「大／特大」只改根字級
+ */
+@theme {
+  /* 間距與尺寸固定為 px：放大字級只放大文字，觸控目標維持 64px、版面不被擠窄 */
+  --spacing: 4px;
+  --color-on-primary: #171b1d; /* primary500 底上的文字 */
+  --color-primary-50: #edf8fa;
+  --color-primary-100: #dbf1f5;
+  --color-primary-200: #b4e2ea;
+  --color-primary-300: #93d4df;
+  --color-primary-400: #71c5d5;
+  --color-primary-500: #5ab4c5;
+  --color-primary-600: #468d9b;
+  --color-primary-700: #356c77;
+  --color-primary-800: #22474e;
+  --color-primary-900: #112629;
+
+  --color-secondary-50: #fdf8ed;
+  --color-secondary-100: #fcf2df;
+  --color-secondary-500: #f5ba4b;
+  --color-secondary-700: #ad7b2b;
+  --color-secondary-800: #74521b;
+
+  --color-grayscale-50: #f1f3f4;
+  --color-grayscale-100: #e3e7e9;
+  --color-grayscale-200: #cad1d5;
+  --color-grayscale-300: #adb8be;
+  --color-grayscale-400: #91a0a8;
+  --color-grayscale-500: #738995;
+  --color-grayscale-600: #5e6d76;
+  --color-grayscale-700: #475259;
+  --color-grayscale-800: #30383d;
+  --color-grayscale-900: #171b1d;
+  --color-grayscale-950: #0b0d0e;
+
+  /* Figma Semantic colors：Reminder */
+  --color-orange-300: #f4b992;
+  --color-orange-500: #fd853a;
+
+  --color-red-50: #faeeee;
+  --color-red-300: #e29494;
+  --color-red-500: #d45251;
+  --color-red-600: #c2332f;
+  --color-red-700: #912522;
+
+  /* 語意 token：Figma background-color/dark = grey50（App scaffold 同色）、text-color/primary = grey800 */
+  --color-background: #f1f3f4;
+  --color-foreground: #30383d;
+  --color-muted: #f1f3f4;
+  --color-muted-foreground: #475259; /* 次要文字用 grey700：對白 8.02、對 grey50 7.20（AAA） */
+  --color-popover: #ffffff;
+  --color-popover-foreground: #171b1d;
+  --color-accent: #edf8fa;
+  --color-accent-foreground: #171b1d;
+  --color-border: #cad1d5;
+  --color-ring: #22474e;
+  --color-danger: #912522;
+  --color-ok: #2a5a2c; /* 對白 8.09 */
+
+  /* 城市通字級（1rem = body 14 的比例） */
+  --text-h1: 2.5714rem;
+  --text-h1--line-height: 1.3;
+  --text-h2: 1.7143rem;
+  --text-h2--line-height: 1.35;
+  --text-title: 1.2857rem;
+  --text-title--line-height: 1.4;
+  --text-h3: 1.1429rem;
+  --text-h3--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-caption: 0.8571rem;
+  --text-caption--line-height: 1.5;
+
+  --radius-tp: 0.5rem; /* Figma Button/m：8px */
+  --radius-field: 0.625rem; /* Figma Text Field/border：10px */
+  --radius-card: 0.1875rem; /* Figma card：3px */
+  --shadow-card: 0px 4px 12px 0px rgba(0, 0, 0, 0.04); /* Figma card */
+
+  --font-sans: "PingFang TC", "Noto Sans TC", Roboto, ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  font-size: 16px; /* 標準：body 16px（城市通 body 14，長者族群至少放大一級） */
+}
+body {
+  @apply bg-background font-sans text-body text-foreground antialiased;
+  margin: 0;
+}
+
+/* 焦點框：3px 外框（市府無障礙規範） */
+:focus-visible {
+  outline: 3px solid var(--color-primary-800);
+  outline-offset: 2px;
+}
+
+/*
+ * 高對比模式（顯示設定 → 高對比）：只換變數，元件不用改。
+ * 文字與主要元件全部換成近黑色、底色全白、卡片改實線框；焦點框加粗。
+ */
+:root[data-contrast="high"] {
+  --color-on-primary: #ffffff;
+  --color-primary-50: #ffffff;
+  --color-primary-400: #000000;
+  --color-primary-500: #0b0d0e;
+  --color-primary-600: #0b0d0e;
+  --color-primary-700: #0b0d0e;
+  --color-primary-800: #0b0d0e;
+  --color-primary-900: #000000;
+  --color-secondary-800: #0b0d0e;
+  --color-grayscale-50: #ffffff;
+  --color-grayscale-100: #ffffff;
+  --color-grayscale-500: #0b0d0e;
+  --color-grayscale-600: #0b0d0e;
+  --color-grayscale-700: #0b0d0e;
+  --color-grayscale-800: #000000;
+  --color-red-50: #ffffff;
+  --color-red-600: #7a1d1b;
+  --color-red-700: #7a1d1b;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-muted-foreground: #0b0d0e;
+  --color-border: #0b0d0e;
+  --color-ok: #0b0d0e;
+  --shadow-card: none;
+}
+:root[data-contrast="high"] .tp-card {
+  border: 2px solid #0b0d0e;
+}
+:root[data-contrast="high"] :focus-visible {
+  outline-width: 4px;
+}
+
+@layer components {
+  /*
+   * 觸控目標：城市通無障礙規範最小 64dp（高於 WCAG 的 48）→ min-h-16；相鄰可點元件間距 ≥ 16dp → gap-4 / space-y-4。
+   * 對比：全站文字 ≥ 7:1（WCAG AAA）。
+   */
+  /* Figma Button/m Primary：8px 圓角、H3。primary500 底＋on-primary 深字（7.2:1） */
+  .tp-btn {
+    @apply inline-flex min-h-16 w-full items-center justify-center gap-2 rounded-tp px-4 text-h3 font-semibold;
+    @apply bg-primary-500 text-on-primary active:bg-primary-400;
+    @apply disabled:bg-grayscale-100 disabled:text-grayscale-700;
+  }
+  /* Figma Button/m Second：白底＋主色框。字 primary800（10.1:1）、框 primary600（3.79:1，非文字 ≥ 3:1） */
+  .tp-btn-outline {
+    @apply inline-flex min-h-16 w-full items-center justify-center gap-2 rounded-tp px-4 text-h3 font-semibold;
+    @apply border border-primary-600 bg-white text-primary-800 active:bg-primary-50;
+  }
+  /* Figma Button/m Alarm：red500 → red700（白字 8.43:1） */
+  .tp-btn-alarm {
+    @apply inline-flex min-h-16 w-full items-center justify-center gap-2 rounded-tp px-4 text-h3 font-semibold;
+    @apply bg-red-700 text-white active:bg-red-700;
+  }
+  /* 只有圖示的按鈕（關閉等）：64×64，一定要有 aria-label */
+  .tp-icon-btn {
+    @apply inline-flex size-16 shrink-0 items-center justify-center rounded-tp text-grayscale-800 active:bg-grayscale-100;
+  }
+  /* 文字連結樣式的按鈕：仍保持 64 高的觸控區 */
+  .tp-link {
+    @apply inline-flex min-h-16 w-full items-center justify-center gap-2 px-2 text-h3 font-semibold text-primary-800 underline underline-offset-4;
+  }
+  /* Figma Text field：grey50 底、10px 圓角。Figma 預設無框線，加 grey500 框線讓長輩看得出輸入框（3.29:1） */
+  .tp-field {
+    @apply min-h-16 w-full rounded-field border border-grayscale-500 bg-grayscale-50 px-4 text-h3 text-foreground placeholder:text-grayscale-700;
+    @apply focus:border-primary-800 aria-invalid:border-red-700;
+  }
+  /* Figma Text field label：H3 Semibold、grey800 */
+  .tp-label {
+    @apply mb-2 block text-h3 font-semibold text-grayscale-800;
+  }
+  /* 底部操作列的工具鈕（唸、用講的、找不到電梯）：64 高、圖示在上字在下，三顆平分寬度 */
+  .tp-tool {
+    @apply inline-flex min-h-16 min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-tp border border-primary-600 bg-white px-1 py-2 text-body leading-tight font-semibold text-primary-800 active:bg-primary-50;
+    @apply aria-pressed:bg-primary-100;
+  }
+  .tp-tool-danger {
+    @apply border-red-700 text-red-700 active:bg-red-50;
+  }
+  /* 共用底部面板：貼齊底部、頂端圓角＋拖曳把手 */
+  .tp-sheet {
+    @apply max-h-dvh w-full space-y-4 overflow-y-auto rounded-t-2xl bg-white px-5 pt-3 pb-8;
+    animation: tp-sheet-in 200ms ease-out;
+  }
+  .tp-sheet-handle {
+    @apply mx-auto h-1.5 w-12 rounded-full bg-grayscale-300;
+  }
+  /* Figma card：白底、3px 圓角、淡陰影；放在 grey50 頁底上 */
+  .tp-card {
+    @apply rounded-card bg-white p-4 shadow-card;
+  }
+}
+
+@keyframes tp-sheet-in {
+  from {
+    transform: translateY(24px); /* 只位移不淡入：淡入途中文字對比會暫時不足 */
+  }
+}
+/* 減少動態：系統設定要求時關掉所有轉場（DC 動態內容） */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
