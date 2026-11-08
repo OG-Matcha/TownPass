@@ -1,3 +1,39 @@
+# 城市通友善包：捷伴・找服務・輔助使用
+
+2026 臺北秋季程式設計節－城市通微服務大黑客松參賽作品（題目：數位平權 × 友善共融）。在城市通 App 上加三項：
+
+- **捷伴**（我的服務 → 市政服務）：說要去哪，就給能走的捷運無障礙路線；用臺北市開放資料避開排定保養的電梯，給唯一建議出口與電梯動線圖，路上一步一步陪到出站。網頁打包在 App 內（`assets/web/mrt`），斷網可用。原始碼：https://github.com/OG-Matcha/jieban
+- **找服務**：說一句話（例：「路燈壞了」）就找到對的服務，裝置端語意模型。
+- **輔助使用**：每個服務網頁都有的浮動鈕，字級、高對比、左右手，可拖曳。
+
+裝置端 AI 揭露見下方「裝置端 AI 揭露」與「語音辨識與朗讀」。
+
+## 授權（AGPL-3.0）
+
+本作品為「2026 臺北秋季程式設計節－城市通微服務大黑客松」參賽作品，依競賽須知「智慧財產聲明」以 AGPL-3.0 授權，並無償、不可撤銷授權主辦單位及其所屬機關使用；自公布得獎結果日起一年內保持公開、不下架。全文見 [LICENSE](LICENSE)。
+
+```
+城市通友善包（捷伴・找服務・輔助使用）— accessibility add-ons for the TownPass app
+Copyright (C) 2026 城市通友善包 contributors (OG-Matcha, Applause0219, KevensDreamLand, YUEYUE14)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+```
+
+本專案修改自臺北市政府 [taipei-doit/TownPass](https://github.com/taipei-doit/TownPass)（GPL-3.0）。GPL-3.0 第 13 條允許與 AGPL-3.0 作品結合散布；原作者著作權標示保留。
+
+---
+
 # What is Town Pass?
 
 Town Pass is an open-source project developed by the Taipei City Government. With the growth of smart cities, the demand for digitalization in city management and citizen services continues to rise. As we enter a new digital era, our goal is to involve citizens in the process, combining third-party expertise and innovation to make digital life in Taipei more convenient.
