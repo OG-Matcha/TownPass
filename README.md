@@ -1,4 +1,4 @@
-# 城市通友善包：捷伴・找服務・輔助使用
+# 捷伴：一路有聲，出站無礙
 
 2026 臺北秋季程式設計節－城市通微服務大黑客松參賽作品（題目：數位平權 × 友善共融）。在城市通 App 上加三項：
 
@@ -13,8 +13,8 @@
 本作品為「2026 臺北秋季程式設計節－城市通微服務大黑客松」參賽作品，依競賽須知「智慧財產聲明」以 AGPL-3.0 授權，並無償、不可撤銷授權主辦單位及其所屬機關使用；自公布得獎結果日起一年內保持公開、不下架。全文見 [LICENSE](LICENSE)。
 
 ```
-城市通友善包（捷伴・找服務・輔助使用）— accessibility add-ons for the TownPass app
-Copyright (C) 2026 城市通友善包 contributors (OG-Matcha, Applause0219, KevensDreamLand, YUEYUE14)
+捷伴：一路有聲，出站無礙 — accessible MRT companion, voice service search and accessibility layer for the TownPass app
+Copyright (C) 2026 捷伴 contributors (OG-Matcha, Applause0219, KevensDreamLand, YUEYUE14)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
